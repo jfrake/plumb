@@ -224,7 +224,7 @@ Stage files use six abstract actions (ask, dispatch, run in parallel, task list,
 
   All issues are pooled, deduplicated, and rewritten as one-line claims with page references (`eval/pool.py`). The authors rate correctness and one outside expert rates importance, both blind to source (`eval/rate_analysis.py`). The main number is valid, important issues found by only one source. The pool also includes points the reviewer overruled at a check-in, so the ratings show whether the reviewer or the tool was right on each override.
 - **Planted errors** per pack fixture, reported by depth.
-- **Reliability:** three runs per paper, overlap of major issues, pinned model versions, archived raw outputs. For Judgment items, compare the calls across the three runs. Where they often split, repeated draws are worth showing at the check-in. Where they agree, a single draw stays.
+- **Reliability:** three runs per paper, overlap of major issues, recorded model versions, archived raw outputs. For Judgment items, compare the calls across the three runs. Where they often split, repeated draws are worth showing at the check-in. Where they agree, a single draw stays.
 - **Costly overrides:** dismissed points the blind raters judged correct and important, reported by stage, pack, and adjudication type. Points the real referees also raised are reported alongside.
 - **The "more" question:** pilot users report whether the tool changed when or whether they submitted.
 
@@ -234,20 +234,11 @@ Deferred: Refine as a source, and the full 8-12 papers (2027). Real corrected or
 
 - Before the repository goes public, every file is checked for personal paths, emails, manuscript numbers, and confidential text. `tests/test_scrub.py` fails if any of them comes back.
 
-## 16. Team and schedule
+## 16. Team
 
 - **Author A:** core shell, Verify, archival and computational packs, code and data path, audit package, scrub.
 - **Author B:** theory, qualitative, and experiments packs, journal profiles, advocate and adjudication, memo and feedback loop, consent record.
 - **Both:** check-in screens, evaluation, proposal.
-
-State on October 3, 2026.
-
-| Week ending | Milestone | Status |
-|---|---|---|
-| Oct 2 | Spec approved by both. Repo created. Name chosen. Core, thirteen packs, audit package, consent record, and journal profiles built. | Done |
-| Oct 9 | Core runs end to end on one paper with check-ins. Preregistration posted. | |
-| Oct 23 | Pilot on 3-4 of our own drafts, which needs no IRB. Open-weight run at Quick depth. | |
-| Oct 30 | Proposal and appendix final. Repo public. Submit. | |
 
 ## 17. Submission package
 

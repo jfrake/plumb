@@ -49,9 +49,11 @@ def test_spec_lists_the_overlays_and_the_real_dependencies():
     assert "pyyaml" in deps and "Python 3.9" in deps
 
 
-def test_spec_milestones_reflect_the_state_on_october_3():
-    table = _spec().split("| Week ending |", 1)[1].split("\n\n", 1)[0]
-    assert "Done" in table and "no IRB" in table and "Repo public" in table
+def test_spec_has_no_dated_milestone_table_and_records_model_versions():
+    spec = _spec()
+    assert "| Week ending |" not in spec and "State on October" not in spec
+    assert "## 16. Team\n" in spec
+    assert "recorded model versions" in spec and "pinned model versions" not in spec
 
 
 def test_spec_names_only_journals_with_profiles_as_off():
