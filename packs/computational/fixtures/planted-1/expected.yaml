@@ -1,0 +1,25 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+must_catch:
+  - {check: C1, page: 4, locator: "2.3, Agreement between the model and the human label is 93 percent", note: "printed accuracy (0.93) is at or below the majority share (0.94, from a 6.0 percent positive share) and is also inconsistent with the printed precision and recall (which imply about 0.96); F1 0.82 does not match P and R (about 0.66)"}
+  - {check: C2, page: 6, locator: "3, only attenuates the estimated effect", note: "no correction and no spread across prompts on the main outcome; 'only attenuates' claim"}
+  - {check: C3, page: 4, locator: "2.3, We code each review with GPT-4o", note: "model named without version, date of use, or temperature"}
+  - {check: C5, page: 4, locator: "2.3, return on assets in the year following each review year", note: "training cutoff after the sample period; outcomes are later performance"}
+  - {check: C6, page: 5, locator: "2.5, we fit a topic model with 12 topics to all 91,240", note: "topics discovered on the estimation sample"}
+  - {check: C7, page: 8, locator: "4.6, We do not separate the sample by adopter status or by period", note: "only pooled error rates; treatment may change the reviews"}
+  - {check: C8, page: 8, locator: "4.5, we do not report a separate validation of the dictionary", note: "finance dictionary on employee reviews"}
+  - {check: C10, page: 8, locator: "4.4, we read this as the causal effect of a core-hours rule", note: "SHAP read as causal"}
+must_not_flag:
+  - {check: C1, page: "4-5", locator: "2.4, Responsiveness, random sample of 400 reviews", note: "D1: validation of the secondary control is done correctly (confusion matrix TP 98, FP 16, FN 26, TN 260)"}
+  - {check: C6, page: 5, locator: "2.5, Career talk, 30/70 split", note: "D2: keyword moderator uses a stated discovery split"}
+also_fair:
+  - {check: C1, page: 4, locator: "2.3, one research assistant code them", note: "main outcome validated by one coder with no intercoder reliability"}
+  - {check: C3, page: 4, locator: "2.4, We code Responsiveness with the same model", note: "D1 control also has no model version, date, or temperature"}
+  - {check: C6, page: 7, locator: "4.4, we train a gradient-boosting model", note: "SHAP model trained with no split, tuning, or validation described"}
+  - {check: C10, page: 7, locator: "4.3, suggests that adoption changes what employees write about", note: "topic result read as mechanism"}
+  - {check: C9, page: 3, locator: "2.2, Reviews are written by current and former employees who choose to post", note: "who writes the reviews; selection not modeled"}
+  - {check: C7, page: 4, locator: "2.4, Responsiveness", note: "error in the control variable not reported by treatment status"}
+  - {check: C13, page: 4, locator: "2.4, control for how responsive managers are described", note: "bad-control concern: contemporaneous Responsiveness may be moved by adoption; C13 is the nearest check"}

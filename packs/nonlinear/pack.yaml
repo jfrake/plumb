@@ -1,0 +1,27 @@
+name: nonlinear
+overlay: true
+detection_cues:
+  - inverted U, inverted-U-shaped, U-shaped, curvilinear, too much of a good thing, diminishing returns, optimal level, threshold, tipping point, sweet spot, non-monotonic
+  - moderates, moderating role, amplifies, attenuates, strengthens the relationship, weakens the relationship, buffers, contingent on, conditional on, interaction effect, joint effect, simple slopes, one standard deviation above and below, Johnson-Neyman
+  - a squared term (x squared, x^2, Squared) in a regression table, especially with a moderator interacted with x and x squared
+  - a coefficient named with " x ", ":", or "*" between two variables; a triple product of three variables
+  - numbered hypotheses about curvilinear, moderated, or contingent effects
+  - figures with lines labeled high and low of a moderator, or a plotted curve with a peak
+  - logit, probit, Poisson, negative binomial, Cox, or tobit tables with product or squared terms
+  - odds ratio, incidence rate ratio, hazard ratio, times more likely
+  - an outcome named ln(1+...), log(x+1), asinh, IHS, or logged, for a count-like or zero-heavy variable, or a footnote about adding one before logging
+  - split-sample tables (by size, industry, ownership, country, period) with text saying an effect is only present or stronger in one group
+  - mean-centered, standardized before creating interaction terms, VIF, multicollinearity near an interaction
+  - fixed effects in the same model as a squared term
+slots:
+  verify: [nonlinear-numbers.md]
+  diagnose: [nonlinear-claims.md, nonlinear-specification.md]
+turns_off: []
+read_checkin_lines: ["Nonlinear terms:"]
+severity_rules:
+  - "When a nonlinear term's role is main hypothesis and the paper's own point estimates contradict the claimed shape or moderation, the issue is 'Undermines the main claim'. This covers: a turning point outside the observed range of the variable; an end slope whose point estimate has the wrong sign; a curvature that changes sign inside the moderator's range when the hypothesis claims one shape; outcome-scale effects reported in the paper that run against the claimed direction."
+  - "When a nonlinear term's role is main hypothesis and the evidence the claim needs is missing or imprecise, the issue is 'Weakens a claim'. This covers: no end slopes, no outcome-scale effects, no rescaling check; a turning point known only in standard deviations from the mean; a slope or a difference with the claimed sign that is not distinguishable from zero under the paper's stated standard, or under every covariance the reported standard errors allow; a result that depends on a covariance the paper does not report."
+  - "For terms whose role is other hypothesis, and for terms the agent found outside the fingerprint, findings are capped at 'Weakens a claim'."
+  - "N5 (centering and collinearity) findings are always 'Minor'."
+  - "A finding that only notes missing evidence (an N1 turning-point interval, N5, N10's scale-clear alternative, N12, N13) on a term whose role is not main hypothesis is 'Minor'. Such a finding is written once per check, listing every term it applies to. A missing turning-point interval is 'Minor' for any role when the turning point lies well inside the range."
+  - "N9 findings are 'Minor' unless the misstatement is the paper's stated size of a main-hypothesis effect."

@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{booktabs,threeparttable,setspace,graphicx,amsmath,natbib}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\setstretch{1.5}
+\bibliographystyle{plainnat}
+\title{Flexible Work Policies and Coercive Supervision:\\Evidence from Employee Reviews Coded by a Language Model}
+\author{Pat Placeholder\\Institute of Invented Studies}
+\date{}
+\begin{document}
+\maketitle
+\begin{center}\textbf{SYNTHETIC TEST PAPER, NOT REAL RESEARCH}\end{center}
+\begin{abstract}
+\noindent Do flexible work policies change how employees describe their supervisors? We study 140 invented firms that adopted a flexible-work policy in 2017 and 260 comparison firms, using a difference-in-differences design on 2014 to 2019 employee reviews posted to an invented review platform. A large language model codes each review for coercive supervision. Adoption reduces the share of reviews describing coercive supervision by 2.1 percentage points, and the reduction predicts higher return on assets in the following year. A topic model shows that the reduction is concentrated in reviews about scheduling, and a gradient-boosting analysis identifies the policy features that matter most. We discuss implications for research on organizational control and for the use of language models in management research.
+
+\medskip\noindent\textbf{Keywords:} flexible work, supervision, employee reviews, large language models, difference-in-differences
+\end{abstract}
+
+\section{Introduction}
+Organizations increasingly let employees decide when and where they work. Scholars of organizational control have long argued that discretion over the conditions of work shifts the basis of supervision from monitoring toward trust \citep{fictional2009control}. If so, employees should describe their supervisors as less coercive after a firm adopts a flexible-work policy. Yet managers who lose direct sight of subordinates may compensate with tighter output targets and closer tracking, in which case flexibility would leave coercion unchanged or raise it \citep{fictional2014tracking}. Which effect dominates is an empirical question, and it is hard to answer with surveys, which are infrequent and are seldom fielded before and after a policy change.
+
+Employee reviews offer a way forward. Platforms collect free-text descriptions of daily work at thousands of firms, and they do so continuously. The difficulty is measurement. A review that says ``my manager watches my screen all day'' and one that says ``my manager checks in when needed'' differ in ways that dictionaries and simple word counts capture poorly. Large language models now read such text at scale, and a growing body of management research uses them to construct measures that were previously out of reach.
+
+We use this approach to test two hypotheses. The first concerns the direct effect of flexibility on how supervision is described.
+
+\medskip\noindent\textbf{Hypothesis 1.} Firms that adopt a flexible-work policy will see a decline in the share of employee reviews describing coercive supervision, relative to firms that do not adopt.
+
+\medskip\noindent The second concerns downstream performance. If coercive supervision is costly, then a decline in its incidence should translate into better results.
+
+\medskip\noindent\textbf{Hypothesis 2.} Declines in the share of reviews describing coercive supervision will predict higher return on assets in the following year.
+
+\medskip\noindent We find support for both hypotheses. Adoption is followed by a decline of 2.1 percentage points in coercive-supervision reviews, against a pre-period mean of 8.4 percent, and the decline maps into a gain in next-year return on assets. We then explore what the reductions are about, using a topic model, and which features of the policies drive them, using a gradient-boosting model with Shapley additive explanations. Reductions concentrate in reviews about scheduling, and the policy features that carry the most weight are the presence of a core-hours rule and manager training.
+
+The paper makes three contributions. First, it brings evidence on supervision under flexible work from a source that records workers' own accounts continuously. Second, it shows how a language model can be used to build a firm-year outcome from unstructured text. Third, it illustrates how inductive tools can suggest mechanisms for a policy effect.
+
+\section{Data}
+\subsection{Sample}
+The invented review platform provides every review posted about a covered firm between January 2014 and December 2019. We keep firms with at least 10 reviews in each year of the window, which yields 400 firms and 91,240 firm-year reviews, an average of about 38 reviews per firm-year. Of the 400 firms, 140 adopted a flexible-work policy in 2017 (the treated firms) and 260 never adopted a policy in the window (the comparison firms). Adoption dates come from firm announcements that we hand-collected. Financial data come from annual filings. Firm names are fictional; we refer to them by number (Firm 1 through Firm 400).
+
+\subsection{Who writes reviews}
+Reviews are written by current and former employees who choose to post. We do not observe the population of employees, and we do not model the decision to post. We return to this in the discussion.
+
+\subsection{Measuring coercive supervision}
+We code each review with GPT-4o. The prompt defines coercive supervision as supervisory behavior that relies on threats, close tracking, or punishment to secure compliance, and asks the model to return a binary label. Each review is coded once. The main outcome, \emph{Coercive}, is the share of a firm's reviews in a year that receive a positive label.
+
+To assess the labels, we drew a random sample of 500 reviews and had one research assistant code them for coercive supervision. Table~\ref{tab:valid} reports the results. Human coders labeled 6.0 percent of the sampled reviews as coercive. Agreement between the model and the human label is 93 percent. Precision for the coercive class is 0.70 and recall is 0.63, giving an F1 of 0.82. We conclude that the model codes coercive supervision with high accuracy and that the measure is suitable for the analysis.
+
+The reviews concern named firms, and the performance outcome in Hypothesis 2 is return on assets in the year following each review year, drawn from firm filings. We use the model as it stands and take each review at face value.
+
+\subsection{Control measure: manager responsiveness}
+Our regressions control for how responsive managers are described to be, a measure that may correlate with both adoption and coercion. We code \emph{Responsiveness} with the same model and a separate prompt. Because a control that is noisier in some parts of the sample than others could reintroduce bias, we validated it carefully. We drew a random sample of 400 reviews from the analysis corpus. The sample was held out from all prompt development, which used a separate set of 150 reviews from firms outside the sample. Two trained human coders labeled the 400 reviews independently and reached a Cohen's kappa of 0.81; disagreements were resolved by discussion. Against the resolved human labels, the model achieves precision of 0.86 and recall of 0.79 for the responsive class, which makes up 31 percent of the sample (124 reviews), and precision of 0.91 and recall of 0.94 for the remaining class. Overall agreement is 0.895. Table~\ref{tab:valid} reports these figures alongside those for the main outcome.
+
+\begin{table}[t]
+\centering
+\begin{threeparttable}
+\caption{Validation of language-model codes against human codes}\label{tab:valid}
+\begin{tabular}{lcccccc}
+\toprule
+Measure & Sample & Coders & Positive share & Precision & Recall & F1 / Agreement\\
+\midrule
+Coercive (main outcome) & 500 & 1 & 0.060 & 0.70 & 0.63 & 0.82 / 0.93\\
+Responsiveness (control) & 400 & 2 & 0.310 & 0.86 & 0.79 & 0.82 / 0.895\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Note: Precision and recall are for the positive class. For the control, the second class has precision 0.91 and recall 0.94. Synthetic values.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsection{Topics and keywords}
+To explore what changed, we fit a topic model with 12 topics to all 91,240 firm-year review sets, pooling the treated and comparison firms and all years, and we label each topic by reading its top words. The share of reviews devoted to the scheduling topic is a secondary outcome. A separate keyword measure of \emph{Career talk}, the presence of words related to promotion and advancement, serves as a moderator. To keep discovery apart from estimation for this measure, we followed the separation of discovery from estimation recommended by \citet{egami2022texts}: we drew a random 30 percent of firms as a discovery split, built the keyword list only from reviews of those firms, and estimated all models using the remaining 70 percent of firms. The discovery firms are excluded from every regression that uses the measure.
+
+\section{Empirical Strategy}
+Let $Y_{it}$ be the share of coercive reviews at firm $i$ in year $t$. We estimate
+\begin{equation}
+Y_{it} = \alpha_i + \gamma_t + \beta\,\mathit{Post}_{t}\times\mathit{Adopter}_{i} + X_{it}'\delta + \varepsilon_{it},
+\end{equation}
+where $\alpha_i$ and $\gamma_t$ are firm and year fixed effects, $\mathit{Adopter}_i$ marks the 140 treated firms, $\mathit{Post}_t$ equals one for 2017 onward, and $X_{it}$ contains \emph{Responsiveness}, log review count, and log firm size. Standard errors are clustered by firm, the level at which adoption is assigned.
+
+The treatment-assignment mechanism is firms' own decisions to adopt in 2017. The key identifying assumption is parallel trends in coercive supervision between adopters and comparison firms absent adoption. The main threat is that firms adopting in 2017 were responding to changes in supervision or morale that were already under way. Because all treated firms adopt in the same year, the design is a two-by-two comparison over time and is not subject to the concerns that attend staggered adoption.
+
+Measurement error in a generated outcome deserves comment. Random error in the dependent variable does not bias coefficients and only attenuates the estimate's precision, and misclassification that is unrelated to treatment pulls estimates toward zero. Any error in our measure therefore only attenuates the estimated effect, so our estimates are conservative. We use the measure as coded and estimate the model once, with the prompt described above.
+
+\section{Results}
+\subsection{Main results}
+Table~\ref{tab:main} reports the estimates. In column 1, adoption is followed by a decline of 2.1 percentage points in the share of coercive reviews. Adding controls in column 2 changes the estimate little. The event-study coefficients for 2014 to 2016 are small and jointly indistinguishable from zero, which supports parallel pre-trends. Hypothesis 1 is supported. Column 3 shows that the decline predicts higher return on assets in the following year; a 10 percentage point drop in the coercive share is associated with an increase of 0.019 points in next-year return on assets, which supports Hypothesis 2.
+
+\begin{table}[t]
+\centering
+\begin{threeparttable}
+\caption{Flexible-work adoption, coercive supervision, and next-year performance}\label{tab:main}
+\begin{tabular}{lccc}
+\toprule
+ & (1) & (2) & (3)\\
+ & Coercive & Coercive & ROA$_{t+1}$\\
+\midrule
+Post $\times$ Adopter & $-0.021^{***}$ & $-0.019^{***}$ & \\
+ & (0.006) & (0.006) & \\
+Coercive$_t$ & & & $-0.190^{**}$\\
+ & & & (0.081)\\
+Controls & No & Yes & Yes\\
+Firm and year fixed effects & Yes & Yes & Yes\\
+Observations (firm-years) & 2,400 & 2,400 & 2,000\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Note: Standard errors clustered by firm in parentheses. $^{***}p<.01$, $^{**}p<.05$, $^{*}p<.10$. Synthetic values.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsection{Moderation by career talk}
+Among the 70 percent estimation firms, the decline is larger where reviews contain more career talk (interaction $-0.014$, standard error $0.006$). Employees who see a path forward appear to read flexibility as a signal of trust.
+
+\subsection{What the reductions are about}
+The scheduling topic accounts for a larger share of reviews at adopters after adoption. The topic discovered from the full sample, the share of reviews about scheduling, rises by 3.4 percentage points at adopters relative to comparison firms (standard error 1.1). This pattern suggests that adoption changes what employees write about, and that the drop in coercion is concentrated in schedule-related complaints.
+
+\subsection{Which policy features matter}
+To identify which features of the policies matter, we train a gradient-boosting model that predicts the change in coercive share from 22 policy features, and we compute Shapley additive explanation values for each feature. The two features with the largest mean absolute Shapley values are the presence of a core-hours rule and manager training. Removing a core-hours rule has a Shapley value of $-0.7$ percentage points on average, and we read this as the causal effect of a core-hours rule on coercive supervision. Firms wishing to reduce coercion should therefore adopt core hours and train managers.
+
+\subsection{Sentiment}
+As a complement, we score the tone of each review using the finance sentiment dictionary of \citet{loughran2011liability}, and we find that adopters' reviews become more positive after adoption. We treat this as further evidence that adoption improves how employees feel about supervision, and we do not report a separate validation of the dictionary on employee reviews.
+
+\subsection{Accuracy of the measure}
+We report the error of the coercion measure on the validation sample as a whole. In the pooled sample of 500 reviews the model's agreement with the human label is 93 percent. We do not separate the sample by adopter status or by period.
+
+\section{Discussion}
+Flexible-work adoption is followed by less coercive supervision as employees describe it, and the decline is associated with better performance the next year. The scheduling and career-talk patterns suggest that the mechanism runs through employees' sense of a path forward and through the removal of schedule friction. The feature analysis points to core hours and manager training as the levers.
+
+The study has limits. Review authors are self-selected, and adoption may change who chooses to post. Adopting firms may also differ in unobserved ways from comparison firms. We view the results as a first look at how flexibility changes the tone of supervision. Future work could pair reviews with payroll and manager-level data.
+
+For research that uses language models, our approach shows that a single well-described prompt, applied to a large corpus, can yield an outcome that speaks to organizational theory. As models improve, we expect such measures to become standard.
+
+\begin{thebibliography}{9}
+\bibitem[Egami et~al.(2022)]{egami2022texts} Egami, N., Fong, C. J., Grimmer, J., Roberts, M. E., and Stewart, B. M. (2022). How to make causal inferences using texts. \emph{Science Advances}, 8(42).
+\bibitem[Fictional(2009)]{fictional2009control} Fictional, A. (2009). Discretion and the basis of supervision. \emph{Journal of Invented Management}, 12(1), 1--20.
+\bibitem[Fictional and Placeholder(2014)]{fictional2014tracking} Fictional, A. and Placeholder, B. (2014). Tracking as compensation for distance. \emph{Journal of Invented Management}, 17(2), 45--70.
+\bibitem[Loughran and McDonald(2011)]{loughran2011liability} Loughran, T. and McDonald, B. (2011). When is a liability not a liability? Textual analysis, dictionaries, and 10-Ks. \emph{Journal of Finance}, 66(1), 35--65.
+\end{thebibliography}
+\end{document}

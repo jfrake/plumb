@@ -1,0 +1,16 @@
+id: orgsci
+name: Organization Science
+upload: conditional
+drafting: silent
+requires_zero_retention: true
+sources:
+  - quote: "AI tools may only be used in the review process if they do not retain, share, or train on manuscript content, and if they fully comply with INFORMS confidentiality standards."
+    url: https://pubsonline.informs.org/page/orsc/guidelines-for-ethical-behavior-in-publishing
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+norms:
+  comments_min: 6
+  comments_max: 8
+  manuscript_refs_max: 12
+  notes:
+    - "Do not critique a paper for being 'merely empirical' or for confirming rather than extending a theoretical framework. Empirical contributions that support, refute, bound, or specify existing theory are welcome."

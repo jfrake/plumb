@@ -1,0 +1,19 @@
+id: mansci
+name: Management Science
+upload: conditional
+drafting: reviewer_own
+requires_zero_retention: true
+sources:
+  - quote: "Members of the review team should not upload any part of a manuscript submitted to Management Science into a generative AI tool such that it might compromise confidentiality and/or copyright."
+    url: https://pubsonline.informs.org/page/mnsc/submission-guidelines
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+  - quote: "All conclusions expressed by each member of the review team (reviewers, Associate Editor, Department Editor) should be theirs and theirs only."
+    url: https://pubsonline.informs.org/page/mnsc/submission-guidelines
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+norms:
+  comments_min: 6
+  comments_max: 8
+  manuscript_refs_max: 12
+  notes: []

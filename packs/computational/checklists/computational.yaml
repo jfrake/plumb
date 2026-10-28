@@ -1,0 +1,14 @@
+- {id: C1, text: "The generated variable is validated against human codes on a held-out sample from the analysis corpus, with sample size, draw, independence from development, intercoder reliability, and class-specific error rates at the true base rate", adjudication: paper}
+- {id: C2, text: "The downstream estimate corrects for prediction error (DSL, PPI, GMM or IV with a validation sample, SIMEX, multiple imputation, joint estimation) or bounds it; \"accuracy is high\" and \"error only attenuates\" do not count without an argument for classical, nondifferential error", adjudication: paper}
+- {id: C3, text: "Model snapshot, access route and dates, decoding settings, full prompt, parsing rules, embedding model, preprocessing, and a replication path for closed models are reported", adjudication: paper}
+- {id: C4, text: "The main coefficient is reported across reasonable prompts, models, K values, seeds, preprocessing choices, or dictionaries", adjudication: paper}
+- {id: C5, text: "When a pretrained model codes historical text about named firms or people, its training cutoff is compared with the sample period and look-ahead is addressed", adjudication: external}
+- {id: C6, text: "Discovery (topics, clusters, keyword sets, embedding axes) and estimation use separate samples; training, tuning, and preprocessing never saw test data or outcomes; panel splits respect time and unit", adjudication: paper}
+- {id: C7, text: "Error rates are reported by treatment status, period, or the subgroups the analysis compares", adjudication: paper}
+- {id: C8, text: "The measure fits the construct it names: prompt definition, similarity metric, dictionary domain, anchor words, external validation of novelty", adjudication: judgment}
+- {id: C9, text: "Selection into the corpus (who writes the text, which firms, which years) is addressed", adjudication: judgment}
+- {id: C10, text: "SHAP, feature importance, partial dependence, or LASSO selection is not read as causal or as substantive importance; inductive ML is not framed as a test", adjudication: paper}
+- {id: C11, text: "Double ML reports learners, folds, repeated splits, sensitivity across learners, and folds that respect clustering", adjudication: paper}
+- {id: C12, text: "Claimed heterogeneity is tested (calibration, BLP, GATES) with a multiple-testing correction", adjudication: paper}
+- {id: C13, text: "Text used for adjustment is pre-treatment and does not encode the treatment; a text feature used as treatment is separated from features that move with it", adjudication: judgment}
+- {id: C14, text: "Silicon-sample output is validated against people from the same population and task, including spread, subgroups, and associations; claims stay exploratory without it", adjudication: paper}

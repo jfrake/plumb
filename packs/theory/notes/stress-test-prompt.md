@@ -1,0 +1,1 @@
+Apply this note only when the label says primary type and the paper computes no estimates from data of its own (a table of estimates from prior studies does not count). Do not ask for empirical tests, formal propositions, or a particular theory format; judge the paper by the standard of its type.

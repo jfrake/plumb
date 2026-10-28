@@ -1,0 +1,5 @@
+I am an author of the attached manuscript, which I plan to submit to {journal}. Act as a demanding, fair referee. Read the whole paper, including tables and appendices. List every specific problem with the paper's claims, evidence, and methods: evidence that does not support what is claimed, analyses or design choices that are wrong or missing, numbers, tables, or citations that do not match the text, and alternative explanations not ruled out. Ignore style unless it changes a claim's meaning.
+
+For each problem give: (1) a short title; (2) severity, exactly one of "Undermines the main claim", "Weakens a claim", "Minor"; (3) the page, as the number printed on the page and the PDF page if different; (4) what the paper claims there and what is wrong, concretely enough to check; (5) a concrete fix, or how to narrow the claim if there is none.
+
+Order by how much each problem matters to the main claim, most serious first. Do not pad and do not omit real problems. Give no overall assessment, score, or recommendation on acceptance, rejection, or revision.

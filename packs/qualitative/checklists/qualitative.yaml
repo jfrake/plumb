@@ -1,0 +1,15 @@
+- {id: Q1, text: "Data sources are reported with counts and periods (interviews, hours observed, documents)", adjudication: paper}
+- {id: Q2, text: "The coding process is described: stages, who coded, how disagreements were resolved", adjudication: paper}
+- {id: Q3, text: "The data structure matches the constructs used in the findings and the model", adjudication: paper}
+- {id: Q4, text: "Every central finding is supported by at least one excerpt or observation", adjudication: paper}
+- {id: Q5, text: "Excerpts are attributed to an informant role, site, or time point", adjudication: paper}
+- {id: Q6, text: "Counts and descriptions of the data agree across text, tables, and appendix", adjudication: paper}
+- {id: Q7, text: "The logic for selecting the site or cases is stated", adjudication: paper}
+- {id: Q8, text: "Named approaches (Gioia, Eisenhardt, grounded theory) are applied as their sources describe", adjudication: external}
+- {id: Q9, text: "Facts about a non-anonymized site or its context match the public record", adjudication: external}
+- {id: Q10, text: "Case selection fits the theoretical purpose", adjudication: judgment}
+- {id: Q11, text: "Depth and duration of access support the claims made", adjudication: judgment}
+- {id: Q12, text: "The theory is grounded in the evidence rather than imposed on it", adjudication: judgment}
+- {id: Q13, text: "New concepts are distinct from existing constructs, or engage them", adjudication: judgment}
+- {id: Q14, text: "Disconfirming evidence and alternative interpretations are considered", adjudication: judgment}
+- {id: Q15, text: "Scope and transferability are stated in terms appropriate to the genre", adjudication: judgment}

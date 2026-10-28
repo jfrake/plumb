@@ -1,0 +1,27 @@
+name: computational
+overlay: true
+detection_cues:
+  - large language model, LLM, GPT, ChatGPT, Claude, Gemini, Llama, Mistral, OpenAI API, Anthropic API
+  - prompt, zero-shot, few-shot, system prompt, temperature, the model was asked to
+  - LLM-coded, LLM-annotated, AI-coded, machine-coded, automated coding, LLM-as-a-judge
+  - synthetic respondents, silicon sample, simulated participants
+  - fine-tuned, BERT, RoBERTa, FinBERT, sentence-transformers, transformer
+  - topic model, LDA, structural topic model, BERTopic, number of topics, coherence
+  - word embedding, word2vec, GloVe, doc2vec, cosine similarity, semantic similarity, embedding space
+  - dictionary, word list, LIWC, DICTION, Loughran-McDonald, computer-aided text analysis, sentiment, tone, TF-IDF
+  - text-based measure, text similarity, text-based novelty, patent text
+  - machine learning, random forest, gradient boosting, neural network, classifier, training set, test set, cross-validation, F1, precision, recall
+  - SHAP, partial dependence, feature importance, double machine learning, causal forest
+  - facial expression, computer vision, convolutional neural network, vocal pitch
+  - earnings call transcripts, 10-K text, letters to shareholders, employee reviews, job postings, patent claims, firm websites
+  - a score, share, similarity, probability, or index built from documents; an appendix with prompts, word lists, topic tables, or confusion matrices
+slots:
+  verify: [measurement-numbers.md]
+  context: [model-provenance.md]
+  diagnose: [measurement-validity.md, generated-variable-inference.md]
+turns_off: []
+read_checkin_lines: ["Generated variables:"]
+severity_rules:
+  - "When a generated variable's role is main treatment or main outcome: failing both C1 (validation on the paper's own data) and the error requirement (C2 correction or C4 sensitivity across prompts and models) is 'Undermines the main claim'; failing one of them is 'Weakens a claim'."
+  - "The error requirement is met by either C2 or C4. Flag it only when both are missing."
+  - "For other generated variables, findings are capped at 'Weakens a claim' unless they undermine the main claim."

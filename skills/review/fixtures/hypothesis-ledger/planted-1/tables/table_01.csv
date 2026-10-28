@@ -1,0 +1,19 @@
+Variable,Mean,SD,Min,Max
+New product introductions (count),3.42,4.87,0,41
+Industry rank in introductions,8.61,6.14,1,31
+Process innovation (log),0.61,0.74,0,3.91
+Alliance experience (log),1.38,0.97,0,4.62
+Partner technological diversity,0.44,0.21,0,0.91
+R&D alliance share,0.37,0.29,0,1
+External CEO succession,0.04,0.20,0,1
+Founder CEO,0.18,0.38,0,1
+Family firm,0.33,0.47,0,1
+Board size (directors),8.71,2.34,4,17
+Absorptive capacity (log R&D staff),3.08,1.22,0,6.95
+Supplier concentration,0.31,0.17,0.04,0.93
+Firm size (log employees),6.12,1.41,2.30,10.83
+Firm age (log years),3.21,0.62,1.10,4.80
+R&D intensity,0.034,0.029,0,0.214
+Leverage,0.27,0.16,0,0.88
+Slack,0.19,0.12,0.01,0.74
+Competition,0.71,0.18,0.12,0.98

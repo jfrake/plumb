@@ -1,0 +1,5 @@
+[
+  {"id": "k4-plant", "label": "delegated vs centralized, K = 5", "page": 5, "location": "Table 3 row 1", "outcome": "long-run performance", "a": {"mean": 0.712, "spread": 0.06, "spread_kind": "sd", "runs": 100}, "b": {"mean": 0.705, "spread": 0.06, "spread_kind": "sd", "runs": 100}, "spread_of": "runs", "claim": "meaningful", "common_random_numbers": "no"},
+  {"id": "d2-decoy", "label": "delegated vs centralized, second setting", "page": 5, "location": "Table 3 row 2", "outcome": "long-run performance", "a": {"mean": 0.742, "spread": 0.06, "spread_kind": "sd", "runs": 100}, "b": {"mean": 0.705, "spread": 0.06, "spread_kind": "sd", "runs": 100}, "spread_of": "runs", "claim": "meaningful", "common_random_numbers": "no"},
+  {"id": "k5-plant", "label": "delegated vs centralized, 10,000 runs", "page": 6, "location": "Table 4 (SD in Table A3)", "outcome": "long-run performance", "a": {"mean": 0.709, "spread": 0.05, "spread_kind": "sd", "runs": 10000}, "b": {"mean": 0.705, "spread": 0.05, "spread_kind": "sd", "runs": 10000}, "spread_of": "runs", "claim": "significant", "common_random_numbers": "no"}
+]

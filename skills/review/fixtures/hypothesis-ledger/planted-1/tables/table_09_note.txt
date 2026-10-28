@@ -1,0 +1,1 @@
+Note. Dependent variable: log of one plus new product introductions. The two samples share no firms: a firm's family status does not change during the panel. Standard errors, clustered by firm, in parentheses. * p<0.10, ** p<0.05, *** p<0.01

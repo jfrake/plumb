@@ -1,0 +1,1 @@
+Note. Dependent variable: log of one plus new product introductions. Model 1 omits slack and competition. Model 4 re-estimates Model 3 on 2010 to 2019. Slack, competition, and firm age are mean-centered before the product terms are formed. Standard errors, clustered by firm, in parentheses. * p<0.10, ** p<0.05, *** p<0.01

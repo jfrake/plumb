@@ -1,0 +1,11 @@
+.superpowers/
+__pycache__/
+.pytest_cache/
+review_workspace/
+plumb_output/
+inbox/
+*.pdf
+!packs/*/fixtures/**/*.pdf
+.DS_Store
+*.pyc
+tests/.scrub_names.local

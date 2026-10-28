@@ -1,0 +1,26 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+script_checked: true
+must_catch:
+  - {check: G1, page: 9, locator: "Table 1, pooled-network panel: \"Density\"", note: "P1: density printed 0.12; 1,030 ties among 412 firms give 0.0122", severity: "number flag", record: t1-density}
+  - {check: G2, page: 7, locator: "Section 3.2: \"We build the alliance network from alliances among sample firms\"", note: "P2: centrality on sample firms only; H1 names the industry network; 2,510 of the 3,960 register alliances (those with non-sample partners, Section 3.1) dropped without comment; the same boundary governs common third parties and partner adoption share; a G2 flag citing H2 or H3 matches P2.", severity: "Weakens a claim"}
+  - {check: G3, page: 7, locator: "Section 3.2: \"we assume that alliances remain active for five years from the announcement\"", note: "P3: five-year window keeps ties the register marks as ended (end dates for 38 percent, 551 of 1,450); no other window in Section 4.4 or elsewhere", severity: "Weakens a claim"}
+  - {check: G6, page: 6, locator: "Section 3.1: \"Partners named in the Register were therefore matched by firm name to the Kestrel records\"", note: "P4: name matching with no match rate or subsidiaries; decides the nodes behind H1", severity: "Weakens a claim"}
+  - {check: G7, page: 10, locator: "Section 4.1: \"The small-world quotient of 7.28 is evidence of a cohesive board elite\"", note: "P5: small-world quotient on a board projection against a degree-sequence random graph", severity: "Minor"}
+  - {check: G9, page: 12, locator: "Table 3: \"Constraint and exploratory patents (H1)\"", note: "P6: constraint with no degree control or correlation (Table 2 omits degree)", severity: "Weakens a claim"}
+  - {check: G16, page: 8, locator: "Section 3.3: \"alliances active in the five years ending in year t\"", note: "P7: window ends in year t, outcome counted in year t, 'leads to' (Section 4.2, p. 11)", severity: "Weakens a claim"}
+  - {check: G10, page: 15, locator: "Table 5 note: \"Standard errors clustered by focal firm in parentheses\"", note: "P8: dyadic logit clustered by focal firm only", severity: "Weakens a claim"}
+  - {check: G11, page: 14, locator: "Section 5.1: \"has a 1.4 percent chance of forming an alliance in a given year\"", note: "P9: random non-tie sample, no reweighting, predicted probability read", severity: "Weakens a claim"}
+  - {check: G13, page: 17, locator: "Section 6: \"We conclude that partner adoption caused focal adoption\"", note: "P10: causal spread claim; partners chosen by similarity (Section 3.2, p. 7); fixed effects and a lag only; repeated in Section 7, p. 19", severity: "Undermines the main claim"}
+  - {check: G12, page: 23, locator: "Appendix B: \"the model converged\"", note: "P11: MCMC ERGM with no convergence, degeneracy, or fit reported", severity: "Minor"}
+must_not_flag:
+  - {check: G1, page: 9, locator: "Table 1, pooled-network panel: \"Mean degree\"", note: "D1: mean degree 5.00 = 2 x 1,030 / 412", record: t1-degree}
+  - {check: G9, page: 13, locator: "Table 4: \"Degree is included in every column; the correlation between effective size and degree is 0.61\"", note: "D2: degree in every column; correlation 0.61 reported"}
+  - {check: G10, page: 16, locator: "Table 6 note: \"Standard errors in parentheses are dyadic-robust\"", note: "D3: dyadic-robust errors"}
+also_fair:
+  - {check: G4, page: 6, locator: "Section 3.1: \"records alliances involving private partners less completely\"", note: "the register's weak coverage of private partners"}
+  - {check: G15, page: 9, locator: "Section 3.4: \"so the estimates come from changes in a firm’s constraint over time\"", note: "fires only if no archival adversarial agent runs: constraint is the main predictor and the paper does not name what produces position"}
+  - {check: G11, page: 14, locator: "Section 5.1: \"The pairs at risk in year t are all pairs of sample firms that had not allied before year t\"", note: "register starts in 2006, so pairs allied before 2006 cannot be excluded; left-censored risk set"}

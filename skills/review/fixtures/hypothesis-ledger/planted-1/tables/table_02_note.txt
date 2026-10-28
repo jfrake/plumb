@@ -1,0 +1,1 @@
+Note. Dependent variable in Models 1 to 5: log of one plus new product introductions; in Model 6: industry rank in introductions, where 1 is the firm with the most introductions, so a lower rank is better. Model 4 is the full model. Model 5 lags alliance experience by two years. Standard errors, clustered by firm, in parentheses. * p<0.10, ** p<0.05, *** p<0.01

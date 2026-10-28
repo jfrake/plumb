@@ -1,0 +1,33 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+script_checked: true
+must_catch:
+  - {check: K1, page: 3, locator: "3.2: Agents update their search choices each period", note: "P1: update timing, order, and tie-breaking unstated; Weakens assumes model_mechanism.md names update order as a candidate artifact behind the headline, and Minor is the rule's outcome if it does not", severity: "Weakens a claim"}
+  - {check: K2, page: 8, locator: "Code and data statement: Code is available from the authors upon reasonable request", note: "P2: code on request only; Minor assumes the run names no journal, or one that does not require code at submission", severity: "Minor"}
+  - {check: K3, page: 5, locator: "4: Results are averaged over 100 runs, and each run lasts 250 periods", note: "P3: 100 runs and 250 periods with no justification; the same experiment carries the script's inside_noise flag", severity: "Weakens a claim"}
+  - {check: K4, page: 5, locator: "4.1, Table 3 row 1: Delegated organizations therefore achieve substantially higher performance than centralized ones", note: "P4: difference 0.007 with interval -0.0096 to 0.0236 on stated independent draws, called substantially higher", severity: "Undermines the main claim", record: k4-plant}
+  - {check: K5, page: 6, locator: "4.3, Table 4: The advantage of delegation is significant at p < 0.001", note: "P5: standardized difference 0.08 made significant by 10,000 runs; p < .05 needs about 1,201; the run-to-run SD appears only in Table A3 and Table 4 prints no difference column, so the claim rests on significance alone", severity: "Weakens a claim", record: k5-plant}
+  - {check: K6, page: 13, locator: "Appendix C: For K of 8 or more, centralized search performs better", note: "P6: reversal for K of 8 or more inside the 'complex environments' region the abstract claims", severity: "Undermines the main claim"}
+  - {check: K7, page: 12, locator: "Appendix B: We vary each parameter in turn, holding the others at baseline", note: "P7: one-at-a-time sweeps only", severity: "Weakens a claim"}
+  - {check: K8, page: 4, locator: "3.4, Table 2: Base case: landscape properties by level of interdependence", note: "P8: 3.4 local peaks at K = 0, impossible under the stated construction, repeated in the text; the 4.1 sentence on p. 5, 'organizations face an average of 3.4 local peaks even without interdependence', is an equally valid hit, and a reviewer may fold in the table's rise in peak height from K = 0 to K = 2 against the text's claim that peaks become lower; Appendix C on p. 13, where Figure A3(a) puts both structures at 0.665 at K = 0 against Table 2's peak height of 0.618, is also a valid hit", severity: "Undermines the main claim"}
+  - {check: K11, page: 6, locator: "5: We attribute the advantage of delegation to filtering by middle managers", note: "P9: filtering named as the mechanism with no run that switches it off", severity: "Weakens a claim"}
+  - {check: K12, page: 10, locator: "Appendix A: Each delegated unit may change up to two decisions per period", note: "P10: delegated units may change two decisions per period, centralized one; no run equalizes search width; Figure A1's U = 1 point (0.705) matches the centralized benchmark but keeps search width two, so it does not equalize width", severity: "Undermines the main claim"}
+  - {check: K13, page: 7, locator: "6: Firms should delegate at least 40 percent of decisions", note: "P11: numerical prescription tied to no data, in the discussion only", severity: "Weakens a claim"}
+  - {check: K14, page: 8, locator: "7.2: the agents behaved in realistic ways", note: "P12: LLM agents validated by quoted exchanges only; not a headline result", severity: "Weakens a claim"}
+  - {check: K15, page: 8, locator: "7.3: spontaneously converge on a shared naming convention", note: "P13: naming convention read as emergent with no check against recall", severity: "Weakens a claim"}
+must_not_flag:
+  - {check: K10, page: 3, locator: "3.1: Overall performance is the average of the contributions over the N decisions", note: "D1: landscape construction complete"}
+  - {check: K4, page: 5, locator: "4.1, Table 3 row 2: The difference, 0.037, is meaningful", note: "D2: difference 0.037 with interval 0.020 to 0.054 on independent draws", record: d2-decoy}
+  - {check: K13, page: 7, locator: "6: We offer this as a proposition for field studies of delegation", note: "D3: general proposition offered for later testing, bounded to low and moderate interdependence as in Figure A3"}
+  - {check: K6, page: 5, locator: "4.2: For K from 1 to 4, faster turnover raises performance", note: "D4: secondary result bounded to K from 1 to 4"}
+also_fair:
+  - {check: K11, page: 10, locator: "Appendix A: while the centralized structure changes at most one decision per period", note: "the search-width difference behind P10 may also be filed as an artifact"}
+  - {check: K1, page: 7, locator: "7.1: Each agent sees the last five messages from its team", note: "the LLM agents' memory rule, if the extension leaves it thin; also the prompt's one change per period against A.4's two for delegated units"}
+  - {check: face-validity, page: 3, locator: "3.2: We model delegation as assigning each unit manager authority over a subset", note: "whether 'delegation' in the model is delegation in the paper's sense"}
+  - {check: K3, page: 7, locator: "7.1: We ran 20 runs of 50 periods each with two units", note: "20 runs of 50 periods unjustified for the LLM extension; Minor, no noise flag for that experiment"}
+  - {check: K4, page: 12, locator: "Appendix B: delegated organizations with two or more units match or exceed the centralized benchmark", note: "figure-only robustness comparisons in Figures A1 and A2, printed with no spread; Figure A2 gaps of 0.007 to 0.010 are inside the noise"}
+  - {check: C4, page: 7, locator: "7.1: All agents in all runs use the same model and the same prompt", note: "computational overlay: one prompt and one model for the LLM extension"}
+  - {check: C14, page: 7, locator: "7.2: To validate the LLM agents, we read their exchanges", note: "computational overlay: individual LLM agents not compared with people"}

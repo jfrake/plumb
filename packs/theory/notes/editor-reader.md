@@ -1,0 +1,1 @@
+Skip question 3 (Constructs). The theory pack's construct clarity agent checks the paper's constructs. Write the heading for question 3 with the line "Covered by the construct clarity check." In the Checks section, answer each question 3 id (3a to 3d) as "skipped, pack note: theory pack."

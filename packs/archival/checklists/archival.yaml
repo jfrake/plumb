@@ -1,0 +1,9 @@
+- {id: A1, text: "Stars match reported p-values and standard errors", adjudication: paper}
+- {id: A2, text: "Sample sizes agree across tables and text", adjudication: paper}
+- {id: A3, text: "Standard errors clustered at the level of treatment assignment", adjudication: paper}
+- {id: A6, text: "Claims about the data source match its documentation", adjudication: external}
+- {id: A7, text: "Cited estimators and thresholds are stated correctly", adjudication: external}
+- {id: A8, text: "Code reproduces the reported estimates (when a replication package is supplied)", adjudication: external}
+- {id: A10, text: "Alternative explanations are ruled out, not merely consistent", adjudication: judgment}
+- {id: A11, text: "Magnitude is plausible against outside benchmarks", adjudication: judgment}
+- {id: A12, text: "Industry-year fixed effects do not absorb the variation an industry-level argument needs", adjudication: judgment}

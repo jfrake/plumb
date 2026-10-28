@@ -1,0 +1,42 @@
+name: synth
+label: "SC"
+definition: "The paper builds the counterfactual for one or a few treated units as a weighted combination of untreated units, fitted on pre-treatment outcomes or predictors."
+detection_cues:
+  - "synthetic control"
+  - "synthetic counterfactual"
+  - "donor pool"
+  - "donor weights"
+  - "augmented synthetic control"
+  - "augsynth"
+  - "synthdid"
+  - "synthetic difference-in-differences"
+  - "SDID"
+  - "generalized synthetic control"
+  - "gsynth"
+  - "matrix completion"
+  - "RMSPE"
+  - "MSPE"
+  - "in-space placebo"
+  - "permutation test with a treated unit"
+negative_cues:
+  - "synthetic data"
+  - "synthetic biology or synthetic products"
+  - "control variables or managerial control"
+replaces: []  # traceability only; the loader does not read it
+later: ["SC14"]  # cut for version one; ids never reused
+encouragement: []
+checklist:
+  - {id: SC1, text: "Pre-treatment fit is reported as a number on the outcome's scale (pre-period RMSPE or mean gap) with a predictor balance table comparing the treated unit, its synthetic control, and the donor average, and the text's description of the fit matches those numbers", adjudication: paper}
+  - {id: SC2, text: "The number of pre-periods, the donor pool size, and the outcome's volatility are reported, and a close pre-period fit obtained from few pre-periods and many donors is not offered alone as proof of validity", adjudication: paper}
+  - {id: SC3, text: "The donor pool follows a stated rule that excludes units treated by the same or a similar intervention and units hit by large idiosyncratic shocks, while keeping units that share the treated unit's common shocks", adjudication: judgment}
+  - {id: SC4, text: "Spillovers to donors (competitors, suppliers, firms in the same market) and anticipation of the treatment are addressed, the direction of the resulting bias is stated, and suspected anticipation is handled by backdating", adjudication: judgment}
+  - {id: SC5, text: "Donor weights are reported, what a concentrated or a dispersed set of weights means for interpreting the counterfactual is discussed, and the treated unit lies within or near the donors' range on key predictors or the paper uses an estimator built for a unit outside it; weight concentration or dispersion is not by itself a flaw", adjudication: paper}
+  - {id: SC6, text: "The predictor set is stated and justified, predictors are measured before treatment, and a specification that uses every pre-period outcome as a separate predictor is recognized as making the other covariates irrelevant to the weights", adjudication: paper}
+  - {id: SC7, text: "Alternative predictor sets and leave-one-out donor results are shown, and the paper says how the reported specification was chosen", adjudication: paper}
+  - {id: SC8, text: "Permutation inference runs placebos over the full donor pool or a stated rule for discarding poor-fit placebos, uses a fit-adjusted statistic (for example the post/pre RMSPE ratio) or a stated rule for discarding poorly fitting placebos, reports a p-value no smaller than 1/(J+1) for the J placebos kept when one treated unit is permuted in space (1/C(J+N, N) for N treated units permuted as a set; no floor check for conformal inference), and is not described as a sampling-based test when assignment was not random", adjudication: paper}
+  - {id: SC9, text: "An in-time placebo (backdating the treatment) or a hold-out validation period is reported, placed far enough from the true date to avoid anticipation", adjudication: paper}
+  - {id: SC10, text: "When pre-treatment fit is imperfect, the paper uses and names an estimator built for that case (augmented, demeaned, or intercept-shifted SC, or synthetic DiD) and shows its estimate beside SC and DiD; an estimator whose weights can be negative or that adds an intercept is not called plain synthetic control", adjudication: paper}
+  - {id: SC11, text: "A synthetic DiD reports its unit and time weights and regularization, and its variance estimator fits the number of treated units: the jackknife is undefined with one treated unit, the bootstrap and jackknife are built for many treated units, and the placebo method assumes homoskedasticity across units", adjudication: paper}
+  - {id: SC12, text: "With several treated units or staggered adoption, the pooling and aggregation method is stated, and fit is shown for each treated unit or cohort as well as for the average", adjudication: paper}
+  - {id: SC13, text: "A generalized synthetic control or matrix completion estimate reports the number of factors or the regularization parameter, how it was chosen, the pre-periods available per treated unit, and how uncertainty was computed", adjudication: paper}
+  - {id: SC15, text: "The effect is judged against the outcome's volatility and the spread of placebo gaps, and conclusions from one or a few treated units are not generalized beyond them", adjudication: judgment}

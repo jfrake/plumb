@@ -1,0 +1,30 @@
+\begin{table}[htbp]
+\centering
+\caption{Recall on the planted archival test paper}
+\label{tab:recall_planted}
+\begin{threeparttable}
+\begin{tabular}{lrrr}
+\toprule
+ & Planted & Caught & Recall \\
+\midrule
+\multicolumn{4}{l}{\textit{By error kind}} \\
+Text number does not match its table & 2 & 1 & 0.500 \\
+Significance star not supported & 2 & 2 & 1.000 \\
+Arithmetic within a table does not hold & 2 & 2 & 1.000 \\
+Citation to a nonexistent work & 2 & 2 & 1.000 \\
+Archival design error & 4 & 4 & 1.000 \\
+\midrule
+\multicolumn{4}{l}{\textit{By severity}} \\
+Undermines the main claim & 1 & 1 & 1.000 \\
+Weakens a claim & 5 & 5 & 1.000 \\
+Minor & 6 & 5 & 0.833 \\
+\midrule
+All planted errors & 12 & 11 & 0.917 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item \textit{Note:} Recall is caught divided by planted. 11 of 11 catches were matched by signature: an issue counts as catching a planted error only if its text matches a regular expression in the answer key that names the planted change and it sits within one page of the error or on a page the key lists.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

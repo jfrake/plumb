@@ -1,0 +1,81 @@
+[
+ {
+  "id": "t3-presence",
+  "kind": "fit_table",
+  "source": "Table 3, p. 10",
+  "cells": [],
+  "outcome": "presence",
+  "terms": [
+   {
+    "label": "BoardIndep*RDIntensity*~CEODuality",
+    "raw_consistency": "0.95",
+    "pri": "0.90",
+    "raw_coverage": "0.36",
+    "unique_coverage": "0.18",
+    "headline": true
+   },
+   {
+    "label": "BoardIndep*CEODuality*~OwnerConc",
+    "raw_consistency": "0.81",
+    "pri": "0.86",
+    "raw_coverage": "0.20",
+    "unique_coverage": "0.09",
+    "headline": true
+   },
+   {
+    "label": "BoardIndep*FirmSize*Alliances",
+    "raw_consistency": "0.94",
+    "pri": "0.83",
+    "raw_coverage": "0.38",
+    "unique_coverage": "0.09",
+    "headline": true
+   }
+  ],
+  "solution_consistency": "0.89",
+  "solution_coverage": "0.65",
+  "consistency_cutoff": "0.80",
+  "crisp_outcome": false,
+  "split_unclear": false
+ },
+ {
+  "id": "a1-absence",
+  "kind": "fit_table",
+  "source": "Table A1, p. 12",
+  "cells": [],
+  "outcome": "absence",
+  "terms": [
+   {
+    "label": "~BoardIndep*CEODuality*~RDIntensity",
+    "raw_consistency": "0.94",
+    "pri": "0.89",
+    "raw_coverage": "0.26",
+    "unique_coverage": "0.06",
+    "headline": false
+   },
+   {
+    "label": "~BoardIndep*~RDIntensity*~Alliances",
+    "raw_consistency": "0.93",
+    "pri": "0.83",
+    "raw_coverage": "0.41",
+    "unique_coverage": "0.21",
+    "headline": false
+   }
+  ],
+  "solution_consistency": "0.92",
+  "solution_coverage": "0.47",
+  "consistency_cutoff": "0.80",
+  "crisp_outcome": false,
+  "split_unclear": false
+ },
+ {
+  "id": "design",
+  "kind": "design",
+  "source": "Analysis and Results, pp. 8 and 9",
+  "cells": [],
+  "variant": "fsQCA",
+  "conditions": 6,
+  "n_cases": 180,
+  "frequency_cutoff": 2,
+  "cases_in_truth_table": 162
+ }
+]

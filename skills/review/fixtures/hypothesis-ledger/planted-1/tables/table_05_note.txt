@@ -1,0 +1,1 @@
+Note. Dependent variable: log of one plus new product introductions. Column 1 is the full model on the full sample. Column 4 keeps firms that draw most of their revenue from manufacturing. Standard errors, clustered by firm, in parentheses. * p<0.10, ** p<0.05, *** p<0.01

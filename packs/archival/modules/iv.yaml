@@ -1,0 +1,51 @@
+name: iv
+label: "IV"
+definition: "The paper estimates the effect of an endogenous variable using a variable (an instrument) that shifts it, by two-stage least squares, LIML, GMM, or a control function with an excluded instrument."
+detection_cues:
+  - "instrumental variable"
+  - "2SLS"
+  - "two-stage least squares"
+  - "first stage"
+  - "exclusion restriction"
+  - "Stock-Yogo"
+  - "Cragg-Donald"
+  - "Kleibergen-Paap"
+  - "weak instrument"
+  - "Hansen J"
+  - "Sargan"
+  - "LATE"
+  - "compliers"
+  - "ivreg2"
+  - "ivreghdfe"
+  - "feols with an instrument"
+  - "leniency"
+  - "examiner"
+  - "judge fixed effects"
+  - "Bartik"
+  - "shift-share"
+  - "Rotemberg"
+  - "system GMM"
+  - "Arellano-Bond"
+  - "control function"
+negative_cues:
+  - "a Heckman selection model or inverse Mills ratio with no excluded instrument in a 2SLS (Selection module)"
+  - "random assignment of an offer or encouragement in an experiment (label IV (encouragement), read by the experiments pack)"
+replaces: ["A5"]  # traceability only; the loader does not read it
+later: ["IV10", "IV17"]  # cut for version one; ids never reused
+encouragement: ["IV1", "IV2", "IV3", "IV4", "IV5", "IV9", "IV11"]
+checklist:
+  - {id: IV1, text: "Each instrumented estimate reports first-stage strength with a statistic that fits the error structure and the instrument count: under robust or clustered errors, the robust (Kleibergen-Paap) first-stage F with one instrument, which may be compared with the Stock-Yogo size values, or the effective F with several instruments; a Cragg-Donald or other non-robust F offered under robust or clustered errors, a robust F compared with Stock-Yogo values when there are several instruments, or no first-stage statistic, does not count", adjudication: paper}
+  - {id: IV2, text: "Where first-stage strength is not clearly strong, the estimates hypotheses rest on also get inference that stays valid with weak instruments (Anderson-Rubin, conditional likelihood ratio, or tF intervals)", adjudication: paper}
+  - {id: IV3, text: "With several endogenous regressors, such as an endogenous variable and its interaction with a moderator, the paper reports a conditional first-stage statistic for each", adjudication: paper}
+  - {id: IV4, text: "The first stage and the reduced form (outcome on instrument) are both reported, their signs and sizes fit the paper's account of how the instrument works, fitted values from a nonlinear first stage are not plugged into a linear second stage, and a hand-run two-step 2SLS has second-stage standard errors that account for the first step", adjudication: paper}
+  - {id: IV5, text: "The exclusion restriction is argued channel by channel, naming the ways the instrument could affect the outcome other than through the treatment, and at least one falsification test the argument implies is reported (a placebo outcome, a sample where the first stage is zero, or a pre-period outcome)", adjudication: judgment}
+  - {id: IV6, text: "For an instrument with a plausible direct channel to the outcome, the paper reports how large a direct effect would overturn the result, or bounds that allow one", adjudication: paper}
+  - {id: IV7, text: "Overidentification tests are read correctly: a passed Hansen or Sargan test is not presented as proof that the instruments are valid, and a p-value near 1 with many instruments is not presented as reassurance", adjudication: paper}
+  - {id: IV8, text: "When the IV estimate differs from OLS by a large factor, the paper explains the gap with a specific argument (measurement error, complier effects, weak-instrument bias, a possible exclusion violation) instead of reading it as proof that OLS was biased", adjudication: judgment}
+  - {id: IV9, text: "The compliers are described, and the estimate is presented as a local effect for them, not as the average effect for all units", adjudication: judgment}
+  - {id: IV11, text: "Monotonicity is stated and defended, including when several instruments are pooled or several treatment categories are instrumented", adjudication: judgment}
+  - {id: IV12, text: "A judge, examiner, or other agent-assignment design builds its leniency measure leaving out the focal case, shows quasi-random assignment within the assignment stratum, reports first-stage strength, and reports or discusses tests of exclusion and monotonicity", adjudication: paper}
+  - {id: IV13, text: "An agent-assignment design considers whether agents differ in skill as well as stringency, which would make the instrument correlate with case quality", adjudication: judgment}
+  - {id: IV14, text: "A shift-share instrument states whether identification rests on the shares or on the shocks and reports the diagnostics that choice needs (Rotemberg weights and share pre-trends for shares; shock balance and the effective number of shocks for shocks), with standard errors valid when units with similar shares have correlated errors", adjudication: paper}
+  - {id: IV15, text: "An instrument built from lagged values of the endogenous variable, industry or peer averages, or the same firm's values in other periods comes with an explicit argument that it is excluded given persistence, common shocks, and spillovers, and a group mean of the endogenous variable is not used with fixed effects at that group-by-period level", adjudication: judgment}
+  - {id: IV16, text: "Dynamic panel GMM reports the instrument count against the number of groups and whether instruments are collapsed, and a Hansen p-value near 1 is not read as validation", adjudication: paper}

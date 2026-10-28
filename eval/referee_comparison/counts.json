@@ -1,0 +1,46 @@
+{
+ "classes": {
+  "factual": {
+   "referee_points": 31, "also_raised": 20, "plumb_only": 46,
+   "referee_valid": 18, "referee_serious": 17, "referee_wrong": 5,
+   "plumb_only_valid": 39, "plumb_only_serious": 11, "plumb_only_wrong": 1
+  },
+  "substantive judgment": {
+   "referee_points": 73, "also_raised": 59, "plumb_only": 50,
+   "referee_valid": 53, "referee_serious": 38, "referee_wrong": 4,
+   "plumb_only_valid": 39, "plumb_only_serious": 27, "plumb_only_wrong": 1
+  },
+  "preference": {
+   "referee_points": 20, "also_raised": 8, "plumb_only": 3,
+   "referee_valid": 11, "referee_serious": 6, "referee_wrong": 3,
+   "plumb_only_valid": 3, "plumb_only_serious": 0, "plumb_only_wrong": 0
+  },
+  "all": {
+   "referee_points": 124, "also_raised": 87, "plumb_only": 99,
+   "referee_valid": 82, "referee_serious": 61, "referee_wrong": 12,
+   "plumb_only_valid": 81, "plumb_only_serious": 38, "plumb_only_wrong": 2
+  }
+ },
+ "papers": {
+  "A": {
+   "referee_points": 34, "plumb_only": 34,
+   "referee_valid": 20, "referee_serious": 12, "referee_wrong": 6,
+   "plumb_only_valid": 30, "plumb_only_serious": 4, "plumb_only_wrong": 2
+  },
+  "B": {
+   "referee_points": 29, "plumb_only": 18,
+   "referee_valid": 24, "referee_serious": 9, "referee_wrong": 1,
+   "plumb_only_valid": 17, "plumb_only_serious": 8, "plumb_only_wrong": 0
+  },
+  "C": {
+   "referee_points": 25, "plumb_only": 29,
+   "referee_valid": 12, "referee_serious": 16, "referee_wrong": 3,
+   "plumb_only_valid": 17, "plumb_only_serious": 16, "plumb_only_wrong": 0
+  },
+  "D": {
+   "referee_points": 36, "plumb_only": 18,
+   "referee_valid": 26, "referee_serious": 24, "referee_wrong": 2,
+   "plumb_only_valid": 17, "plumb_only_serious": 10, "plumb_only_wrong": 0
+  }
+ }
+}

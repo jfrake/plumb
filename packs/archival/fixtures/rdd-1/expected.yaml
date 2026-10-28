@@ -1,0 +1,72 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+module: rdd
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+must_catch:
+  - check: RD3
+    page: 5
+    locator: "5.1 Validity of the design: The density test (p = 0.03) shows no significant manipulation around the threshold"
+    note: "The paper's own density test rejects continuity at 5 percent (p = 0.03), and the text reads it as showing no manipulation. Firms had an incentive to report fewer than 250 employees, and Appendix Table A1 shows 44 firms at 235 to 249 against 30 at 250 to 265. The headline H1 estimate rests on this design and the failed test is never addressed."
+    severity: "Undermines the main claim"
+  - check: RD8
+    page: 5
+    locator: "4.3 Estimation: We cluster standard errors at each value of the running variable following Lee and Card (2008)"
+    note: "Clustering on the 31 integer values of headcount is offered as the answer to discreteness. Kolesar and Rothe (2018) show this does not protect against misspecification and has poor coverage. Mass points and heaping at 240, 245, 250, and 260 visible in Table A1 are never diagnosed."
+    severity: "Weakens a claim"
+  - check: RD1
+    page: 5
+    locator: "4.3 Estimation: within a window of 15 employees on either side of the threshold"
+    note: "Every column of Table 3 uses a fixed window of plus or minus 15 employees with no bandwidth selector named or justified, and only conventional clustered standard errors. No robust bias-corrected inference, no MSE versus coverage target. The MSE-optimal bandwidth (18.4) appears only later in the robustness section."
+    severity: "Weakens a claim"
+  - check: RD5
+    page: 5
+    locator: "5.1 Validity of the design: within a window of 40 employees on either side of the threshold"
+    note: "Balance is tested in a plus or minus 40 window while the outcome uses plus or minus 15. Firm age jumps by 6.1 years (SE 1.9, p < 0.01) on a mean of 24.8, yet the text says 'Taken together, the covariates are balanced at the threshold' and attributes the gap to chance."
+    severity: "Weakens a claim"
+  - check: RD17
+    page: 7
+    locator: "Table 3 notes: N = 5,200"
+    note: "Table 3 reports 5,200 observations, the full 50 to 500 employee sample, but the local linear fit uses only firms within 15 employees of 250. Appendix Table A1 implies 74 firms in the window (44 below, 30 above), which the text never states. The headline estimate (-2.4, SE 1.1, p about 0.03) rests on few effective observations and sits near the 5 percent line, and is not presented as fragile."
+    severity: "Weakens a claim"
+  - check: RD4
+    page: 11
+    locator: "Appendix B: Supporting evidence: passage is as good as random near the threshold"
+    note: "Close-vote design on shareholder proposals. Figure B1 (page 12) shows a visible drop in density just above 50 percent (26 proposals in the 49 to 50 bin, 12 in the 50 to 51 bin; Table B1 has 144 below and 85 above within the 6-point bandwidth), yet the text asserts passage is as good as random. No density test, no balance evidence, no discussion of management advantage in close votes. Supporting analysis only, so the headline does not rest on it."
+    severity: "Weakens a claim"
+  - check: RD10
+    page: 9
+    locator: "7 Conclusion: the mandate reduces layoffs across the economy"
+    note: "The sharp RD estimate is local to firms with about 250 employees, yet the conclusion claims an economy-wide effect and effects 'in firms of every size', with no extrapolation method or assumption. The abstract stays local, so the overreach sits in the conclusion."
+    severity: "Weakens a claim"
+must_not_flag:
+  - check: RD6
+    page: 8
+    locator: "Table 4: Sensitivity to bandwidth, kernel, polynomial order, and heaping"
+    note: "Half (9.2) and double (36.8) the MSE-optimal bandwidth of 18.4, triangular and uniform kernels, a local quadratic, and a donut dropping 249 to 251. Estimates range from -2.1 to -2.9, all negative; the text on page 7 correctly says column 5 (-2.9, SE 1.8) is not significant at 10 percent and that precision, not size, varies. Cluster counts (37, 19, 73, 34) match the integer values in each window."
+  - check: RD7
+    page: 8
+    locator: "5.4 Placebo thresholds: placebo thresholds of 200 and 300 employees"
+    note: "Same estimator as the main specification at placebo cutoffs 200 and 300, windows 185 to 215 and 285 to 315 that exclude 250 and each lie on one side of it; estimates 0.3 (1.2) and -0.4 (1.4), reported and near zero. Each window has 31 integer values, matching 31 clusters."
+  - check: RD16
+    page: 6
+    locator: "Figure 1: Layoff rate by headcount near the threshold"
+    note: "Binned means with bins chosen by the mimicking-variance selector (five evenly spaced bins each side, 3 employees wide, the last right bin 4) and local linear fits within 15 employees. Fitted values at the cutoff are 8.9 and 6.5, a jump of -2.4 that matches Table 3, column 1 in size and sign. The caption states the uneven last bin."
+also_fair:
+  - check: RD17
+    page: 8
+    locator: "Table 4: Sensitivity to bandwidth, kernel, polynomial order, and heaping"
+    note: "The robustness table reports no observations within each bandwidth on either side. Not planted; the decoy is about bandwidth, kernel, and order variation, but a referee could fairly ask for effective Ns here too."
+  - check: RD5
+    page: 11
+    locator: "Appendix B: Supporting evidence: We compare firms where a proposal narrowly passed with firms where it narrowly failed"
+    note: "The close-vote analysis reports no covariate balance at all. This overlaps the RD4 plant (which names 'its own density and balance evidence'), so a referee may file it under RD5 instead."
+  - check: RD17
+    page: 8
+    locator: "Table 5: Placebo thresholds"
+    note: "The placebo table reports no observations within each window on either side of the placebo cutoffs. Not planted."
+  - check: RD10
+    page: 9
+    locator: "6 Discussion: suggests that the effect of voice is not specific to the council form"
+    note: "The Discussion generalizes from the supporting close-vote design in Appendix B (a different treatment, population, and cutoff) to voice in general. Not planted; the planted RD10 is the Conclusion sentence on the same page."

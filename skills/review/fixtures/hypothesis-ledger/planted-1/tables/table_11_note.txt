@@ -1,0 +1,1 @@
+Note. Dependent variable in Models 1 and 3: log of one plus new product introductions; in Model 2: absorptive capacity (log R&D staff). Pooled models with industry and year fixed effects; R&D intensity is omitted because it is closely tied to R&D staff. Standard errors, clustered by firm, in parentheses. * p<0.10, ** p<0.05, *** p<0.01

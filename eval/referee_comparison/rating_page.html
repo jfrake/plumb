@@ -1,0 +1,308 @@
+<!doctype html>
+<!-- Rating page for the blind referee comparison. It holds no items: the points, match cards and
+     ratings live in the page's database, seeded by pool/make_seed.py and exported for export.py.
+     Database rules used: items read by any viewer, write owner; matchdata, matches, config, ratings
+     read and write owner only; ratings/{self} read and write by that viewer. --><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Review Point Ratings</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one centered column, a single point per screen, set like a slip of referee copy; controls below in two labeled rows. */
+:root {
+  --paper: #f6f7f9; --card: #ffffff; --ink: #1f2a3a; --muted: #5d6878; --rule: #d9dee6;
+  --accent: #2e6a6e; --accent-ink: #ffffff; --chosen: #e3efef;
+  --ok: #2f6b45; --warn: #8a6414; --bad: #9b2f2f;
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #141a22; --card: #1c2430; --ink: #e6ebf2; --muted: #9aa6b6; --rule: #2f3a49;
+  --accent: #6fb3b5; --accent-ink: #0f1a1b; --chosen: #22393b;
+  --ok: #7cc296; --warn: #d9b25e; --bad: #e28a8a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #141a22; --card: #1c2430; --ink: #e6ebf2; --muted: #9aa6b6; --rule: #2f3a49;
+  --accent: #6fb3b5; --accent-ink: #0f1a1b; --chosen: #22393b;
+  --ok: #7cc296; --warn: #d9b25e; --bad: #e28a8a; color-scheme: dark }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 48px; }
+main { max-width: 680px; margin: 0 auto; display: grid; gap: 20px; }
+h1 { font-family: var(--display); font-weight: 600; font-size: 1.9rem; line-height: 1.15; margin: 0; text-wrap: balance; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 1.25rem; margin: 0; }
+p { margin: 0; }
+.muted { color: var(--muted); }
+.eyebrow { font-family: var(--mono); font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tabs button { font: 500 .9rem var(--body); padding: 8px 14px; border-radius: 999px; border: 1px solid var(--rule); background: var(--card); color: var(--ink); cursor: pointer; }
+.tabs button[aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.progress { display: grid; gap: 6px; }
+.bar { height: 6px; background: var(--rule); border-radius: 3px; overflow: hidden; }
+.bar > i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s; }
+.count { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: .85rem; color: var(--muted); }
+.slip { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 22px 22px 24px; display: grid; gap: 14px; }
+.paper-title { font-size: .9rem; color: var(--muted); }
+.point { font-family: var(--display); font-size: 1.35rem; line-height: 1.4; }
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; min-width: 0; }
+legend { font-weight: 600; font-size: .9rem; padding: 0; margin-bottom: 8px; }
+.choices { display: flex; gap: 8px; flex-wrap: wrap; }
+.choice { flex: 1 1 150px; text-align: left; font: 500 .95rem var(--body); padding: 10px 12px; border-radius: 6px; border: 1px solid var(--rule); background: var(--card); color: var(--ink); cursor: pointer; display: flex; gap: 8px; align-items: baseline; }
+.choice kbd { font-family: var(--mono); font-size: .75rem; color: var(--muted); }
+.choice[aria-pressed="true"] { border-color: var(--accent); background: var(--chosen); box-shadow: inset 0 0 0 1px var(--accent); }
+.choice:focus-visible, .tabs button:focus-visible, .nav button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+textarea, input[type="search"] { width: 100%; box-sizing: border-box; font: .95rem var(--body); color: var(--ink); background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 8px 10px; }
+textarea { min-height: 56px; resize: vertical; }
+.nav { display: flex; gap: 10px; justify-content: space-between; flex-wrap: wrap; }
+.nav button { font: 600 .95rem var(--body); padding: 10px 18px; border-radius: 6px; border: 1px solid var(--rule); background: var(--card); color: var(--ink); cursor: pointer; }
+.nav button.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.nav button:disabled { opacity: .45; cursor: not-allowed; }
+.scales { display: grid; gap: 12px; background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 18px; }
+.scales dt { font-weight: 600; }
+.scales dd { margin: 2px 0 0; color: var(--muted); }
+.status { font-size: .9rem; color: var(--muted); min-height: 1.4em; }
+.status.err { color: var(--bad); }
+.match { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 16px; display: grid; gap: 10px; }
+.match .ref { font-family: var(--display); font-size: 1.1rem; }
+.cand { border-left: 3px solid var(--rule); padding-left: 10px; font-size: .95rem; }
+.cand.on { border-left-color: var(--accent); }
+.picker { display: grid; gap: 6px; max-height: 260px; overflow-y: auto; }
+.picker label { display: flex; gap: 8px; align-items: baseline; font-size: .9rem; cursor: pointer; }
+.chip { font-family: var(--mono); font-size: .72rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--rule); color: var(--muted); }
+.chip.done { color: var(--ok); border-color: var(--ok); }
+@media (prefers-reduced-motion: reduce) { .bar > i { transition: none; } }
+</style>
+
+<main>
+  <header style="display:grid;gap:6px">
+    <p class="eyebrow">Four papers · blind rating</p>
+    <h1>Review Point Ratings</h1>
+  </header>
+  <nav class="tabs" id="tabs" hidden>
+    <button id="tab-rate" aria-selected="true">Rate points</button>
+    <button id="tab-match" aria-selected="false">Confirm matches</button>
+  </nav>
+  <p class="status" id="status" role="status">Loading the points…</p>
+
+  <section id="intro" hidden style="display:grid;gap:16px">
+    <p>Each screen shows one point about one of four papers. The points come from several sources and are written in the same plain style. Rate each point as you would if a colleague had raised it about your paper.</p>
+    <dl class="scales">
+      <div><dt>Is the point correct?</dt><dd>Valid: the problem is real as stated. Doubtful: it may be real, but it overstates or misreads the paper. Wrong: the paper already handles it, or the point is mistaken.</dd></div>
+      <div><dt>How much does it matter?</dt><dd>Undermines the main claim: if true, the main result does not hold as stated. Weakens a claim: it narrows or qualifies a claim. Minor: it improves the paper without changing a claim. Rate importance as if the point were correct.</dd></div>
+      <div><dt>What kind of point is it?</dt><dd>Factual: the paper or an outside source can settle it, such as a number that does not match its table or a misdescribed citation. Substantive judgment: a call about the design, the argument, or the contribution that affects whether the claims hold. Preference: a matter of framing, emphasis, or style that does not change whether the claims hold.</dd></div>
+    </dl>
+    <p class="muted">Answers save as you go. You can stop and come back, and go back to change any answer. Keys 1 2 3 set correctness, Q W E set importance, A S D set the kind, Enter moves on.</p>
+    <div class="nav"><span></span><button class="primary" id="start">Start rating</button></div>
+  </section>
+
+  <section id="rate" hidden style="display:grid;gap:16px">
+    <div class="progress"><div class="bar"><i id="bar"></i></div><span class="count" id="count"></span></div>
+    <article class="slip">
+      <div><p class="eyebrow" id="paper-label"></p><p class="paper-title" id="paper-title"></p></div>
+      <p class="point" id="point"></p>
+    </article>
+    <fieldset><legend>Is the point correct?</legend>
+      <div class="choices" id="corr">
+        <button class="choice" data-v="valid"><kbd>1</kbd>Valid</button>
+        <button class="choice" data-v="doubtful"><kbd>2</kbd>Doubtful</button>
+        <button class="choice" data-v="wrong"><kbd>3</kbd>Wrong</button>
+      </div></fieldset>
+    <fieldset><legend>How much does it matter, if correct?</legend>
+      <div class="choices" id="imp">
+        <button class="choice" data-v="Undermines the main claim"><kbd>Q</kbd>Undermines the main claim</button>
+        <button class="choice" data-v="Weakens a claim"><kbd>W</kbd>Weakens a claim</button>
+        <button class="choice" data-v="Minor"><kbd>E</kbd>Minor</button>
+      </div></fieldset>
+    <fieldset><legend>What kind of point is it?</legend>
+      <div class="choices" id="kind">
+        <button class="choice" data-v="factual"><kbd>A</kbd>Factual</button>
+        <button class="choice" data-v="substantive judgment"><kbd>S</kbd>Substantive judgment</button>
+        <button class="choice" data-v="preference"><kbd>D</kbd>Preference</button>
+      </div></fieldset>
+    <label for="note" class="muted" style="font-size:.9rem">Note (optional)</label>
+    <textarea id="note"></textarea>
+    <div class="nav"><button id="back">Back</button><button class="primary" id="next" disabled>Save and next</button></div>
+  </section>
+
+  <section id="done" hidden style="display:grid;gap:12px">
+    <h2 id="done-title"></h2>
+    <p>You can close this page, or go back to change any answer.</p>
+    <div class="nav"><button id="review">Go back to the last point</button><span></span></div>
+  </section>
+
+  <section id="matches" hidden style="display:grid;gap:14px">
+    <div class="progress"><div class="bar"><i id="mbar"></i></div><span class="count" id="mcount"></span></div>
+    <div id="mlist" style="display:grid;gap:14px"></div>
+  </section>
+</main>
+
+<script>
+(async () => {
+  const $ = (id) => document.getElementById(id);
+  const status = (msg, err) => { $("status").textContent = msg || ""; $("status").className = "status" + (err ? " err" : ""); };
+  const show = (id) => ["intro", "rate", "done", "matches"].forEach(s => $(s).hidden = s !== id);
+
+  const db = await claude.use("db");
+  const user = await claude.use("user");
+  if (!db || !user) { status("This page needs to be opened in claude.ai while signed in.", true); return; }
+  const uid = await user.id();
+  const owner = await user.isOwner();
+  if (!uid) { status("Your account could not be identified. Reload the page while signed in.", true); return; }
+
+  // Load the points once, in their fixed random order
+  let items = [];
+  try {
+    const snap = await db.collection("items").get();
+    items = snap.docs.map(d => ({ id: d.id, ...d.data() }))
+      .sort((a, b) => (a.paper_order - b.paper_order) || (a.item_order - b.item_order));
+  } catch (e) { status("The points could not be loaded (" + e.code + "). Reload to try again.", true); return; }
+  if (owner) {
+    try {
+      const cfg = await db.doc("config/settings").get();
+      const label = cfg.exists ? cfg.data().heldout_label : null;
+      if (label) items = items.filter(it => it.paper_label === label);
+    } catch (e) { /* keep all items if the setting cannot be read */ }
+  }
+  if (!items.length) { status("No points are loaded yet. Check back shortly."); return; }
+
+  // Restore this rater's answers
+  const ref = db.doc("ratings/" + uid);
+  let answers = {};
+  let exists = false;
+  try { const s = await ref.get(); if (s.exists) { exists = true; answers = { ...(s.data().answers || {}) }; } }
+  catch (e) { status("Your earlier answers could not be loaded (" + (e.code || "error") + "). Reload the page before rating, so nothing is overwritten.", true); return; }
+  let idx = Math.max(0, items.findIndex(it => !answers[it.id]));
+  if (items.every(it => answers[it.id])) idx = items.length;
+  let draft = {};
+
+  function progress() {
+    const n = items.filter(it => answers[it.id]).length;
+    $("bar").style.width = (100 * n / items.length) + "%";
+    $("count").textContent = n + " of " + items.length + " rated";
+  }
+  function render() {
+    progress();
+    if (idx >= items.length) { show("done"); $("done-title").textContent = "All " + items.length + " points rated."; status(""); return; }
+    show("rate"); status("");
+    const it = items[idx];
+    $("paper-label").textContent = it.paper_label;
+    $("paper-title").textContent = it.title;
+    $("point").textContent = it.text;
+    draft = { ...(answers[it.id] || {}) };
+    $("note").value = draft.note || "";
+    paint();
+  }
+  function paint() {
+    for (const [box, key] of [["corr", "correctness"], ["imp", "importance"], ["kind", "kind"]])
+      $(box).querySelectorAll(".choice").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.v === draft[key])));
+    $("next").disabled = !(draft.correctness && draft.importance && draft.kind);
+    $("back").disabled = idx === 0;
+  }
+  for (const [box, key] of [["corr", "correctness"], ["imp", "importance"], ["kind", "kind"]])
+    $(box).addEventListener("click", e => { const b = e.target.closest(".choice"); if (!b) return; draft[key] = b.dataset.v; paint(); });
+
+  let saving = false;
+  async function save() {
+    if (saving || !(draft.correctness && draft.importance && draft.kind)) return;
+    saving = true; $("next").disabled = true;
+    const it = items[idx];
+    const entry = { correctness: draft.correctness, importance: draft.importance, kind: draft.kind, note: $("note").value.trim(), at: new Date().toISOString() };
+    try {
+      if (!exists) { const s = await ref.get(); exists = s.exists; }
+      if (!exists) { await ref.set({ rater: owner ? "second" : "primary", answers: { [it.id]: entry } }); exists = true; }
+      else await ref.update({ answers: { [it.id]: entry } });
+      answers[it.id] = entry; idx += 1; render();
+    } catch (e) {
+      status(e.code === "invalid_argument" ? "This account cannot save ratings. Ask the page owner to share the page with you as an Editor." : "The answer did not save (" + e.code + "). Try again.", true);
+      $("next").disabled = false;
+    }
+    saving = false;
+  }
+  $("next").addEventListener("click", save);
+  $("back").addEventListener("click", () => { if (idx > 0) { idx -= 1; render(); } });
+  $("review").addEventListener("click", () => { idx = items.length - 1; render(); });
+  $("start").addEventListener("click", render);
+  document.addEventListener("keydown", e => {
+    if ($("rate").hidden || e.target.tagName === "TEXTAREA" || e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    const map = { "1": ["correctness", "valid"], "2": ["correctness", "doubtful"], "3": ["correctness", "wrong"],
+                  "q": ["importance", "Undermines the main claim"], "w": ["importance", "Weakens a claim"], "e": ["importance", "Minor"],
+                  "a": ["kind", "factual"], "s": ["kind", "substantive judgment"], "d": ["kind", "preference"] };
+    if (map[k]) { draft[map[k][0]] = map[k][1]; paint(); }
+    else if (k === "enter") save();
+  });
+
+  // Owner only: confirm matches
+  if (owner) {
+    $("tabs").hidden = false;
+    const setTab = (t) => { $("tab-rate").setAttribute("aria-selected", String(t === "rate")); $("tab-match").setAttribute("aria-selected", String(t === "match")); };
+    $("tab-rate").addEventListener("click", () => { setTab("rate"); render(); });
+    let mdata = null, mans = {};
+    $("tab-match").addEventListener("click", async () => {
+      setTab("match"); show("matches");
+      if (!mdata) {
+        status("Loading matches…");
+        try {
+          const [md, ma] = await Promise.all([db.collection("matchdata").get(), db.collection("matches").get()]);
+          mdata = md.docs.map(d => ({ id: d.id, ...d.data() })).filter(m => m.proposed_strength === "partial").sort((a, b) => a.paper_label.localeCompare(b.paper_label) || a.id.localeCompare(b.id));
+          ma.docs.forEach(d => mans[d.id] = d.data());
+        } catch (e) { status("Matches could not be loaded (" + e.code + ").", true); return; }
+        status("");
+      }
+      drawMatches();
+    });
+    function mprogress() {
+      const n = mdata.filter(m => mans[m.id]).length;
+      $("mbar").style.width = (100 * n / mdata.length) + "%";
+      $("mcount").textContent = n + " of " + mdata.length + " partial matches confirmed";
+    }
+    function drawMatches() {
+      mprogress();
+      const list = $("mlist"); list.textContent = "";
+      for (const m of mdata) {
+        const cur = mans[m.id] || { strength: m.proposed_strength, match: m.proposed || [] };
+        const card = document.createElement("div"); card.className = "match";
+        const head = document.createElement("div"); head.style.cssText = "display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap";
+        const lab = document.createElement("span"); lab.className = "eyebrow"; lab.textContent = m.paper_label + " · referee point";
+        const chip = document.createElement("span"); chip.className = "chip" + (mans[m.id] ? " done" : ""); chip.textContent = mans[m.id] ? "confirmed: " + mans[m.id].strength : "proposed: " + m.proposed_strength;
+        head.append(lab, chip);
+        const rp = document.createElement("p"); rp.className = "ref"; rp.textContent = m.ref_text;
+        card.append(head, rp);
+        const chosen = new Set(cur.match);
+        const shown = document.createElement("div"); shown.style.cssText = "display:grid;gap:6px";
+        const paintShown = () => { shown.textContent = ""; if (!chosen.size) { const p = document.createElement("p"); p.className = "muted"; p.textContent = "No matching issue selected."; shown.append(p); }
+          m.candidates.filter(c => chosen.has(c.id)).forEach(c => { const p = document.createElement("p"); p.className = "cand on"; p.textContent = c.text; shown.append(p); }); };
+        paintShown(); card.append(shown);
+        const det = document.createElement("details"); const sum = document.createElement("summary"); sum.textContent = "Change the matched issues"; sum.style.cursor = "pointer";
+        const q = document.createElement("input"); q.type = "search"; q.placeholder = "Filter this paper's issues"; q.id = "q-" + m.id;
+        const pick = document.createElement("div"); pick.className = "picker";
+        const drawPick = () => { pick.textContent = ""; const f = q.value.toLowerCase();
+          m.candidates.filter(c => !f || c.text.toLowerCase().includes(f)).forEach(c => {
+            const l = document.createElement("label"); const cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = chosen.has(c.id); cb.id = "cb-" + m.id + "-" + c.id;
+            cb.addEventListener("change", () => { cb.checked ? chosen.add(c.id) : chosen.delete(c.id); paintShown(); });
+            const t = document.createElement("span"); t.textContent = c.text; l.append(cb, t); pick.append(l); }); };
+        q.addEventListener("input", drawPick); drawPick();
+        det.append(sum, q, pick); card.append(det);
+        const row = document.createElement("div"); row.className = "choices";
+        for (const s of ["full", "partial", "none"]) {
+          const b = document.createElement("button"); b.className = "choice"; b.textContent = s[0].toUpperCase() + s.slice(1) + (s === "none" ? ": not raised" : " match");
+          b.setAttribute("aria-pressed", String(mans[m.id] && mans[m.id].strength === s));
+          b.addEventListener("click", async () => {
+            const body = { strength: s, match: s === "none" ? [] : [...chosen], at: new Date().toISOString() };
+            if (s !== "none" && !body.match.length) { status("Select at least one matching issue, or choose None.", true); return; }
+            try { await db.doc("matches/" + m.id).set(body); mans[m.id] = body; status(""); drawMatches(); }
+            catch (e) { status("The match did not save (" + e.code + "). Try again.", true); }
+          });
+          row.append(b);
+        }
+        card.append(row); list.append(card);
+      }
+    }
+  }
+
+  status("");
+  if (idx > 0 && idx < items.length) render(); else if (idx >= items.length) render(); else show("intro");
+  progress();
+})();
+</script>
+
+</body></html>

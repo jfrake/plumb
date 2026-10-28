@@ -1,0 +1,7 @@
+pymupdf>=1.24.3
+pdfplumber>=0.10
+requests>=2.28
+pyyaml>=6.0
+# evaluation only: eval/baseline.py imports these inside its call functions; a review never needs them
+openai>=1.70
+anthropic>=0.80

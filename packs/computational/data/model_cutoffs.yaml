@@ -1,0 +1,114 @@
+# Training cutoffs and release dates for models papers commonly name.
+# Every row comes from the provider's own page (url), with a verbatim quote.
+# Rows older than 180 days are leads to re-fetch, not facts. Keys: provider, family,
+# version, aliases, release_date, training_cutoff, deprecated, url, quote, checked_on.
+- provider: OpenAI
+  family: gpt-3.5-turbo
+  version: "gpt-3.5-turbo"
+  aliases: ["GPT-3.5", "GPT-3.5 Turbo", "ChatGPT"]
+  release_date: null
+  training_cutoff: "2021-09"
+  deprecated: null
+  url: https://developers.openai.com/api/docs/models/gpt-3.5-turbo
+  quote: "Sep 01, 2021 knowledge cutoff"
+  checked_on: "2026-09-28"
+- provider: OpenAI
+  family: gpt-4
+  version: "gpt-4-0613"
+  aliases: ["GPT-4"]
+  release_date: null
+  training_cutoff: "2023-12"
+  deprecated: null
+  url: https://developers.openai.com/api/docs/models/gpt-4
+  quote: "Dec 01, 2023 knowledge cutoff"
+  checked_on: "2026-09-28"
+- provider: OpenAI
+  family: gpt-4-turbo
+  version: "2024-04-09"
+  aliases: ["GPT-4 Turbo"]
+  release_date: null
+  training_cutoff: "2023-12"
+  deprecated: null
+  url: https://developers.openai.com/api/docs/models/gpt-4-turbo
+  quote: "Dec 01, 2023 knowledge cutoff"
+  checked_on: "2026-09-28"
+- provider: OpenAI
+  family: gpt-4o
+  version: "2024-08-06"
+  aliases: ["GPT-4o"]
+  release_date: null
+  training_cutoff: "2023-10"
+  deprecated: null
+  url: https://developers.openai.com/api/docs/models/gpt-4o
+  quote: "Oct 01, 2023 knowledge cutoff"
+  checked_on: "2026-09-28"
+- provider: OpenAI
+  family: gpt-4o-mini
+  version: "2024-07-18"
+  aliases: ["GPT-4o mini", "GPT-4o-mini"]
+  release_date: null
+  training_cutoff: "2023-10"
+  deprecated: null
+  url: https://developers.openai.com/api/docs/models/gpt-4o-mini
+  quote: "Oct 01, 2023 knowledge cutoff"
+  checked_on: "2026-09-28"
+- provider: Anthropic
+  family: sonnet
+  version: "5.5"
+  aliases: ["Claude Sonnet 5.5", "Sonnet 5.5"]
+  release_date: "2026-09-28"
+  training_cutoff: "2026-06"
+  deprecated: null
+  url: https://platform.claude.com/docs/en/models/sonnet-5-5/overview
+  quote: "Training data cutoff | Jun 2026 ... Released September 28, 2026."
+  checked_on: "2026-09-28"
+- provider: Anthropic
+  family: haiku
+  version: "4.5"
+  aliases: ["Claude Haiku 4.5", "Haiku 4.5"]
+  release_date: "2025-10-15"
+  training_cutoff: "2025-07"
+  deprecated: null
+  url: https://platform.claude.com/docs/en/models/haiku-4-5/overview
+  quote: "Training data cutoff | Jul 2025 ... Released October 15, 2025."
+  checked_on: "2026-09-28"
+- provider: Meta
+  family: llama
+  version: "2"
+  aliases: ["Llama 2", "Llama-2"]
+  release_date: null
+  training_cutoff: "2022-09"
+  deprecated: null
+  url: https://github.com/meta-llama/llama/blob/main/MODEL_CARD.md
+  quote: "The pretraining data has a cutoff of September 2022, but some tuning data is more recent, up to July 2023."
+  checked_on: "2026-09-28"
+- provider: Meta
+  family: llama
+  version: "3 8B"
+  aliases: ["Llama 3 8B", "Llama-3-8B"]
+  release_date: "2024-04-18"
+  training_cutoff: "2023-03"
+  deprecated: null
+  url: https://github.com/meta-llama/llama-models/blob/main/models/llama3/MODEL_CARD.md
+  quote: "The pretraining data has a cutoff of March 2023 for the 8B and December 2023 for the 70B models respectively. Model Release Date April 18, 2024."
+  checked_on: "2026-09-28"
+- provider: Meta
+  family: llama
+  version: "3 70B"
+  aliases: ["Llama 3 70B", "Llama-3-70B", "Llama 3"]
+  release_date: "2024-04-18"
+  training_cutoff: "2023-12"
+  deprecated: null
+  url: https://github.com/meta-llama/llama-models/blob/main/models/llama3/MODEL_CARD.md
+  quote: "The pretraining data has a cutoff of March 2023 for the 8B and December 2023 for the 70B models respectively. Model Release Date April 18, 2024."
+  checked_on: "2026-09-28"
+- provider: Meta
+  family: llama
+  version: "3.1"
+  aliases: ["Llama 3.1", "Llama-3.1"]
+  release_date: "2024-07-23"
+  training_cutoff: "2023-12"
+  deprecated: null
+  url: https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md
+  quote: "The pretraining data has a cutoff of December 2023. Model Release Date: July 23, 2024."
+  checked_on: "2026-09-28"

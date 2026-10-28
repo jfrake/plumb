@@ -1,0 +1,27 @@
+name: archival
+detection_cues:
+  - difference-in-differences
+  - instrumental variable
+  - regression discontinuity
+  - event study
+  - panel data with fixed effects and a causal claim
+  - synthetic control
+  - propensity score
+  - matched sample
+  - coarsened exact matching
+  - entropy balancing
+  - Heckman
+  - shift-share
+slots:
+  context: [dgp-research.md]
+  theory: [mechanism-discrimination.md]
+  diagnose: [methods-checks.md, adversarial-dgp.md, triangulation.md, design-checks.md]
+turns_off: []
+read_checkin_lines: ["Designs:"]
+severity_rules:
+  - "For theory-testing papers, an identification failure that could produce the main estimate by itself is 'Undermines the main claim'."
+  - "For phenomenon-driven papers, demands for causal identification are downgraded one level."
+  - "A module finding on a design whose role is secondary is 'Minor', except that a result the paper's own numbers contradict (an impossible p-value, a robust estimate of the opposite sign, a failed density test described as passing) is at most 'Weakens a claim'. Report at most two findings per secondary design."
+  - "A module finding is 'Undermines the main claim' only on a design whose role is main, only on the estimate the headline result or a numbered hypothesis rests on, and only in the cases the module lists. Every other module finding is at most 'Weakens a claim'. A finding that is only about reporting, where the missing item would not change what the estimate means, is 'Minor'."
+  - "For module ids, the module rules replace the pack's general rule that an identification failure that could produce the main estimate by itself is 'Undermines the main claim'. The phenomenon-driven downgrade applies to findings that ask for an analysis the paper lacks, not to findings where the paper's own numbers contradict its claim (DD1, RD2, RD3, RD4, SC8, IV1 below 10, IV15, and DD5 and SO14 in their Undermines cases)."
+  - "CHECK 7b's automatic High and adversarial-DGP's auto-severity patterns do not apply to module ids; the module rules set their severity."

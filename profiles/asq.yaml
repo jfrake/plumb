@@ -1,0 +1,19 @@
+id: asq
+name: Administrative Science Quarterly
+upload: banned
+drafting: banned
+requires_zero_retention: true
+sources:
+  - quote: "Uploading a submitted manuscript into AI tools creates confidentiality risks and copyright issues. For this reason, both Cornell University (ASQ's owner) and Sage (ASQ's publishing partner) prohibit this use of AI, and we follow this policy."
+    url: https://journals.sagepub.com/page/asq/1.asq-guidance-for-ai-use-for-authors-and-reviewers
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+  - quote: "You may not use AI tools to read and summarize the article for you or to generate feedback."
+    url: https://journals.sagepub.com/page/asq/1.asq-guidance-for-ai-use-for-authors-and-reviewers
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+norms:
+  comments_min: 6
+  comments_max: 8
+  manuscript_refs_max: 12
+  notes: []

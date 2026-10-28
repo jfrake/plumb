@@ -1,0 +1,52 @@
+name: theory
+detection_cues:
+  - no original empirical data
+  - propositions derived from theory
+  - process model
+  - typology or conceptual framework
+  - integrative or theory-synthesis review
+  - conceptual essay or perspective
+slots:
+  context: [argument-record.md]
+  theory: [proposition-audit.md]
+  diagnose: [construct-clarity.md, logic-checks.md, literature-fidelity.md]
+turns_off:
+  - {agent: construction-ledger-producer.md, reason: a conceptual argument needs no data research}
+  - {agent: setting-research.md, reason: a conceptual argument needs no data research}
+  - {agent: timeline-research.md, reason: a conceptual argument needs no data research}
+  - {agent: face-validity.md, reason: a conceptual argument needs no data research}
+# In a theory paper the argument is the data, so logic is held to a stricter standard.
+severity_rules:
+  - "A central proposition or process transition that does not follow from the stated premises or mechanisms is 'Undermines the main claim'."
+  - "A central construct that is undefined or defined circularly is 'Undermines the main claim' when the main argument turns on its meaning. Otherwise it is 'Weakens a claim'."
+  - "A mischaracterization of prior work is 'Undermines the main claim' when the paper's stated gap rests on it. Otherwise it is 'Weakens a claim'."
+  - "Demands for empirical tests, formal propositions, or a particular theory format are not raised. Each paper is judged by the standard of its type."
+core_notes:
+  theory-logic.md:
+    - file: notes/theory-logic.md
+  theory-devil.md:
+    - file: notes/theory-devil.md
+  formal-model.md:
+    - file: notes/formal-model.md
+  completeness.md:
+    - file: notes/completeness.md
+  boundary-conditions.md:
+    - file: notes/boundary-conditions.md
+  editor-reader.md:
+    - file: notes/editor-reader.md
+  stage-4-compiler:
+    - file: notes/stage-4-compiler.md
+  stress-test-prompt:
+    - file: notes/stress-test-prompt.md
+  packs/theory/agents/proposition-audit.md:
+    - text: "Also write `{WORKSPACE}/stage-4/proposition_issues.md`, so the Stage 4 compiler receives your gaps as findings, and name it with `stage-3/proposition_audit.md` in your one-sentence reply. Its first line is `Pack: theory`, then the title '## Proposition Issues'. Write one finding for each unit, central or peripheral, that you rate Does not follow or Follows with gaps, for each proposition that states no direction or does not name the constructs it relates (T4), and for each gap in the argument as a whole (coverage of the core claim, consistency between units, dangling units). Cite T4 when a proposition does not state a direction or name the constructs it relates, T11 when a mechanism is Named only or Missing, and 'none' otherwise. Give each finding the heading '#### <unit>: <brief issue>' and the lines Checklist item, Evidence (passages with pages, from the argument record), Concern, Suggestion (a new argument, a sharper statement, or a narrower claim), Severity (Minor / Weakens a claim / Undermines the main claim), and Confidence. A central proposition or process transition that does not follow from the stated premises or mechanisms is 'Undermines the main claim' (the pack's first severity rule). A gap in a peripheral unit is 'Minor'. When there are none, write 'None.' under the title."
+    - text: "Apply this note only when the label says second type. The primary pack and the theory devil own rival explanations: in the ledger, write 'not assessed: theory is the second type' under Obvious rival addressed, and raise no rival mechanism in your findings."
+    - text: "Apply this note only when `simulation` is in `run.json` `packs`. For a proposition the paper supports with results from running its simulation, audit only its verbal derivation and its specificity; which model element produces the result and whether it is built in belong to the simulation pack (K11 and K12), and whether the runs support it belongs to that pack too (K4 to K6)."
+  packs/theory/agents/logic-checks.md:
+    - text: "Apply this note only when the label says second type. Do not run your protocol. Write your output file with exactly two lines, '# Not run' and, after a blank line, 'Theory is the second type for this paper; the proposition audit and the construct clarity check cover its theory.' Then reply as usual."
+    - text: "In CHECK 7, for an integrative review or theory synthesis that states no search and coding protocol (the manuscript audit types such a review as theory), the question of how the literature was chosen asks only that a reader can tell what the synthesis covers; do not ask for a systematic search, screening counts, or coding reliability."
+    - text: "Apply this note only when `meta-analysis` is in `run.json` `packs`. In CHECK 7, leave how the literature was searched, screened, and coded to the meta-analysis pack (M1 to M4); keep whether the synthesis produces a payoff beyond summary."
+  packs/theory/agents/literature-fidelity.md:
+    - text: "Apply this note only when the label says second type. Do not run your protocol. Write your output file with exactly two lines, '# Not run' and, after a blank line, 'Theory is the second type for this paper; the proposition audit and the construct clarity check cover its theory.' Then reply as usual."
+  packs/theory/agents/construct-clarity.md:
+    - text: "Apply this note only when `qualitative` is in `run.json` `packs`. For a concept the paper builds from its own qualitative evidence, leave CHECK 5 (distinct from existing constructs, T13) to the qualitative pack (Q13); keep CHECK 5 for every other construct."

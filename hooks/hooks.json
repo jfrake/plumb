@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "PreCompact": [{"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/pre-compact.sh\"", "timeout": 10}]}],
+    "Notification": [{"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/notify.sh\"", "timeout": 10}]}],
+    "PreToolUse": [{"matcher": "^(Edit|Write)$", "hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/protect-files.sh\"", "timeout": 10}]}],
+    "PostToolUse": [{"matcher": "Bash", "hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/bind-usage.sh\"", "timeout": 10}]}],
+    "SubagentStop": [{"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/record-usage.sh\"", "timeout": 10}]}],
+    "Stop": [{"hooks": [{"type": "command", "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/record-usage.sh\"", "timeout": 10}]}]
+  }
+}

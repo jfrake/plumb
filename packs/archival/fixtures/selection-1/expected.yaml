@@ -1,0 +1,76 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+module: selection
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+must_catch:
+  - check: SO14
+    page: 4
+    locator: "Section 3.2 Sample construction: We restrict the sample to firms with complete data from 2016 to 2019"
+    note: "The sample is conditioned on survival through 2019, a post-adoption outcome. The restriction removes 35 of 131 adopters (29 delisted) and 58 of 511 non-adopters (44 delisted). Section 5.1 (page 6) reports that adopter delisting was 22.1 percent versus 8.6 percent for non-adopters, that 21 of the 29 delisted adopters left after distress, and that delisted rated adopters had a 2014 spread of 402 bp versus 231 bp for retained adopters (298 vs 246 for non-adopters). The restriction drops the highest-cost adopters disproportionately, which pushes the adopter-minus-control spread difference toward the negative headline estimate (-31.2 bp). The paper never discusses this. Magnitude from the paper's own numbers: restoring the 29 delisted adopters (402 vs 231 bp, a 171 bp gap) moves the adopter mean by about 29/131 x 171 = 38 bp, and the 44 delisted non-adopters (298 vs 246 bp) move the control mean by about 44/511 x 52 = 4 bp, a net of about 34 bp against a headline of about 31 bp, so a worst-case bound includes zero."
+    severity: "Undermines the main claim"
+  - check: SO1
+    page: 5
+    locator: "Section 4.2 Selection into rated debt: The selection equation contains the second-stage controls plus year dummies."
+    note: "No excluded variable: Table 4 (page 9) Column 2 has exactly the Column 3 regressors (Adopt, five 2014 controls, industry and year dummies). Identification of the Heckman correction rests on probit functional form alone, and the paper neither names an exclusion restriction nor acknowledges this."
+    severity: "Weakens a claim"
+  - check: SO3
+    page: 9
+    locator: "Section 5.3 Main results: Because lambda is significant, selection bias is present, and the estimates in Column 3 are corrected for it."
+    note: "Adopt does not predict selection in the first stage (0.03, SE 0.08, Table 4 Column 2), so by Certo et al.'s conditions selection into rated debt cannot bias the Adopt coefficient through this channel; the significant lambda (-24.6, SE 9.1) is read as proof that selection bias existed and was corrected."
+    severity: "Weakens a claim"
+  - check: SO6
+    page: 7
+    locator: "Section 5.2 Propensity score and balance: every p-value exceeds 0.05. We conclude that the matched sample is balanced on all covariates, including leverage."
+    note: "Balance is judged only by t-test p-values (Table 3, page 8). From the table, leverage after matching has means 0.312 vs 0.263 and SDs 0.140 and 0.140, a standardized difference of 0.049/0.140 = 0.35 (p = 0.058 only because n = 60 per group). Before matching the gap was 0.033, so matching worsened leverage balance. No standardized differences are reported."
+    severity: "Weakens a claim"
+  - check: SO12
+    page: 10
+    locator: "Section 5.5 Omitted variables: Following Oster (2019), delta = 2.4, so omitted variable bias is unlikely."
+    note: "Oster's delta is reported with no assumed maximum R-squared (Rmax) and no statement of the proportional-selection assumption, so delta = 2.4 cannot be interpreted or reproduced from the reported R-squareds (0.09 and 0.43); it is read as ruling out omitted variable bias."
+    severity: "Weakens a claim"
+  - check: SO13
+    page: 4
+    locator: "Section 4.1 Propensity score and matching: Board size and CEO pay are measured in 2016"
+    note: "The score model (Table 2, page 7: 'Board size, 2016' 0.19***, 'Log CEO pay, 2016' 0.48**) includes two covariates measured after the 2015 adoption. Section 2.1 (page 2) says adopters often created board sustainability committees and tied executive pay to sustainability targets, so both are plausible mediators. The paper gives no causal argument for them, only data availability."
+    severity: "Weakens a claim"
+  - check: SO15
+    page: 1
+    locator: "Abstract: Propensity score matching addresses endogeneity in the adoption decision"
+    note: "Matching is presented as solving endogeneity. The paper never states the unconfoundedness assumption or argues that the covariates capture why firms adopt, and Section 6 Threats to Validity (page 11) names only public-debt coverage, noisy year-end yields, and external validity, with no unobserved reason for adoption (for example, management's private information about future credit quality)."
+    severity: "Weakens a claim"
+must_not_flag:
+  - check: SO8
+    page: 5
+    locator: "Section 4.1 Propensity score and matching: This rule removes 31 of the 96 adopters"
+    note: "Overlap is shown by group in Figure 1 (page 8), the trimming rule (scores between 0.1 and 0.9, Crump et al. 2009) is stated, 31 treated removed (7 below 0.1, 24 above 0.9; histogram bins sum to 96 and 453, retained 65 and 232), and the estimand is restated as the effect on adopters with scores between 0.1 and 0.9 (page 5), a qualifier repeated in the Abstract (page 1), Introduction, and Conclusion (page 12)."
+  - check: SO12
+    page: 11
+    locator: "Section 5.6 Debt maturity: the robustness value for making it insignificant at the 5 percent level is 0.060"
+    note: "For the secondary H2 outcome, Cinelli-Hazlett values are reported with inputs and benchmark and are internally consistent: t = 3.25, df = 429 gives partial R2 = 0.024, RV(q=1) = 0.145, RV(q=1, alpha=0.05) = 0.060; a confounder 3x leverage (1.2 and 5.4 percent) is below 0.060. ITCV = 0.067 (component correlation 0.26) matches Frank's formula with the same t and df, benchmarked against leverage impact 0.0085 (partial correlations 0.063 x 0.134 from the 0.4 and 1.8 percent partial R-squareds). Assumptions are stated. Table 6 on page 12 repeats the numbers."
+  - check: SO7
+    page: 5
+    locator: "Section 4.1 Propensity score and matching: we match each adopter to the single nearest non-adopter on the logit of the propensity score, with replacement"
+    note: "Score model (Table 2), algorithm (1:1 nearest neighbor on logit score), replacement, caliper (0.2 SD of logit score), number of matches (one), and estimand (ATT) are all stated. Table 5 (page 10) shows entropy balancing (-29.8, SE 10.9) and a matching estimator without regression (-28.7, SE 11.6) agreeing with the main -31.2 (SE 10.4)."
+also_fair:
+  - check: SO13
+    page: 10
+    locator: "Section 5.4 Alternative matching and weighting: the means and variances of the eight score-model covariates"
+    note: "The entropy-balancing alternative balances the same set, which includes board size and CEO pay measured in 2016, so it inherits the post-treatment covariate problem planted in the score model."
+  - check: SO3
+    page: 9
+    locator: "Section 5.3 Main results: which suggests that ignoring selection into rated debt understates the benefit of adoption"
+    note: "A second reading of the lambda-corrected versus uncorrected gap (-31.2 vs -24.1) as evidence about selection bias, although Adopt does not predict rated-debt status in the first stage."
+  - check: SO15
+    page: 11
+    locator: "Section 6 Threats to Validity: The Heckman correction addresses the resulting sample selection"
+    note: "The Heckman correction is presented as solving sample selection without any stated exclusion restriction or assumption; overlaps with the SO1 plant but sits at a separate sentence."
+  - check: SO14
+    page: 10
+    locator: "Section 5.4 Alternative matching and weighting: computed on firm-level mean spreads for the 31 matched pairs in which both firms have rated debt"
+    note: "The matching-estimator check keeps only pairs where both firms have rated debt in 2016 to 2019, which conditions on a post-adoption status without a selection correction."
+  - check: SO4
+    page: 9
+    locator: "Section 5.3 Main results: in Column 3 is 8.7, below the conventional cutoff of 10"
+    note: "Both columns and a collinearity diagnostic are reported, but a VIF of 8.7 for lambda under functional-form-only identification signals substantial collinearity; a referee could say it is dismissed too quickly (Minor)."

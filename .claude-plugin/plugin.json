@@ -1,0 +1,8 @@
+{
+  "name": "plumb",
+  "version": "0.1.0",
+  "description": "A human-directed AI referee for management research.",
+  "author": {"name": "Anonymous"},
+  "license": "MIT",
+  "keywords": ["peer-review", "management", "referee", "human-in-the-loop"]
+}

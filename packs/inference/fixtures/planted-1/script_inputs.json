@@ -1,0 +1,21 @@
+{
+  "claims": [
+    {"id": "p9-h4", "page": "10",
+     "excerpt": "H4 is marginally significant and supported at the 10 percent level (b = 0.061, SE = 0.052).",
+     "b": "0.061", "se": "0.052", "claim": {"op": "<", "level": "0.10"},
+     "directional": true, "tails": "unstated", "table": "Table 4",
+     "cells": ["Table 4, Efficiency score, column (1): 0.061 (0.052), no mark"]}
+  ],
+  "arith": [
+    {"id": "p11-size", "kind": "magnitude", "check": "I15", "source": "Discussion, page 16",
+     "cells": ["Appendix Table A2, Board expertise: 0.00012*** (0.000015)", "Table 1, Return on assets (ROA), Mean: 0.061", "Table 1, Board expertise, SD: 1.00"],
+     "b": "0.00012", "delta_x": "1.00", "mean_y": "0.061", "se": "0.000015",
+     "claimed": {"unit": "pct_of_mean", "value": "0.02"}}
+  ],
+  "stars": [
+    {"id": "p8-mark", "page": "9", "table": "Table 3, column (2)", "label": "Industry exposure x reform", "coef": "0.084", "se": "0.047", "mark": "**",
+     "note": "* p < 0.10, ** p < 0.05, *** p < 0.01. Standard errors in parentheses."},
+    {"id": "d2-mark", "page": "13", "table": "Table 8, column (2)", "label": "Audit committee change", "coef": "0.048", "se": "0.025", "mark": "**",
+     "note": "* p < 0.10, ** p < 0.05, *** p < 0.01. Standard errors in parentheses."}
+  ]
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "item": "majors:3",
+    "title": "The defenses against a slow-moving common cause cannot detect a confounder of the size that would suffice, and the omitted-variable bound is reported at two values.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "majors:9",
+    "title": "Backing-heavy speeches may fall where traders expect the rules to change, and the paper does not control for position in the policy-meeting cycle.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "majors:16",
+    "title": "BR is coded with a broad rule by coders whose blinding is not reported, and reliability covers only 70 of the speeches.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "majors:5",
+    "title": "Every robustness and endogeneity check is described in words, with no coefficients, tables, or appendix.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "majors:14",
+    "title": "The sample was trimmed on residuals from an unstated model of the outcome, the count conflicts with the tables, and the estimator is described two ways.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "majors:15",
+    "title": "The paper does not show how much BR variation is left after 57 other regressors, and topic is coded from the same content as BR.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "majors:13",
+    "title": "The text says that at high positive tone backing \"in fact, reduces\" uncertainty, but no test of that conditional slope is reported.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "majors:11",
+    "title": "The business media fear moderator used for H3 is averaged over a window that includes the day after the speech, and it moves with the macro era.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "minors:15",
+    "title": "The gap statement does not say what existing theory gets wrong.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "minors:16",
+    "title": "The promised reversal is recast as complementary in the Discussion.",
+    "reason": "merged into a kept issue in the audit"
+  },
+  {
+    "item": "minors:24",
+    "title": "The Kincaid et al. (1975) author record did not match.",
+    "reason": "overruled in the audit"
+  },
+  {
+    "item": "issue 2",
+    "title": "Estimate the main model separately before and after 2008",
+    "reason": "cut from a kept issue in the audit"
+  },
+  {
+    "item": "issue 2",
+    "title": "Compare the Chair's backing-ratio slope with that of governors",
+    "reason": "cut from a kept issue in the audit"
+  },
+  {
+    "item": "issue 14",
+    "title": "Fear series values before the vendor launch were scored retrospectively",
+    "reason": "cut from a kept issue in the audit"
+  },
+  {
+    "item": "issue m12",
+    "title": "Add Chair fixed effects to the model",
+    "reason": "cut from a kept issue in the audit"
+  }
+]

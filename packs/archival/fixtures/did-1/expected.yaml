@@ -1,0 +1,68 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+module: did
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+must_catch:
+  - check: DD1
+    page: 11
+    locator: "Appendix A: is similar to our main two-way fixed effects estimate, and we conclude that our main result is not an artifact of staggered adoption"
+    note: "Adoption is staggered (five cohorts). The abstract (p. 1), Table 3 col. 2 (p. 5), and the H1 test all rest on the pooled TWFE coefficient 2.84 (SE 1.12, p < 0.05). The paper's own Callaway-Sant'Anna overall ATT in Table 7 is -1.26 (SE 1.14): opposite sign and not significant. The text calls it 'similar' and keeps the TWFE number as the headline."
+    severity: "Undermines the main claim"
+  - check: DD3
+    page: 4
+    locator: "Empirical strategy: The twelve never-treated regions serve as the control group throughout."
+    note: "Table 1 (p. 3) shows the twelve remaining regions form the 2019 cohort, adopting in 2019, the panel's last year (announced 2017). They are not never-treated: they are treated in 2019 and inside their announcement window from 2017. Appendix A itself says every region adopts by 2019."
+    severity: "Weakens a claim"
+  - check: DD4
+    page: 6
+    locator: "Figure 1 note: relative to the year the law took effect, with 95 percent confidence intervals based on standard errors clustered by region"
+    note: "The note lists event times -6 to +6. The window is unbalanced in the lags: +5 and +6 come only from the 2011 and 2013 cohorts (2011 reaches +8, 2013 reaches +6); the 2015 cohort reaches +4; the 2017 cohort has three post periods (0, +1, +2); the 2019 cohort, coded as control, contributes none. The text never says how the cohort composition changes across event time. The leads and lags are also from a TWFE event-study regression (Table 4 note) under staggered adoption."
+    severity: "Weakens a claim"
+  - check: DD5
+    page: 5
+    locator: "Event-study estimates: The joint test of the five leads (p = 0.31) confirms the identifying assumption."
+    note: "A non-rejection is offered as proof of parallel trends. Every lead's 95% CI in Table 4 (p. 6) contains the main effect 2.84: -6: 0.88 +/- 3.80; -5: -0.61 +/- 3.59; -4: 1.12 +/- 3.35; -3: -0.47 +/- 3.37 (upper 2.90); -2: 0.35 +/- 2.92. The pre-test has little power against a violation of the size of the effect. Leads show no monotone drift, so this is not the undermining case."
+    severity: "Weakens a claim"
+  - check: DD7
+    page: 2
+    locator: "Setting: Each regional assembly announced its adoption two years before the law took effect"
+    note: "Announcement precedes the effective year by two years (Table 1 lists both) and firms were explicitly given time to build systems, so they could respond early. The headline TWFE model codes treatment from the effective year (p. 4, 'equals one from the year the law took effect') with no anticipation window, and the Appendix B synthetic control is dated at Harrowmere's 2013 effective year and fitted through 2012 although its law was announced in 2011. The paper's own CS analyses (Section 6, Appendix A) allow two years of anticipation, which shows the authors know the issue."
+    severity: "Weakens a claim"
+  - check: DD11
+    page: 4
+    locator: "Empirical strategy: log headcount in the current year, because larger firms have more suppliers"
+    note: "Section 5.3 and Table 5 (pp. 6-7) report that the SCDA raised log headcount by 0.041 (SE 0.016); the law therefore moves this covariate, making it a bad control in the headline model (Table 3 col. 2)."
+    severity: "Weakens a claim"
+  - check: SC8
+    page: 13
+    locator: "Appendix B: which gives a permutation p-value of 0.03, significant at 5 percent"
+    note: "Nine placebos kept (J = 9), so the smallest attainable permutation p-value is 1/(J+1) = 0.10. Rank 1 of 10 gives p = 0.10, not 0.03, and the result cannot be significant at 5 percent. Supporting (appendix) design."
+    severity: "Weakens a claim"
+must_not_flag:
+  - check: DD2
+    page: 11
+    locator: "Appendix A: controls are limited to regions whose law had not yet been announced in the comparison year"
+    note: "No never-treated regions exist, so not-yet-treated controls are used, restricted to regions not yet announced; two years of anticipation match the two-year announcement lag; universal base period e = -3 (last pre-announcement year); estimation ends in 2016 because the 2019 cohort was announced in 2017; the 2017 cohort is correctly reported as not identified; no covariates; cohort-size weights 480/620/710 of 1,810 give 0.265/0.343/0.392 (sum 1.000); weighted average of cohort ATTs -2.61, -1.37, -0.24 equals -1.26; 37,800 firm-years = 3,150 x 12 (2005 to 2016); bootstrap SEs clustered by region. No package is named, so no package default is left unstated."
+  - check: DD6
+    page: 8
+    locator: "Supplier audits: up to 2.9, the breakdown value"
+    note: "For the secondary outcome, CS event study with two years of anticipation, universal base period e = -3, and a balanced window (-6 to +1, all three identified cohorts contribute). Rambachan-Roth relative-magnitudes bounds tied to the largest consecutive pre-period change (0.03 in Table 6: leads 0.02, -0.01, 0.02, base 0). With e = 0 and +1 three and four steps from the base, the bound on the average violation is 3.5 x 0.03 x M-bar = 0.105 M-bar. Post average 0.66 = (0.52 + 0.80)/2, SE 0.18: at M-bar = 1 the CI is about 0.66 +/- (0.105 + 1.96 x 0.18) = [0.20, 1.12]; breakdown (0.66 - 0.353)/0.105 = 2.9. The paper argues M-bar = 1 is the plausible benchmark."
+  - check: DD10
+    page: 2
+    locator: "Setting: No region repealed, suspended, or amended the law during the sample period"
+    note: "Treatment is absorbing and the paper says so explicitly; no switching estimator is needed."
+also_fair:
+  - check: DD6
+    page: 5
+    locator: "Event-study estimates: The joint test of the five leads (p = 0.31) confirms the identifying assumption."
+    note: "For the main outcome (suppliers reported), no sensitivity analysis to parallel-trends violations is reported; only the audits outcome gets Rambachan-Roth bounds. Minor under the pack rule since the leads show no drift."
+  - check: SC4
+    page: 12
+    locator: "Appendix B: The pre-period is 2005 to 2012 (eight years) and the post-period is 2013 to 2016."
+    note: "Harrowmere's law was announced in 2011 (2013 cohort), but the SC is fitted through 2012 and dated at the effective year, so possible anticipation in 2011 to 2012 is not handled by backdating. Same root as the DD7 plant."
+  - check: DD4
+    page: 5
+    locator: "Empirical strategy: with the year before adoption as the omitted reference year"
+    note: "The TWFE event study's reference year (e = -1) lies inside the two-year announcement window, so it may already reflect anticipation. Same root as the DD7 plant."

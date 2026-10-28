@@ -1,0 +1,29 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+must_catch:
+  - {check: E2, page: 3, locator: "Study 1, participants: leaving 392 participants, 98 per cell", note: "P1: 392 analyzed in four cells with no covariates implies error df 388; every Study 1 F prints 380", severity: "Minor", stat: {kind: df, n: 392, cells: 4, covariates: 0, df2: 380, expect: mismatch}}
+  - {check: E3, page: 6, locator: "Study 2, exclusions: 31 in the vice-president condition and 9 in the peer condition", note: "P2: 31 against 9 excluded on a post-task question; no estimate without the exclusion; Study 1 supports H1 separately", severity: "Weakens a claim"}
+  - {check: E6, page: 5, locator: "Study 1, interaction: F(1, 380) = 3.21, p = .03", note: "P3: F(1, 380) = 3.21 gives p = .074, printed .03; H2 called supported. A finding that the exclusion turns the all-412 interaction (p = .070) into p = .03 is this plant: on the analysed sample the interaction is also not significant (p = .074), so the exclusion changes nothing and the error is the misprinted p", severity: "Weakens a claim", stat: {kind: F, df1: 1, df2: 380, value: "3.21", p: ".03", expect: mismatch}}
+  - {check: E13, page: 7, locator: "Study 2, mediation: establishes evaluation apprehension as the mechanism", note: "P4: mediator measured after the outcome; indirect effect said to establish the mechanism", severity: "Weakens a claim"}
+  - {check: E7, page: 9, locator: "General Discussion: status changes whether people ask, not what they ask", note: "P5: d = 0.14, 95% CI -0.14 to 0.42, read as no effect on quality; the interval includes the Study 2 main effect d = 0.32", severity: "Weakens a claim"}
+  - {check: E8, page: 13, locator: "Appendix B: fail the attention item shown before the manipulation", note: "P6: registered exclusion is a pre-manipulation attention item; the paper applies a post-task question and calls it preregistered", severity: "Weakens a claim"}
+  - {check: E11, page: 11, locator: "Appendix A, Study 1: known for sharp, demanding feedback", note: "P7: 'sharp, demanding feedback' moves anticipated criticism; unmeasured; Study 2 wording has no such clause", severity: "Weakens a claim"}
+  - {check: IV1, page: 8, locator: "Study 3, first stage: far above the Stock-Yogo critical values", note: "P8: only a Cragg-Donald F under team-clustered errors; no robust first-stage statistic; H4 is not the main claim", severity: "Weakens a claim"}
+must_not_flag:
+  - {check: E7, page: 3, locator: "Study 1, participants: required 352 participants", note: "D1: d = 0.30, 80 percent, two-sided .05, 352 required, 412 recruited"}
+  - {check: E6, page: 5, locator: "Study 1, main effect: F(1, 380) = 18.40, p = .000", note: "D2: p = .000 means below .0005; the F gives p of about .00002", stat: {kind: F, df1: 1, df2: 380, value: "18.40", p: ".000", expect: consistent}}
+  - {check: E2, page: 7, locator: "Study 2, results: F(1, 196) = 5.02, p = .026", note: "D3: ANCOVA error df 196 = 200 - 2 - 2", stat: {kind: df, n: 200, cells: 2, covariates: 2, df2: 196, expect: consistent}}
+  - {check: E3, page: 3, locator: "Study 1, footnote: F(1, 408) = 17.95, p < .001", note: "D4: 20 excluded, five per cell, and the H1 main effect on all 412 is reported and supports H1, so the exclusion draws no finding for H1. The H2 interaction on all 412 (F(1, 408) = 3.30, p = .070) is printed correctly; any H2 finding here belongs to P3", stat: {kind: F, df1: 1, df2: 408, value: "17.95", p: "< .001", expect: consistent}}
+  - {check: E6, page: 7, locator: "Study 2, behavioral outcome: t(196) = 1.80, p = .037, one-tailed, as preregistered", note: "D5: declared one-tailed, registered as directional", stat: {kind: t, df: 196, value: "1.80", p: ".037", tails: one, expect: consistent}}
+  - {check: IV4, page: 8, locator: "Study 3, results: the intention-to-treat effect of the invitation", note: "D6: reduced form reported and labeled intention to treat; 0.20 x 0.45 = 0.09; compliers described"}
+also_fair:
+  - {check: E1, page: 6, locator: "Study 2, method: Participants were randomly assigned to the vice-president or the peer condition", note: "no randomization procedure, unit, or who assigned"}
+  - {check: E7, page: 5, locator: "Study 2, participants: We recruited 240 students and staff", note: "no sample-size justification for Study 2"}
+  - {check: E8, page: 13, locator: "Appendix B: https://registry.example.org/r/7Q4K2", note: "registration link does not resolve (reserved domain)"}
+  - {check: IV5, page: 8, locator: "Study 3, design: affects performance ratings only through platform use", note: "the invitation itself may affect ratings other than through use"}
+  - {check: E15, page: 9, locator: "General Discussion: organizations that display rank in their collaboration tools", note: "generalizes from an online task, a lab task, and one firm to organizations in general"}
+  - {check: IV2, page: 8, locator: "Study 3, first stage: so the invitation is a strong instrument", note: "first-stage strength under clustered errors is not shown, and no weak-instrument-robust interval is reported for the 2SLS estimate (the reduced-form test is the only such evidence)"}
+  - {check: "core:literature", page: 2, locator: "Theory, status and the decision to ask: A request for help discloses a gap", note: "the help-seeking and status argument in the Theory section cites no substantive literature (the four references are methods works only); a core contribution or adjacent-literature finding here is fair"}

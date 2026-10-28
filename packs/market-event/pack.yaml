@@ -1,0 +1,40 @@
+name: market-event
+overlay: true
+detection_cues:
+  - event study of stock returns, cumulative abnormal return, CAR, CAAR, abnormal returns, announcement returns
+  - market model, estimation window, event window, window notation such as [-1, +1] or (-1, +1)
+  - announcement effect, market reaction, stock market reaction, investor reaction, shareholder value, the market values or penalizes an action
+  - buy-and-hold abnormal returns, BHAR, calendar-time portfolio, Fama-French, Carhart four-factor
+  - CRSP, Eventus, WRDS event study
+  - Patell, BMP, Boehmer, Kolari, Corrado, rank test, generalized sign test, percent positive
+  - confounding events, announcement date, first public disclosure, SDC, Factiva, press releases, recall databases
+  - a table of mean and median CARs over several windows with N and percent positive
+  - a cross-sectional regression with a CAR as the dependent variable
+  - hypotheses stated as the market will react positively or negatively
+  - an appendix listing events with firms and dates
+slots:
+  verify: [event-numbers.md]
+  context: [event-dating.md]
+  diagnose: [event-test.md, event-claims.md]
+turns_off: []
+read_checkin_lines: ["Market event analyses:"]
+core_notes:
+  packs/archival/agents/methods-checks.md:
+    - {text: "The market-event overlay runs on this paper. Leave to it: tests of mean abnormal returns, event and estimation windows, confounding-event screens, the choice among event windows, controls in regressions whose dependent variable is an abnormal return, and those regressions' standard errors where the concern is shared announcement dates or overlapping event windows. The block 'If Event Study (distinct from DiD)' applies to event-time regressions, not to abnormal returns. A3, CHECK 5 clustering by firm and the count of clusters, and CHECK 4b are not that pack's; they stay as your own instructions and any other pack's note assign them."}
+  packs/archival/agents/triangulation.md:
+    - {text: "The market-event overlay runs on this paper. Do not apply the straight-line test to plots of cumulative abnormal returns; that pack reads them."}
+  packs/archival/agents/adversarial-dgp.md:
+    - {text: "The market-event overlay runs on this paper. Leave confounding news and anticipation, as rival explanations of abnormal-return results, and selection into announcing, as a rival explanation of a trait's coefficient in a CAR regression, to that pack."}
+  packs/inference/agents/inference-claims.md:
+    - {text: "The market-event overlay runs on this paper. In I11 and I12, leave the choice among event windows for a test of mean abnormal returns to that pack (check R5): several windows reported for one announcement are not a family. Also leave to it, in I16, a null mean CAR read as no market reaction (check R13). Regressions whose outcome is a CAR stay yours."}
+severity_rules:
+  - "When a market event analysis's role is main hypothesis, the issue is 'Undermines the main claim' in three cases, and only these. (a) R5, when all four hold: the paper itself designates one window as primary or main, in a hypothesis, the methods, or a preregistration; that window's result is not significant at the level the paper uses to call a hypothesis supported; the paper declares the hypothesis supported from another window; and the paper gives no argument anywhere for why the news reached the market over the longer window (documented leaks, staggered disclosure, a filing that followed the press release). With such an argument, the issue is 'Weakens a claim'. (b) R10, for a test the paper identifies as the cross-sectional t: the t-statistic recomputed from the paper's own mean, standard deviation, and N, under every rounding, does not reach the significance the paper claims for the main window. (c) all events fall on one date or a handful of dates, and no reported test allows cross-sectional correlation (Kolari and Pynnonen 2010, a portfolio or calendar-time test)."
+  - "R9 on a main-hypothesis analysis is 'Weakens a claim' when events share announcement dates: a common-date design, a date list in which several events share a day 0, repeat events of the same firm with overlapping windows in a mean test, or a statement that announcements coincided. When the only evidence is concentration by year, it is 'Minor'. Never predict what an adjusted test would show."
+  - "R13: a claim of realized performance, long-run value, or stakeholder welfare drawn only from a short-window CAR is 'Weakens a claim' when it sits in the abstract, introduction, or conclusion, and 'Minor' elsewhere."
+  - "R6: a reported, significant pre-event CAR that the paper does not discuss is 'Weakens a claim'. A missing pre-event window is 'Minor', unless the paper's own numbers show pre-event movement (a significant day -1 or pre-window return) or the event is a target-side takeover announcement; then 'Weakens a claim'."
+  - "R7: no confounding-event screen at all, on a main-hypothesis analysis, is 'Weakens a claim' when the analysis has about ten or fewer events, a named event, or a plausible confound correlated with the event, and 'Minor' otherwise. A screen stated without its news types, days, or source is 'Minor'."
+  - "R11: 'Weakens a claim' when Stage 1 reports `majority_against_mean` or `median_against_mean` for a hypothesis test; otherwise a missing median, share positive, or sign or rank test is 'Minor'."
+  - "R2 and R8 are 'Weakens a claim' when the analysis has about ten or fewer events or the event is one the paper discusses by name; otherwise 'Minor'."
+  - "R10 on a statistic the paper does not identify as the cross-sectional t is at most 'Weakens a claim' on a main-hypothesis analysis, with the remedy: name the test and report the cross-sectional t. R12 raises Stage 1's `stars_exceed_under_t` on a hypothesis test with fewer than 30 events at 'Weakens a claim', naming both p-values."
+  - "Reporting-only findings are 'Minor': R3 (one issue per paper listing every missing item), R4 with no sign in the paper that thin trading or multi-country timing bites, and R18 screens that reconcile but lack a rationale. An estimation window that overlaps the event window of a main-hypothesis analysis is 'Weakens a claim'."
+  - "Any other issue on a main-hypothesis analysis is 'Weakens a claim'. For analyses whose role is other hypothesis, findings are capped at 'Weakens a claim'; for control or robustness, at 'Minor'."

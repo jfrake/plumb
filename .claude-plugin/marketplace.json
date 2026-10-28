@@ -1,0 +1,7 @@
+{
+  "name": "plumb",
+  "owner": {"name": "Anonymous"},
+  "plugins": [
+    {"name": "plumb", "source": "./", "description": "Human-directed AI referee for management research."}
+  ]
+}

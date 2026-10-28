@@ -1,0 +1,59 @@
+name: simulation
+unfrozen: true
+unfrozen_note: "The checklist, severity rules, and agent prompts were written before anyone on the project read Wibbens and Kretschmer (2026), 'The five essentials of a modeling paper', Strategy Science. Revise them once a maintainer has read it and mapped each essential to K1 to K15, then remove this note and unfrozen."
+detection_cues:
+  - agent-based model, ABM, agent-based simulation, computational model, simulation model, NetLogo, Repast, MASON
+  - NK model, NK landscape, rugged landscape, fitness landscape, local search, long jumps, interdependence K, number of local peaks
+  - exploration and exploitation, mutual learning, organizational code, socialization rate, turnover of individuals
+  - system dynamics, stock and flow, feedback loop, causal loop diagram, Vensim, Stella
+  - runs per condition, Monte Carlo runs, random seed, time steps, periods, burn-in, steady state, parameter sweep, parameter space
+  - ODD protocol, pseudo-code, docking, replication of a simulation model
+  - generative agents, multi-agent LLM simulation, LLM agents interacting, agent society, emergent convention
+  - figures of simulated trajectories averaged over runs; a parameter table; no data section
+slots:
+  verify: [simulation-numbers.md]
+  context: [reference-model.md]
+  theory: [model-mechanism.md]
+  diagnose: [model-specification.md, simulation-claims.md]
+turns_off:
+  - agent: setting-research.md
+    reason: "A simulation has no empirical setting to research; the simulation pack's reference-model agent fetches the stylized facts and calibration sources the model relies on."
+  - agent: timeline-research.md
+    reason: "A simulation has no dated events."
+core_notes:
+  construction-ledger-producer.md:
+    file: notes/construction-ledger.md
+  face-validity.md:
+    text: "This is a simulation paper. Skip Steps 1 to 6 for simulated outcomes, which are in model units; when the paper also reports estimates from data, run Steps 1 to 6 on those as usual. Do Step 7 for each focal construct the model represents (for example delegation, search, performance): does the model's representation correspond to the construct the paper names, and what else does it capture?"
+  formal-model.md:
+    text: "Audit only results the paper derives by hand. Results obtained by running the simulation are checked by the simulation pack; do not try to verify their signs analytically. If the paper derives nothing by hand, write 'No analytic derivations' and stop."
+  completeness.md:
+    text: "For a simulation paper, do not flag missing empirical validation, code, or model description for the simulation; the simulation pack's K13, K2, and K1 own them. Check promise delivery as usual, and check any part of the paper that reports estimates from data as usual."
+  boundary-conditions.md:
+    text: "Limits set by the model's own parameter ranges belong to the simulation pack's K6. Raise only scope limits outside the model, such as the kinds of organizations or environments the model's assumptions exclude."
+  contribution-auditor.md:
+    text: "Read `stage-2/reference_model.md` for the review literature on this model family before judging novelty. If the file is missing, judge novelty as usual."
+  stage-4-compiler:
+    text: "A face-validity Step 7 issue and a simulation-pack K11 or K12 issue that name the same model element raise the same problem: merge them into one issue with the evidence from both and the severity the simulation pack's rules set."
+  packs/inference/agents/inference-numbers.md:
+    text: "Tests, p-values, significance marks, and intervals computed across simulation runs, including regressions of simulated outcomes on model parameters, belong to the simulation pack (K4 and K5): skip them in every check. Keep every estimate the paper computes from data."
+  packs/inference/agents/inference-dependence.md:
+    text: "Tests, p-values, significance marks, and intervals computed across simulation runs, including regressions of simulated outcomes on model parameters, belong to the simulation pack (K4 and K5): skip them in every check. Keep every estimate the paper computes from data."
+  packs/inference/agents/inference-claims.md:
+    text: "Tests, p-values, significance marks, and intervals computed across simulation runs, including regressions of simulated outcomes on model parameters, belong to the simulation pack (K4 and K5): skip them in every check. Keep every estimate the paper computes from data."
+  packs/archival/agents/methods-checks.md:
+    text: "Results obtained by running the simulation model, including tests, p-values, and significance marks computed across simulation runs, belong to the simulation pack (K4 to K7): apply your checks only to estimates the paper computes from data."
+  packs/computational/agents/measurement-validity.md:
+    text: "When LLM agents interact in a simulation, leave to the simulation pack (K14 and K15) the validation of their collective behavior and the question whether a collective pattern they produce is recalled from training. Keep C14 for each agent's answers compared with people's, including contamination when a single simulated respondent replicates a published study."
+read_checkin_lines: ["Simulation results:"]
+severity_rules:
+  - "K4 (simulation-claims): a headline result whose difference lies inside the run-to-run uncertainty is 'Undermines the main claim' only when the paper states that each condition uses its own independent draws (the script's inside_noise flag) or when the paper's own interval for the difference covers zero. When the paper does not say whether conditions share landscapes or seeds, the finding is 'Weakens a claim', with 'What would settle it: report the uncertainty of the difference'. A noise problem in a result that is not a headline is 'Weakens a claim'. A headline comparison the paper reports with no run-to-run spread (figure only) is 'Weakens a claim', and a judgment that a figure's bands overlap is at most 'Weakens a claim'."
+  - "K6 (simulation-claims): a claim covers the region its wording names. A reversal the paper's own results show inside that region is 'Undermines the main claim'. An unqualified claim covers the whole range the paper explores, and a reversal anywhere in that range is 'Weakens a claim', with 'What would settle it: bound the claim'. A base value used without justification is 'Minor' when the paper cites a convention, such as N = 10 to 16 following earlier NK work. Without a cited convention, an unjustified base value is at most 'Weakens a claim'."
+  - "K9 (model-specification): a base case that contradicts the published results of the model it extends, with no explanation, is 'Undermines the main claim'. A difference the paper explains without showing that the explanation accounts for it is 'Weakens a claim'."
+  - "K8 (model-specification): an impossible base case is 'Undermines the main claim' when the impossible value also appears in the text or a figure, or when two or more reported values contradict the stated construction. A single impossible table cell is 'Weakens a claim', with 'What would settle it: confirm the value and report the verification run'. A missing verification step is 'Minor' when K9 passes or the code is public, and 'Weakens a claim' only for a new model with nothing that verifies it."
+  - "K1, K10, K2, K3 (model-specification): a missing K1 or K10 element is 'Minor', unless the discrimination table in stage-3/model_mechanism.md names that element as a candidate artifact behind a headline result and does not rate it 'Ruled out'; it is then 'Weakens a claim'. A missing public code deposit (K2) is 'Minor', unless the journal's author guidelines, as fetched by the reference-model agent, require code at submission; it is then 'Weakens a claim'. When a K1 gap exists that public code would have settled, the K1 finding carries the 'Weakens a claim', not K2. A missing count of runs or periods (K3) is a number flag; a missing justification for the count is 'Minor', unless stage-1/simulation_numbers.md shows a K4 flag (the script's inside_noise) or an independence_unstated status with inside_noise_if_independent true for the same experiment; it is then 'Weakens a claim'. None of these reporting gaps is 'Undermines the main claim' on its own."
+  - "K5 (simulation-claims): 'Minor' when effect sizes or run-to-run spread are reported next to the tests; 'Weakens a claim' when a claim's importance rests on significance alone."
+  - "K13 and K14 (simulation-claims), read with the claim scope in the fingerprint as corrected at the read check-in. A K13 finding is 'Undermines the main claim' only for a headline result whose scope is 'quantitative or prescriptive' and that has no calibration, stylized fact, or data behind it; a general proposition with no stylized-fact grounding is 'Weakens a claim' at most, and it is not flagged when the paper presents it as a proposition for later testing; a claim kept inside the model is not flagged. A K14 finding is 'Undermines the main claim' when a headline result whose scope is 'general proposition' or 'quantitative or prescriptive' rests on LLM agents validated only by how believable their transcripts read; otherwise it is 'Weakens a claim'."
+  - "K12 (model-mechanism): 'Undermines the main claim' only when the agent quotes the assumption with its page, shows that the compared conditions differ in it, and finds no run that equalizes it. Every other K12 finding is 'Weakens a claim'."
+  - "K7, K11, K15: at most 'Weakens a claim'."
+  - "Every other simulation finding is capped at 'Weakens a claim'."

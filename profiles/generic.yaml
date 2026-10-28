@@ -1,0 +1,11 @@
+id: generic
+name: Other journal
+upload: unknown
+drafting: unknown
+requires_zero_retention: true
+sources: []
+norms:
+  comments_min: 6
+  comments_max: 8
+  manuscript_refs_max: 12
+  notes: []

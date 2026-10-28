@@ -1,0 +1,138 @@
+# How published introductions frame their contribution: a hunch about what papers like this one do,
+# never a rule. Built from 1,000 research articles in seven journals, 2010-2025 (Organization Science 180,
+# ASQ, AMJ, SMJ and OBHDP 143 each, AMR 142, Management Science 106 from its Organizations and Strategy
+# departments), each introduction coded once by a model (Oct 10, 2026) with ten roots, the two rarest since
+# merged into the eight in notes/codebook.md. A human check of 30 codes found them sound. Numbers are
+# percentages of the group's n; rests_on is the share of introductions that only gesture at their root, by
+# the weak frame they rest on. Aggregate counts only: no text from any paper.
+# Built by framing/scripts/build_norms.py, outside this repository.
+
+overall:
+  n: 1000
+  carried: 33
+  roots: {"standing anomaly": 6, "hidden anomaly": 8, "rival account": 5, "shaky foundation": 7, "theory repair": 26, "wider reach": 36, "head-to-head": 7, "dissolved debate": 5}
+  rests_on: {"unstudied topic": 88, "process for its own sake": 9, "literature-only puzzle": 3, "no stated claim": 0}
+  voicing: {"cumulative / adds": 34, "scattered / adds": 29, "cumulative / completes": 15, "contested / adds": 10, "scattered / completes": 7, "contested / completes": 3, "contested / overturns": 2, "cumulative / overturns": 1, "scattered / overturns": 0}
+
+# Keyed by run.json journal id. A journal not listed here uses overall.
+journals:
+  orgsci:
+    name: "Organization Science"
+    n: 180
+    carried: 28
+    roots: {"standing anomaly": 6, "hidden anomaly": 6, "rival account": 7, "shaky foundation": 5, "theory repair": 24, "wider reach": 39, "head-to-head": 7, "dissolved debate": 5}
+    rests_on: {"unstudied topic": 90, "process for its own sake": 7, "literature-only puzzle": 3, "no stated claim": 0}
+  asq:
+    name: "Administrative Science Quarterly"
+    n: 143
+    carried: 40
+    roots: {"standing anomaly": 10, "hidden anomaly": 20, "rival account": 6, "shaky foundation": 1, "theory repair": 22, "wider reach": 29, "head-to-head": 7, "dissolved debate": 5}
+    rests_on: {"unstudied topic": 88, "process for its own sake": 10, "literature-only puzzle": 1, "no stated claim": 0}
+  amj:
+    name: "Academy of Management Journal"
+    n: 143
+    carried: 28
+    roots: {"standing anomaly": 4, "hidden anomaly": 8, "rival account": 6, "shaky foundation": 8, "theory repair": 31, "wider reach": 35, "head-to-head": 5, "dissolved debate": 4}
+    rests_on: {"unstudied topic": 83, "process for its own sake": 14, "literature-only puzzle": 4, "no stated claim": 0}
+  amr:
+    name: "Academy of Management Review"
+    n: 142
+    carried: 39
+    roots: {"standing anomaly": 8, "hidden anomaly": 6, "rival account": 1, "shaky foundation": 1, "theory repair": 43, "wider reach": 30, "head-to-head": 1, "dissolved debate": 9}
+    rests_on: {"unstudied topic": 80, "process for its own sake": 13, "literature-only puzzle": 7, "no stated claim": 0}
+  smj:
+    name: "Strategic Management Journal"
+    n: 143
+    carried: 26
+    roots: {"standing anomaly": 6, "hidden anomaly": 5, "rival account": 2, "shaky foundation": 13, "theory repair": 22, "wider reach": 38, "head-to-head": 11, "dissolved debate": 2}
+    rests_on: {"unstudied topic": 90, "process for its own sake": 5, "literature-only puzzle": 5, "no stated claim": 1}
+  mansci:
+    name: "Management Science (Organizations and Strategy departments)"
+    n: 106
+    carried: 48
+    roots: {"standing anomaly": 2, "hidden anomaly": 6, "rival account": 9, "shaky foundation": 20, "theory repair": 13, "wider reach": 38, "head-to-head": 8, "dissolved debate": 3}
+    rests_on: {"unstudied topic": 95, "process for its own sake": 5, "literature-only puzzle": 0, "no stated claim": 0}
+  obhdp:
+    name: "Organizational Behavior and Human Decision Processes"
+    n: 143
+    carried: 26
+    roots: {"standing anomaly": 7, "hidden anomaly": 3, "rival account": 6, "shaky foundation": 8, "theory repair": 20, "wider reach": 43, "head-to-head": 8, "dissolved debate": 3}
+    rests_on: {"unstudied topic": 90, "process for its own sake": 8, "literature-only puzzle": 3, "no stated claim": 0}
+
+# Keyed by the codebook's design values; type_to_design maps a Plumb paper type to one.
+designs:
+  archival:
+    n: 375
+    carried: 34
+    roots: {"standing anomaly": 6, "hidden anomaly": 4, "rival account": 5, "shaky foundation": 12, "theory repair": 18, "wider reach": 39, "head-to-head": 11, "dissolved debate": 4}
+    rests_on: {"unstudied topic": 94, "process for its own sake": 3, "literature-only puzzle": 3, "no stated claim": 0}
+  experiment:
+    n: 149
+    carried: 30
+    roots: {"standing anomaly": 6, "hidden anomaly": 4, "rival account": 9, "shaky foundation": 9, "theory repair": 21, "wider reach": 39, "head-to-head": 7, "dissolved debate": 3}
+    rests_on: {"unstudied topic": 92, "process for its own sake": 5, "literature-only puzzle": 3, "no stated claim": 0}
+  survey:
+    n: 123
+    carried: 26
+    roots: {"standing anomaly": 7, "hidden anomaly": 2, "rival account": 3, "shaky foundation": 10, "theory repair": 20, "wider reach": 44, "head-to-head": 9, "dissolved debate": 6}
+    rests_on: {"unstudied topic": 91, "process for its own sake": 7, "literature-only puzzle": 2, "no stated claim": 0}
+  "qualitative or case":
+    n: 120
+    carried: 30
+    roots: {"standing anomaly": 6, "hidden anomaly": 32, "rival account": 1, "shaky foundation": 0, "theory repair": 30, "wider reach": 29, "head-to-head": 0, "dissolved debate": 2}
+    rests_on: {"unstudied topic": 70, "process for its own sake": 29, "literature-only puzzle": 1, "no stated claim": 0}
+  conceptual:
+    n: 166
+    carried: 39
+    roots: {"standing anomaly": 8, "hidden anomaly": 6, "rival account": 2, "shaky foundation": 1, "theory repair": 44, "wider reach": 30, "head-to-head": 1, "dissolved debate": 8}
+    rests_on: {"unstudied topic": 78, "process for its own sake": 15, "literature-only puzzle": 7, "no stated claim": 0}
+  "formal or simulation":
+    n: 47
+    carried: 45
+    roots: {"standing anomaly": 6, "hidden anomaly": 2, "rival account": 19, "shaky foundation": 0, "theory repair": 32, "wider reach": 26, "head-to-head": 6, "dissolved debate": 6}
+    rests_on: {"unstudied topic": 96, "process for its own sake": 0, "literature-only puzzle": 4, "no stated claim": 0}
+  "abductive or mixed":
+    n: 20
+    carried: 20
+    roots: {"standing anomaly": 0, "hidden anomaly": 15, "rival account": 15, "shaky foundation": 5, "theory repair": 40, "wider reach": 25, "head-to-head": 0, "dissolved debate": 0}
+    rests_on: {"unstudied topic": 81, "process for its own sake": 12, "literature-only puzzle": 6, "no stated claim": 0}
+
+home_literatures:
+  "organization theory":
+    n: 282
+    carried: 33
+    roots: {"standing anomaly": 9, "hidden anomaly": 11, "rival account": 5, "shaky foundation": 3, "theory repair": 31, "wider reach": 28, "head-to-head": 7, "dissolved debate": 6}
+    rests_on: {"unstudied topic": 81, "process for its own sake": 15, "literature-only puzzle": 4, "no stated claim": 0}
+  strategy:
+    n: 256
+    carried: 31
+    roots: {"standing anomaly": 4, "hidden anomaly": 5, "rival account": 4, "shaky foundation": 12, "theory repair": 22, "wider reach": 41, "head-to-head": 9, "dissolved debate": 4}
+    rests_on: {"unstudied topic": 89, "process for its own sake": 7, "literature-only puzzle": 3, "no stated claim": 1}
+  "organizational behavior":
+    n: 254
+    carried: 29
+    roots: {"standing anomaly": 7, "hidden anomaly": 6, "rival account": 5, "shaky foundation": 5, "theory repair": 26, "wider reach": 41, "head-to-head": 4, "dissolved debate": 5}
+    rests_on: {"unstudied topic": 91, "process for its own sake": 6, "literature-only puzzle": 3, "no stated claim": 0}
+  other:
+    n: 99
+    carried: 39
+    roots: {"standing anomaly": 7, "hidden anomaly": 6, "rival account": 6, "shaky foundation": 12, "theory repair": 20, "wider reach": 34, "head-to-head": 7, "dissolved debate": 6}
+    rests_on: {"unstudied topic": 87, "process for its own sake": 10, "literature-only puzzle": 3, "no stated claim": 0}
+  entrepreneurship:
+    n: 53
+    carried: 43
+    roots: {"standing anomaly": 8, "hidden anomaly": 8, "rival account": 9, "shaky foundation": 2, "theory repair": 21, "wider reach": 36, "head-to-head": 13, "dissolved debate": 4}
+    rests_on: {"unstudied topic": 90, "process for its own sake": 3, "literature-only puzzle": 7, "no stated claim": 0}
+  "technology and innovation":
+    n: 45
+    carried: 31
+    roots: {"standing anomaly": 0, "hidden anomaly": 13, "rival account": 9, "shaky foundation": 16, "theory repair": 24, "wider reach": 31, "head-to-head": 4, "dissolved debate": 0}
+    rests_on: {"unstudied topic": 97, "process for its own sake": 3, "literature-only puzzle": 0, "no stated claim": 0}
+  "human resources":
+    n: 11
+    carried: 55
+    roots: {"standing anomaly": 18, "hidden anomaly": 18, "rival account": 0, "shaky foundation": 0, "theory repair": 27, "wider reach": 18, "head-to-head": 18, "dissolved debate": 0}
+    rests_on: {"unstudied topic": 80, "process for its own sake": 20, "literature-only puzzle": 0, "no stated claim": 0}
+
+type_to_design: {archival: archival, experiments: experiment, survey: survey, qualitative: "qualitative or case",
+  theory: conceptual, simulation: "formal or simulation", meta-analysis: archival}

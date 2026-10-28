@@ -1,0 +1,285 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{setspace}
+\input{glyphtounicode}
+\pdfgentounicode=1
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\setstretch{1.3}
+\emergencystretch=3em
+\newcommand{\corein}{{\Large$\bullet$}}
+\newcommand{\periin}{{\small$\bullet$}}
+\newcommand{\coreout}{{\Large$\otimes$}}
+\newcommand{\periout}{{\small$\otimes$}}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Many Roads to Profit: Governance and Strategy Configurations in Midsized Manufacturing Firms}\\[1.2em]
+\textbf{SYNTHETIC TEST PAPER, NOT REAL RESEARCH}\\[1.2em]
+Avery Lindqvist and Tomas Okonkwo\\
+Department of Strategy, Eastvale University (a fictional institution)\\[0.6em]
+\small All firms, people, organizations, and data in this paper are invented for software testing.
+\end{center}
+
+\vspace{1.5em}
+\noindent\textbf{Abstract.} Research on firm profitability usually asks which single governance or strategy attribute raises performance on average. We take a configurational view instead and ask which combinations of board independence, CEO duality, R\&D intensity, firm size, alliance activity, and ownership concentration are sufficient for high profitability. Using fuzzy set qualitative comparative analysis (fsQCA) on one year of records for 180 midsized manufacturing firms in the fictional Northfield region, we find three configurations sufficient for high profitability. Each combines an independent board with a different partner: R\&D intensity without CEO duality, CEO duality with dispersed ownership, or large size with an active alliance portfolio. A separate analysis of the absence of high profitability shows that low performers follow their own paths. The findings suggest that governance attributes work in combination with strategy and that the same board structure can support several routes to profit.
+
+\vspace{1em}
+\noindent\textbf{Keywords:} configurations; fsQCA; corporate governance; profitability; equifinality
+
+\clearpage
+\section{Introduction}
+
+Why do some manufacturing firms earn high returns while similar firms in the same region do not? Strategy research has given many answers, and most of them take the form of a single attribute that raises performance on average: independent boards monitor managers, R\&D builds capabilities, alliances give access to partners' resources, and size brings scale. Each answer has empirical support, yet each also has exceptions. Firms with highly independent boards sometimes earn poor returns, and firms with little R\&D sometimes earn excellent ones.
+
+A configurational perspective treats these exceptions as informative. It holds that attributes matter in combination, that several different combinations can lead to the same outcome, and that the role of one attribute can depend on the others present (Fiss, 2011; Misangyi et al., 2017). Under this view the question is not how much board independence adds to profitability, holding other attributes constant, but which combinations of attributes are sufficient for high profitability and how board independence fits within them.
+
+We study this question in a population of 180 midsized manufacturing firms in the fictional Northfield region. The setting has two useful features. First, firms in the region file standardized annual records with a regional registry, so governance and strategy attributes are measured in the same way for every firm. Second, the firms compete in similar product markets and face the same regional labor and capital conditions, which narrows the range of outside explanations for differences in profitability.
+
+We use fuzzy set qualitative comparative analysis (fsQCA), which represents each firm as a set of degrees of membership in theoretically defined sets and identifies combinations of conditions that are consistently associated with membership in the outcome set (Ragin, 2008). The method suits our question because it allows for equifinality, conjunctural causation, and asymmetry: the conditions for high profitability need not be the mirror image of the conditions for its absence.
+
+Our analysis yields three configurations sufficient for high profitability. In each, an independent board is combined with a different partner condition. In the first, an independent board goes with R\&D intensity and a separation of the CEO and chair roles. In the second, an independent board goes with CEO duality and dispersed ownership. In the third, an independent board goes with large size and an active portfolio of alliances. A separate analysis of the absence of high profitability, reported in the appendix, shows that low performers are characterized by boards without independence combined with low R\&D intensity.
+
+The paper makes two contributions. First, it shows that board independence is part of several distinct routes to high profitability rather than a uniform lever, which helps reconcile mixed findings on boards and performance. Second, it shows how governance and strategy attributes combine, which moves the study of profitability in manufacturing toward the configurational theorizing that recent work has called for (Misangyi et al., 2017; Greckhamer et al., 2018).
+
+The rest of the paper proceeds as follows. We develop our hypotheses, describe the setting and data, explain how we calibrated each set, present the analysis and results, and discuss the implications and limits of the study.
+
+\clearpage
+\section{Theory and Hypotheses}
+
+\subsection{Configurations and profitability}
+
+Configurational theory starts from the idea that organizations are best understood as clusters of interconnected attributes rather than as collections of independent ones (Fiss, 2011). Applied to profitability, this idea suggests that governance arrangements and strategic choices complement one another. An independent board may be most valuable when management pursues an investment strategy that needs disciplined oversight, while CEO duality may be harmless, or even helpful, when other mechanisms such as dispersed ownership limit managerial discretion. Large firms may profit from alliances because they have the routines to manage several partners at once. These arguments imply that several combinations of attributes can lead to high profitability. We therefore expect:
+
+\medskip
+\noindent\emph{H1: High profitability is reached through more than one configuration of governance and strategy conditions.}
+\medskip
+
+\subsection{R\&D intensity}
+
+Investment in research and development builds technological capabilities that let manufacturing firms differentiate their products and command price premiums. In midsized manufacturing, where many firms produce components to the specifications of larger customers, R\&D also lets a firm move from build-to-print work to design work, which carries higher margins. Firms that spend more on R\&D relative to sales should therefore earn higher returns.
+
+\medskip
+\noindent\emph{H2: R\&D intensity is positively related to profitability.}
+\medskip
+
+\subsection{Board independence}
+
+Independent directors monitor managers on behalf of owners, bring outside expertise to strategic decisions, and lend credibility to the firm with lenders and customers. In midsized firms, where owners and managers often overlap, an independent board may be the main safeguard against decisions that serve insiders at the expense of the firm. We expect that without such a board, high profitability is out of reach.
+
+\medskip
+\noindent\emph{H3: Board independence is necessary for high profitability.}
+\medskip
+
+\clearpage
+\section{Setting and Data}
+
+\subsection{Midsized manufacturing in the Northfield region}
+
+Our setting is midsized manufacturing in the fictional Northfield region. The firms in our population make machined components, fabricated metal products, plastics, and electrical assemblies, mostly for industrial customers. Firms in the region compete in overlapping product markets, recruit from the same pool of skilled workers, and borrow from a small number of regional banks.
+
+The Northfield Manufacturers' Council, a fictional trade association to which most firms in the region belong, publishes an annual benchmark survey of its members. Its most recent survey reports a median return on assets of 4.1 percent for midsized manufacturing in the region, and it describes firms well above that median as high performers. The Council also publishes a governance code that recommends that a majority of each board be independent, and an industry classification that labels firms as R\&D intensive when their R\&D spending exceeds 2.5 percent of sales.
+
+\subsection{Sample and records}
+
+Firms in the region with 40 or more employees must file standardized annual records with the fictional Northfield Industrial Registry. The records include audited financial statements, the composition of the board, the identity of the chair, R\&D spending, headcount, the list of active alliance agreements, and the identity and holdings of the largest owner. We drew every firm that filed complete records for the most recent fiscal year and that reported its main activity as manufacturing. This yields 180 firms. All measures come from the same year of records, so the analysis is cross-sectional.
+
+We chose the six conditions on theoretical grounds. Board independence and CEO duality capture the structure of oversight. Ownership concentration captures the strength of owner monitoring. R\&D intensity, firm size, and alliance activity capture the strategic resources that oversight governs. Together they let us examine how governance and strategy combine.
+
+\subsection{Raw measures}
+
+\emph{Return on assets (ROA)} is net income divided by total assets. \emph{Board independence} is the share of directors who are neither employees nor relatives of the largest owner. \emph{CEO duality} indicates whether the chief executive also chairs the board. \emph{R\&D intensity} is R\&D spending divided by sales. \emph{Firm size} is the natural logarithm of the number of employees. \emph{Alliance count} is the number of alliance agreements active at the end of the year. \emph{Ownership concentration} is the share of equity held by the largest owner. Table~2 reports descriptive statistics for the raw measures.
+
+\clearpage
+\setcounter{table}{1}
+\begin{table}[t]
+\centering
+\caption{Descriptive statistics of the raw measures (N = 180)}
+\begin{tabular}{lrrrrr}
+\toprule
+Measure & Mean & SD & Min & Median & Max \\
+\midrule
+Return on assets & 0.022 & 0.039 & $-$0.115 & 0.021 & 0.132 \\
+Board independence (share) & 0.510 & 0.172 & 0.050 & 0.516 & 0.927 \\
+CEO duality (0/1) & 0.394 & 0.490 & 0 & 0 & 1 \\
+R\&D intensity (share of sales) & 0.028 & 0.022 & 0.003 & 0.022 & 0.119 \\
+Firm size (log employees) & 6.388 & 1.172 & 3.700 & 6.365 & 9.831 \\
+Alliance count & 3.21 & 2.13 & 0 & 3 & 8 \\
+Ownership concentration (share) & 0.273 & 0.120 & 0.030 & 0.270 & 0.660 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Calibration}
+
+Sets are calibrated by the direct method (Ragin, 2008). For each fuzzy set we choose three anchors: the raw value at which a firm is fully in the set, the crossover point at which it is neither more in nor more out, and the value at which it is fully out. The direct method converts each raw value into a log odds of membership, scaled so that the full-membership anchor maps to a membership of about 0.95 and the full-non-membership anchor to about 0.05, and then into a membership score between 0 and 1. CEO duality is a crisp set. Table~1, on the next page, reports the anchors and the source of each.
+
+We set the anchors from outside standards where the region provides them and from theoretical knowledge otherwise. For board independence, the crossover of 0.50 is the majority threshold of the Council's governance code; a board with four in five independent directors is fully in the set and a board with one in five or fewer is fully out, the points the code itself uses to describe fully independent and insider boards. For R\&D intensity, the crossover of 2.5 percent is the Council's classification threshold for R\&D intensive firms, and the anchors of 6.0 and 0.5 percent are the values the Council's classification uses for its highest and lowest R\&D bands. For alliance activity, firms with six or more active alliances are fully in the set and firms with one or none are fully out, and the crossover of three is the Council's threshold for an active alliance portfolio. A firm is in the crisp set of CEO duality when its chief executive chairs the board.
+
+\clearpage
+\setcounter{table}{0}
+\begin{table}[t]
+\centering
+\small
+\caption{Calibration anchors and sources}
+\setstretch{1.1}
+\begin{tabular}{llllll}
+\toprule
+Set & Raw measure & Source & Full in & Crossover & Full out \\
+\midrule
+High profitability & ROA & Registry & 0.0856 & 0.0210 & $-$0.0370 \\
+Board independence & Share independent & Registry & 0.80 & 0.50 & 0.20 \\
+CEO duality (crisp) & CEO chairs board & Registry & \multicolumn{3}{l}{1 if CEO chairs the board, else 0} \\
+R\&D intensity & R\&D / sales & Registry & 0.060 & 0.025 & 0.005 \\
+Firm size & Log employees & Registry & 8.374 & 6.3645 & 4.608 \\
+Alliance activity & Active alliances & Registry & 6 & 3 & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\emph{Outcome.} For high profitability, we set the full membership anchor at the 95th percentile of ROA in our sample, the crossover at the sample median, and the full nonmembership anchor at the 5th percentile. Percentiles are nearest rank: the 95th percentile is the value of the 171st firm in ascending order, the 5th is the value of the 9th, and the median lies midway between the 90th and 91st firms. This gives anchors of 8.56, 2.10, and $-$3.70 percent.
+
+\medskip
+\noindent\emph{Firm size.} For firm size we also use sample percentiles, with the same nearest rank rule, because no external size standard exists for this industry: the Council's survey reports headcounts in broad bands only, and the registry's filing threshold of 40 employees marks the lower edge of the population rather than a level of size. The anchors are 8.374, 6.3645, and 4.608 log employees.
+
+\medskip
+\noindent\emph{Ownership concentration.} Ownership concentration, the share of equity held by the largest owner, was calibrated similarly.
+
+\clearpage
+\section{Analysis}
+
+We analyze 180 firms on six conditions: board independence, CEO duality, R\&D intensity, firm size, alliance activity, and ownership concentration. For each firm, the membership in each set comes from the calibration described above. We ran the analyses in the fsQCA program.
+
+The analysis of sufficiency follows the truth table algorithm (Ragin, 2008). Each firm is assigned to the combination of conditions in which its membership exceeds 0.5. For each combination with enough cases, the program computes the consistency with which membership in the combination is a subset of membership in high profitability. Consistency measures how closely the subset relation holds, and coverage measures how much of the outcome the combination accounts for (Ragin, 2006). We used a raw consistency cutoff of 0.80, in line with common practice in management research (Greckhamer et al., 2018), and coded combinations at or above this cutoff as sufficient for the outcome.\footnote{We applied a frequency threshold of 2, which kept most cases.} Combinations with fewer cases than the frequency threshold were treated as having no cases.
+
+The program then minimizes the combinations coded as sufficient into simpler expressions. Following practice in organization research, we report the intermediate solution. For each configuration we report raw consistency, the proportional reduction in inconsistency (PRI), raw coverage, and unique coverage, and for the solution as a whole we report consistency and coverage. Raw coverage gives the share of membership in the outcome that a configuration accounts for, and unique coverage gives the share that only that configuration accounts for.
+
+Table~3 presents the results in the configuration chart notation common in organization research. A filled circle indicates that a condition is present in a configuration, and a crossed circle that it is absent. Large circles mark core conditions and small circles mark peripheral conditions. A blank cell means the condition may be either present or absent.
+
+We analyze the absence of high profitability as a separate step, with the same calibration, cutoffs, and procedure, using membership in the negation of the outcome set (one minus membership in high profitability). Its results appear in the appendix.
+
+\clearpage
+\section{Results}
+
+\subsection{Overview}
+
+The truth table covers 162 of the 180 firms. Within these firms, the combinations that pass the consistency cutoff minimize to three configurations, reported in Table~3 on the next page. The solution consistency of 0.89 indicates that membership in at least one of the three configurations is almost always matched by membership in high profitability, and the solution coverage of 0.65 indicates that the three configurations together account for about two thirds of the membership in high profitability.
+
+\subsection{Three configurations}
+
+\emph{Configuration 1} combines an independent board with R\&D intensity and the absence of CEO duality. Firms in this configuration separate the roles of chief executive and chair and spend heavily on R\&D under the oversight of an independent board. Its raw consistency is 0.95, and it has the largest unique coverage of the three, 0.18.
+
+\emph{Configuration 2} combines an independent board with CEO duality and the absence of ownership concentration. In these firms the chief executive also chairs the board, but an independent board and dispersed ownership surround that concentration of authority. Its raw consistency is 0.81 and its raw coverage is 0.20.
+
+\emph{Configuration 3} combines an independent board with large size and an active alliance portfolio. These firms manage several partners at once under independent oversight. Its raw consistency is 0.94 and its raw coverage is 0.38.
+
+\subsection{Hypotheses}
+
+The presence of three distinct configurations supports H1: high profitability is reached through more than one combination of governance and strategy conditions. We return to H3 in the discussion.
+
+\clearpage
+\setcounter{table}{2}
+\begin{table}[t]
+\centering
+\caption{Configuration chart for high profitability}
+\setstretch{1.15}
+\begin{tabular}{lccc}
+\toprule
+ & \multicolumn{3}{c}{Configuration} \\
+\cmidrule(lr){2-4}
+Condition & 1 & 2 & 3 \\
+\midrule
+Board independence & \corein & \corein & \corein \\
+CEO duality & \coreout & \periin & \\
+R\&D intensity & \corein & & \\
+Firm size & & & \periin \\
+Alliance activity & & & \corein \\
+Ownership concentration & & \periout & \\
+\midrule
+Raw consistency & 0.95 & 0.81 & 0.94 \\
+PRI & 0.90 & 0.86 & 0.83 \\
+Raw coverage & 0.36 & 0.20 & 0.38 \\
+Unique coverage & 0.18 & 0.09 & 0.09 \\
+\midrule
+Solution consistency & \multicolumn{3}{c}{0.89} \\
+Solution coverage & \multicolumn{3}{c}{0.65} \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\parbox{0.8\textwidth}{\footnotesize Note: Filled circles indicate the presence of a condition and crossed circles its absence. Large circles are core conditions; small circles are peripheral conditions. Blank cells indicate that the condition may be present or absent. Intermediate solution, N = 180.}
+\end{table}
+
+R\&D intensity is a core condition of Configuration 1, the configuration with the largest unique coverage. Table~3 therefore supports H2.
+
+Results were robust to alternative specifications.
+
+\clearpage
+\section{Discussion}
+
+Our analysis shows that high profitability among midsized Northfield manufacturers is reached through three configurations. The three share an independent board but differ in what accompanies it. Because board independence appears in all three configurations, it is a necessary condition for high profitability. H3 is therefore supported. The partners of an independent board, however, vary: R\&D intensity in firms that separate the chief executive and chair roles, CEO duality in firms with dispersed ownership, and size with alliances in the largest firms.
+
+The analysis of low performers in the appendix adds a second picture. Low performers combine a board without independence with low R\&D intensity, together with either CEO duality or an inactive alliance portfolio (Table~A1). These paths are not the mirror image of the paths to high profitability: low R\&D intensity appears in both configurations for low performance, although R\&D intensity appears in only one of the three configurations for high performance. For managers and owners of low performing firms, Table~A1 suggests that an insider board paired with little R\&D is the combination that both paths to poor returns share.
+
+Our findings speak to the debate on boards and firm performance. Studies that look for an average association between board independence and performance have reported mixed findings. A configurational reading suggests one reason: an independent board may support high profitability through several different combinations, so its association with performance depends on what else the firm has in place.
+
+The study has limits. All firms come from one fictional region and one year of records, so we make no claims about how configurations change over time. The calibration of some sets relies on the region's own standards, which may not travel to other settings. Finally, the conditions we chose do not exhaust the attributes that could matter, and future work could add measures of management quality or customer concentration.
+
+\section{Conclusion}
+
+Board independence, R\&D intensity, size, alliances, CEO duality, and ownership structure combine in several ways that are sufficient for high profitability in midsized manufacturing. Researchers and practitioners who look for a single best governance arrangement may miss the variety of combinations through which firms reach the same result.
+
+\clearpage
+\appendix
+\section*{Appendix: The Absence of High Profitability}
+
+We analyzed the absence of high profitability separately, with membership in the negated outcome set equal to one minus membership in high profitability, the same six conditions, the same raw consistency cutoff of 0.80, and the same frequency threshold. Table~A1 reports the intermediate solution in the same notation as Table~3.
+
+\begin{table}[h]
+\centering
+\renewcommand{\thetable}{A1}
+\caption{Configuration chart for the absence of high profitability}
+\setstretch{1.15}
+\begin{tabular}{lcc}
+\toprule
+ & \multicolumn{2}{c}{Configuration} \\
+\cmidrule(lr){2-3}
+Condition & A1 & A2 \\
+\midrule
+Board independence & \coreout & \coreout \\
+CEO duality & \periin & \\
+R\&D intensity & \periout & \periout \\
+Firm size & & \\
+Alliance activity & & \coreout \\
+Ownership concentration & & \\
+\midrule
+Raw consistency & 0.94 & 0.93 \\
+PRI & 0.89 & 0.83 \\
+Raw coverage & 0.26 & 0.41 \\
+Unique coverage & 0.06 & 0.21 \\
+\midrule
+Solution consistency & \multicolumn{2}{c}{0.92} \\
+Solution coverage & \multicolumn{2}{c}{0.47} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Both configurations for low performance combine a board without independence with low R\&D intensity. In configuration A1 these go with CEO duality, and in configuration A2 with an inactive alliance portfolio. Configuration A2 has the larger raw and unique coverage.
+
+\clearpage
+\section*{References}
+
+\begin{list}{}{\leftmargin=1.5em \itemindent=-1.5em \itemsep=0.4em}
+\item Fiss, P. C. (2011). Building better causal theories: A fuzzy set approach to typologies in organization research. \emph{Academy of Management Journal}, 54(2), 393--420.
+\item Greckhamer, T., Furnari, S., Fiss, P. C., and Aguilera, R. V. (2018). Studying configurations with qualitative comparative analysis: Best practices in strategy and organization research. \emph{Strategic Organization}, 16(4), 482--495.
+\item Misangyi, V. F., Greckhamer, T., Furnari, S., Fiss, P. C., Crilly, D., and Aguilera, R. (2017). Embracing causal complexity: The emergence of a neo-configurational perspective. \emph{Journal of Management}, 43(1), 255--282.
+\item Ragin, C. C. (2006). Set relations in social research: Evaluating their consistency and coverage. \emph{Political Analysis}, 14(3), 291--310.
+\item Ragin, C. C. (2008). \emph{Redesigning social inquiry: Fuzzy sets and beyond}. University of Chicago Press.
+\end{list}
+
+\end{document}

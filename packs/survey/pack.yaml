@@ -1,0 +1,33 @@
+name: survey
+detection_cues:
+  - survey, questionnaire, respondents, informants, key informant, Likert, seven-point scale, five-point scale, self-reported, response rate
+  - Qualtrics, MTurk, Prolific, CloudResearch, online panel
+  - a Measures section with scale sources and alpha values; a table of means, standard deviations, and correlations with reliabilities on the diagonal; a CFA table with fit statistics
+  - common method bias, common method variance, Harman, single-factor test, marker variable, unmeasured latent method factor, procedural remedies, temporal separation
+  - two-wave, three-wave, time-lagged, multi-source, supervisor-rated, matched dyads, nested, team-level, aggregated, rwg, ICC
+  - hierarchical regression, SEM, AMOS, Mplus, lavaan, PROCESS macro, bootstrap, indirect effect, full mediation, partial mediation
+  - the paper names no design for identification (no difference-in-differences, instrumental variables, regression discontinuity, event study, or randomization)
+slots:
+  diagnose: [respondents-and-sources.md, psychometrics.md, claims-and-controls.md]
+  verify: [survey-numbers.md]
+  context: [scale-provenance.md]
+turns_off: []
+severity_rules:
+  - "S14: causal wording or prescriptive implications about the main relation, from a study with no design for identification, is 'Weakens a claim'. It is 'Undermines the main claim' only when the stated contribution is itself the causal effect, the paper gives no argument about direction or confounding beyond a limitations sentence, and no other study in the paper supplies that evidence (for example an experiment that manipulates the predictor)."
+  - "S1 to S3: findings are capped at 'Weakens a claim'; common source alone never undermines the main claim. S2 is 'Minor' when the design already separates sources for the main relation; otherwise fold it into the S1 issue. When both variables of a relation are private states only the respondent can report, the S1 finding is 'Minor'. The S1 finding is also 'Minor' when the paper states why a separate source or lag was not feasible and reports a statistical remedy that meets S3."
+  - "S9: 'Undermines the main claim' when the disattenuated correlation's lower bound is at or above 1 for the main predictor and main outcome, or for two focal variables entered in the same model (a mediator entered with the predictor counts), and the paper reports no nested-model comparison, CFA latent correlation with an interval, or similar test for that pair. Otherwise 'Weakens a claim'."
+  - "S17: 'Undermines the main claim' when the mechanism is a stated contribution, the predictor, mediator, and outcome are all measured in one wave, and no other study in the paper separates them in time or manipulates the mediator. When the mediator shares a wave with only the predictor or only the outcome, 'Weakens a claim'. Otherwise 'Weakens a claim'."
+  - "S14 and S15 findings drop one level for phenomenon-driven papers and for papers whose hypotheses and implications are worded as associations throughout. The Stage 4 compiler applies this rule; pack agents do not."
+  - "S16: 'Minor', written as one issue covering every unexplained control and any missing results with and without controls. A control measured after the predictor, or plausibly caused by it, is 'Weakens a claim'."
+  - "S18: 'Weakens a claim' when the paper fits a structural equation or path model to the printed correlations; otherwise 'Minor'. When the table note gives a range of Ns or says the correlations use pairwise deletion, the finding asks for disclosure and is 'Minor'."
+  - "S6: capped at 'Weakens a claim'; 'Minor' when the paper discloses the change but gives no reason."
+  - "S4, S5, S7, S8, S10 to S13, and S15: at most 'Weakens a claim'. A finding that only notes missing reporting is 'Minor' unless it concerns the main relation's sample or measures, and is written once per check. When the paper fits no measurement model, a request for a confirmatory model is 'Minor'."
+core_notes:
+  completeness.md:
+    - text: "Apply this note only when the label says primary type. In Step 3, for a measured predictor, read the item on descriptive statistics by treatment and control group as a table of means, standard deviations, and correlations of all study variables with their reliabilities, and flag only if that table is missing. Skip the balance-table item. Leave the statement of identifying assumptions to the survey pack (check S14)."
+  face-validity.md:
+    - text: "Apply this note only when the label says primary type. For questionnaire scales, leave prior validation and scale provenance (Step 7, item 5) to the survey pack; keep Step 7, items 1 to 4."
+    - text: "Apply this note only when the label says primary type. In Steps 3 and 5, for an outcome on a rating scale with no natural unit, express effects in standard-deviation units only, and skip the aggregate scale-up."
+  packs/inference/agents/inference-claims.md:
+    - text: "Apply this note only when `archival` is not in `run.json` `packs`. In I16, leave a mediation claim that reads a non-significant direct effect as full mediation to the survey pack (check S17); keep every other null."
+read_checkin_lines: ["Survey data:", "Focal measures:"]

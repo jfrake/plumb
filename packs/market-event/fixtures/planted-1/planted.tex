@@ -1,0 +1,484 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{threeparttable}
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage[authoryear,round]{natbib}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\onehalfspacing
+\captionsetup{labelfont=bf,font=small}
+\newcommand{\win}[2]{[$#1$, $#2$]}
+
+\begin{document}
+
+\begin{center}
+{\Large\bfseries Doing Well by Partnering: Stock Market Reactions to\\ Corporate-Nonprofit Sustainability Partnerships\par}
+\vspace{0.8em}
+{\large\bfseries SYNTHETIC TEST PAPER, NOT REAL RESEARCH\par}
+\vspace{0.8em}
+Mara Ellingsen and Tobias Renwick\\
+Department of Management, Halvorsen University\\
+\vspace{0.4em}
+{\small Fictional authors, firms, nonprofits, summits, and databases. Written to test a review tool.}
+\end{center}
+
+\begin{abstract}
+\noindent Firms increasingly announce partnerships with nonprofit organizations to address environmental and social problems. We ask whether investors reward these commitments. Using 212 announcements of corporate-nonprofit sustainability partnerships by U.S.-listed firms between 2007 and 2012, we find positive and significant cumulative abnormal returns around the announcement. The reaction is larger for firms with a stronger prior reputation for corporate social responsibility, and announcements with high-visibility nonprofit partners earn positive abnormal returns of their own. The results suggest that sustainability partnerships create value for shareholders and that investors price the credibility a firm has built through its past conduct.
+\end{abstract}
+
+\section{Introduction}
+
+Partnerships between firms and nonprofit organizations have become a common way for companies to act on environmental and social problems. A beverage producer joins a watershed trust to restore a river basin; a utility funds a job-training program with a community college network; a retailer commits to source produce through a regional food alliance. These partnerships are announced publicly, often with considerable fanfare, and they commit the firm to multi-year contributions of money, staff time, and operational change. Whether investors see such commitments as a use or a waste of shareholder resources is an open question in the literature on corporate social responsibility (CSR).
+
+Two views compete. In the first, partnerships divert resources from the firm's core business to the private preferences of managers, and investors should discount them. In the second, partnerships give the firm access to the legitimacy, knowledge, and networks of its nonprofit partner. They signal a durable commitment that customers, employees, and regulators can observe, and investors should reward them. Event studies offer a direct way to adjudicate between these views, because the stock price reaction to an announcement measures the market's revised estimate of the firm's value \citep{mcwilliams1997,mackinlay1997}.
+
+We study 212 announcements of sustainability partnerships by U.S.-listed firms from 2007 to 2012. We make three contributions. First, we document the average market reaction to partnership announcements in a sample larger than prior work on the topic. Second, we show that the reaction depends on the announcing firm's prior CSR reputation, which is consistent with the idea that investors discount commitments from firms that lack a record of following through. Third, we show that the identity of the partner matters: announcements with high-visibility nonprofit partners draw a distinct positive reaction.
+
+The rest of the paper proceeds as follows. Section 2 develops our hypotheses. Section 3 describes the sample, the dating of events, and our methods. Section 4 reports the results, Section 5 discusses them, and Section 6 concludes.
+
+\section{Theory and Hypotheses}
+
+\subsection{Prior evidence}
+
+Research on how investors respond to corporate social initiatives has produced mixed findings. Studies of charitable giving, environmental awards, and inclusion in social-responsibility indexes have reported positive, negative, and null reactions, and reviews of this work trace much of the disagreement to differences in research design, such as the length of the event window and the handling of other news released at the same time \citep{mcwilliamssiegelteoh1999}. Partnerships with nonprofits have received less attention than donations or ratings. The few studies that exist rely on small samples, often drawn from a single industry, and they rarely distinguish among partners.
+
+Partnerships deserve separate study because they differ from the initiatives examined so far. A donation is a transfer; a rating change is an outside judgment. A partnership is a relationship with a named counterparty that has its own stake in the outcome, and its terms are often public. This makes it possible to ask not only whether investors respond, but also which features of the firm and the partner shape the response.
+
+\subsection{Partnerships as commitments}
+
+A sustainability partnership differs from a one-time donation. The firm and the nonprofit agree on shared goals, a governance structure, and often a public set of targets. Because the nonprofit's reputation is tied to the partnership, it has an incentive to monitor the firm and to withdraw publicly if the firm does not deliver. This makes the partnership a more credible commitment than a unilateral pledge. Investors who expect the commitment to improve relations with customers, employees, and regulators, or to reduce the risk of costly conflict with activists, should revise the firm's value upward when the partnership is announced.
+
+The competing view holds that partnerships are costly and that their benefits are diffuse and slow to arrive. If investors expect managers to use partnerships to build personal reputations at shareholders' expense, the announcement should lower the firm's value. We expect the first view to dominate on average, because firms choose partnerships that fit their operations, and because partnership agreements usually tie contributions to measurable goals.
+
+The announcement is the moment at which this information becomes public. Press releases describe the partner, the goals, and the scale of the commitment, and they are picked up quickly by financial media. We therefore expect the market's response to be concentrated in the days immediately around the release. Following common practice in management event studies \citep{mcwilliams1997}, the three-day window from the day before to the day after the announcement, \win{-1}{+1}, is our primary window.
+
+\begin{quote}
+\textit{Hypothesis 1 (H1).} Announcements of corporate-nonprofit sustainability partnerships produce positive cumulative abnormal returns over our primary window, \win{-1}{+1}.
+\end{quote}
+
+\subsection{Prior reputation and credibility}
+
+Investors cannot observe directly whether a firm will follow through on a partnership. They must infer it from what they know about the firm. A firm with a long record of responsible conduct has more to lose from abandoning a public commitment, and its past behavior makes its stated intentions more believable. A firm with a weak record may be suspected of using the partnership to deflect criticism. We therefore expect the reaction to be larger for firms with a stronger prior reputation for CSR.
+
+\begin{quote}
+\textit{Hypothesis 2 (H2).} The abnormal return to a partnership announcement is larger for firms with a stronger prior CSR reputation.
+\end{quote}
+
+\subsection{Partner visibility}
+
+Nonprofits differ in how visible they are to the public and to investors. A national organization with broad name recognition brings more attention to the partnership, more media coverage, and more public scrutiny of the firm's performance against its goals. Visibility raises both the potential benefit of the partnership and the cost to the firm of failing to deliver, and so strengthens the commitment. Because news about partnerships with prominent organizations tends to spread through several outlets over a few days, we examine these announcements over the slightly wider window \win{-3}{+3}.
+
+\begin{quote}
+\textit{Hypothesis 3 (H3).} Announcements of partnerships with high-visibility nonprofit partners produce positive cumulative abnormal returns over \win{-3}{+3}.
+\end{quote}
+
+\section{Data and Methods}
+
+\subsection{Sample construction}
+
+Our population is every announcement of a new sustainability partnership between a U.S.-listed firm and a nonprofit organization released on the CivicWire press-release service from January 2007 through December 2012. CivicWire is a subscription wire that distributes corporate and nonprofit releases and codes each release by topic. We searched its archive for releases coded as ``environment'' or ``community'' that named both a listed firm and a registered nonprofit, and read each release to confirm that it announced a new partnership. Renewals, one-time donations, and sponsorships of events were not counted.
+
+We identified 268 announcements, removed 31 without matched return identifiers, 19 lacking 120 trading days of returns, and 4 with more than 10 percent zero-return days, leaving 212. Return data come from the Harlow Securities Returns File, which covers common stocks listed on U.S. exchanges. Table 1 describes the sample. Announcements are spread across the six years, with the largest numbers in 2008 and 2009, and across seven broad industry groups (Appendix Table A2).
+
+\subsection{Event dating}
+
+The event date is the date of the CivicWire release. For each release we record the date and the time stamp that CivicWire assigns when the release is distributed; 61 percent of releases carry a time stamp after 4:00 p.m. Day 0 is the calendar date of the release, or the next trading day for the few releases distributed on a weekend or holiday. Firms often timed their releases to coincide with other investor communications: 44 percent of the announcements fall within two trading days of the firm's quarterly earnings release (Table 1).
+
+Thirty-eight of the 212 announcements were made at two sustainability summits. At the Greenfield Leaders Summit on 23 September 2008, 21 firms announced partnerships from the main stage on the same day; at the Commons Forward Forum on 16 June 2009, 17 firms did so. Appendix B lists these announcements with their dates. The remaining 174 announcements fall on distinct dates, so the sample has 176 distinct announcement dates in all.
+
+\subsection{Thin trading}
+
+Our sample is limited to firms listed in the United States, so every return is measured on a single trading calendar and against a single home-market index. Thin trading can still bias estimated betas and abnormal returns for small stocks. We therefore exclude stocks with more than 10 percent zero-return days in the estimation window. This screen removes 4 events, and the count appears in the sample construction above.
+
+\subsection{Abnormal returns}
+
+We compute abnormal returns with the market model \citep{brownwarner1985,mackinlay1997}. The market model is estimated over trading days $-250$ to $+10$ relative to the announcement, using the Harlow broad-market index as the market return; we require at least 120 daily returns in this period. For firm $i$ on day $t$, the abnormal return is $AR_{it} = R_{it} - (\hat\alpha_i + \hat\beta_i R_{mt})$, and the cumulative abnormal return over a window $[t_1, t_2]$ is $CAR_i[t_1, t_2] = \sum_{t=t_1}^{t_2} AR_{it}$. Daily abnormal returns were winsorized. All estimation uses custom Stata code. As stated in Section 2, \win{-1}{+1} is our primary window; we also report CARs over \win{-3}{+3} and \win{-5}{+5}.
+
+We report the mean CAR across events for each window. We test whether it differs from zero with two statistics. The first is the cross-sectional t \citep{harringtonshrider2007}, the mean CAR divided by its cross-sectional standard deviation over the square root of the number of events:
+\[
+t = \frac{\overline{CAR}}{s_{CAR}/\sqrt{N}}.
+\]
+The second is the standardized-residual Z \citep{patell1976}, which scales each event's abnormal return by the standard deviation of its estimation-period residuals. Both statistics are reported in our tables. All tests are two-tailed. Stars mark significance at the 10, 5, and 1 percent levels.
+
+\subsection{Cross-sectional analysis}
+
+To test H2 we regress each event's $CAR[-1, +1]$ on the firm's prior CSR reputation and controls. Prior CSR reputation is the firm's score in the Stakewell CSR Reputation Ratings at the end of the fiscal year before the announcement, standardized to mean zero and unit standard deviation across all rated firms. The controls are the natural logarithm of market capitalization, the book-to-market ratio, leverage, and return on assets, all measured at the end of the prior fiscal year; an indicator for a high-visibility partner; and year and industry indicators. We also control for the change in the consensus analyst recommendation over trading days 0 to +30, taken from the Ledgerline Analyst Database, to absorb differences in how analysts view the firm.
+
+A partner is high-visibility when the nonprofit appears in the top quintile of the Halvorsen Nonprofit Recognition Index, a survey-based measure of public name recognition. Eighty-eight announcements involve a high-visibility partner.
+
+Standard errors in the cross-sectional regressions are heteroskedasticity-robust and clustered by announcement date, because 38 announcements share two summit dates and their abnormal returns may be correlated \citep{petersen2009}. With 176 distinct dates, each regression has 176 clusters.
+
+Firms choose whether to announce a partnership, and firms with strong reputations may be more likely to do so. To address this selection, we estimate a Heckman model. The first stage is a probit of whether a firm announces a partnership in a given year, estimated on 5,944 firm-years of Stakewell-rated firms. The first-stage probit includes the same regressors as the second-stage regression. The inverse Mills ratio from the first stage enters the second stage as an additional regressor.
+
+\section{Results}
+
+\subsection{Average reactions (H1)}
+
+Table 2 reports mean CARs for the full sample over three windows. The mean CAR over \win{-1}{+1} is 0.41 percent (cross-sectional t = 1.01), and over \win{-3}{+3} it is 0.64 percent (t = 1.31). Returns continue to accumulate over the wider window. H1 is supported: the CAR over [$-5$, $+5$] is 1.52 percent (t = 2.67). The standardized-residual Z over the same window is 2.91, significant at the 1 percent level.
+
+Table 5 reports daily mean abnormal returns from day $-5$ to day $+5$. The reaction is concentrated on the announcement day: the day-0 mean abnormal return of 0.27 percent is the largest of the eleven days. Mean abnormal returns on days $-1$ and $+1$ are also positive, at 0.09 and 0.18 percent.
+
+Table 2 also reports the median CAR and the share of events with a positive CAR for each window. Over \win{-5}{+5}, the median CAR is $-0.18$ percent and 46.7 percent of CARs are positive. The mean is therefore driven by a subset of firms with large positive reactions, which is consistent with investors rewarding the partnerships they view as most credible.
+
+\subsection{High-visibility partners (H3)}
+
+Table 3 reports CARs for the 88 announcements with high-visibility partners. H3 is supported: over [$-3$, $+3$], these announcements earn a mean CAR of 0.47 percent (cross-sectional t = 2.14, significant at the 5 percent level). The reaction over \win{-1}{+1} is also positive, 1.23 percent (t = 2.26). Table 4 breaks the \win{-1}{+1} reaction into daily mean abnormal returns. The largest daily mean is on day 0, at 0.72 percent. Taken together, these results give strong support for the view that partner visibility strengthens the credibility of the commitment.
+
+\subsection{Prior CSR reputation (H2)}
+
+Table 6 reports the cross-sectional regressions. In column 1, the coefficient on prior CSR reputation is 0.58 (standard error 0.23), significant at the 5 percent level: a one-standard-deviation increase in prior reputation raises $CAR[-1, +1]$ by 0.58 percentage points. We interpret this coefficient as the market's valuation of CSR reputation. The high-visibility indicator is positive and significant at the 10 percent level, and the change in the consensus analyst recommendation is positive and significant at the 1 percent level.
+
+Column 2 reports the second stage of the Heckman model. The coefficient on prior CSR reputation is 0.54 (standard error 0.22), close to the estimate in column 1. The inverse Mills ratio is 1.84 (standard error 0.68), significant at the 1 percent level; the significant inverse Mills ratio confirms that selection is present and has been corrected. H2 is supported.
+
+\section{Discussion}
+
+Our results speak to a long debate about whether investors reward corporate social initiatives. Much prior work has examined donations, ratings changes, and product-related announcements, and the conclusions have been mixed \citep{mcwilliamssiegelteoh1999}. Partnerships with nonprofits are a distinct kind of initiative: they involve a named counterparty with its own reputation at stake. We find that investors respond positively to these announcements on average, and that the response is shaped by what investors already know about the firm and by the prominence of its partner.
+
+The finding that prior reputation matters is consistent with a credibility account. Investors appear to discount the partnership commitments of firms that have not demonstrated responsible conduct in the past. This has a practical implication for managers: partnerships are unlikely to repair a weak reputation quickly, and firms with strong records gain more from announcing them.
+
+The finding on partner visibility suggests that firms can raise the credibility of a commitment by choosing a partner whose own reputation is exposed. Nonprofits, in turn, may be able to use their visibility as a bargaining asset in negotiating the terms of a partnership.
+
+Our study has limitations. We observe announcements, not the content of partnership agreements, and we cannot measure how much each firm committed. Our measure of partner visibility is based on public recognition and may not capture visibility among investors. Future work could link announcements to later measures of environmental and social performance.
+
+\section{Conclusion}
+
+We examined the stock market reaction to 212 announcements of corporate-nonprofit sustainability partnerships. Investors respond positively, more so for firms with strong prior CSR reputations and for partnerships with high-visibility nonprofits. Partnerships create lasting shareholder value and benefit the communities they serve. For managers weighing whether to commit to a partnership, our evidence suggests that the market rewards credible commitments made by firms with a record of following through.
+
+\begin{thebibliography}{99}
+\setlength{\itemsep}{0pt}
+\small
+
+\bibitem[Brown and Warner(1985)]{brownwarner1985}
+Brown, S. J., and Warner, J. B. (1985). Using daily stock returns: The case of event studies. \textit{Journal of Financial Economics}, 14(1), 3--31.
+
+\bibitem[Harrington and Shrider(2007)]{harringtonshrider2007}
+Harrington, S. E., and Shrider, D. G. (2007). All events induce variance: Analyzing abnormal returns when effects vary across firms. \textit{Journal of Financial and Quantitative Analysis}, 42(1), 229--256.
+
+\bibitem[MacKinlay(1997)]{mackinlay1997}
+MacKinlay, A. C. (1997). Event studies in economics and finance. \textit{Journal of Economic Literature}, 35(1), 13--39.
+
+\bibitem[McWilliams and Siegel(1997)]{mcwilliams1997}
+McWilliams, A., and Siegel, D. (1997). Event studies in management research: Theoretical and empirical issues. \textit{Academy of Management Journal}, 40(3), 626--657.
+
+\bibitem[McWilliams et al.(1999)]{mcwilliamssiegelteoh1999}
+McWilliams, A., Siegel, D., and Teoh, S. H. (1999). Issues in the use of the event study methodology: A critical analysis of corporate social responsibility studies. \textit{Organizational Research Methods}, 2(4), 340--365.
+
+\bibitem[Patell(1976)]{patell1976}
+Patell, J. M. (1976). Corporate forecasts of earnings per share and stock price behavior: Empirical test. \textit{Journal of Accounting Research}, 14(2), 246--276.
+
+\bibitem[Petersen(2009)]{petersen2009}
+Petersen, M. A. (2009). Estimating standard errors in finance panel data sets: Comparing approaches. \textit{Review of Financial Studies}, 22(1), 435--480.
+
+\end{thebibliography}
+
+\clearpage
+\section*{Tables}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\caption{Descriptive statistics}
+\small
+\begin{tabular}{lcccc}
+\toprule
+\multicolumn{5}{l}{\textit{Panel A. Announcements by year}} \\
+\midrule
+Year & 2007 & 2008 & 2009 & 2010 \\
+Announcements & 21 & 64 & 59 & 31 \\
+\addlinespace
+Year & 2011 & 2012 & & Total \\
+Announcements & 22 & 15 & & 212 \\
+\midrule
+\multicolumn{5}{l}{\textit{Panel B. Event and firm characteristics}} \\
+\midrule
+ & Mean & SD & Median & N \\
+\midrule
+Market capitalization (\$ billion) & 18.4 & 31.7 & 6.2 & 212 \\
+Book-to-market ratio & 0.52 & 0.38 & 0.44 & 212 \\
+Leverage & 0.27 & 0.16 & 0.25 & 212 \\
+Return on assets & 0.061 & 0.074 & 0.058 & 212 \\
+Prior CSR reputation (standardized) & 0.21 & 0.97 & 0.18 & 212 \\
+High-visibility partner (0/1) & 0.415 & 0.494 & 0 & 212 \\
+Release after 4:00 p.m. (0/1) & 0.608 & 0.489 & 1 & 212 \\
+Within two days of earnings release (0/1) & 0.439 & 0.497 & 0 & 212 \\
+Summit announcement (0/1) & 0.179 & 0.384 & 0 & 212 \\
+Change in consensus recommendation, days 0 to +30 & 0.04 & 0.31 & 0.00 & 212 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Notes: Firm characteristics are measured at the end of the fiscal year before the announcement. Prior CSR reputation is standardized across all firms rated by Stakewell. The change in consensus recommendation is measured so that a positive value is an upgrade. Variable definitions are in Appendix Table A1.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\caption{Cumulative abnormal returns, full sample}
+\small
+\begin{tabular}{lccccccc}
+\toprule
+Window & Mean CAR (\%) & SD (\%) & Cross-sectional t & Z & Median (\%) & \% positive & N \\
+\midrule
+{[}$-1$, $+1${]} & 0.41 & 5.90 & 1.01 & 1.18 & 0.05 & 50.9 & 212 \\
+{[}$-3$, $+3${]} & 0.64 & 7.10 & 1.31 & 1.44 & 0.08 & 51.4 & 212 \\
+{[}$-5$, $+5${]} & 1.52 & 8.30 & 2.67*** & 2.91*** & $-0.18$ & 46.7 & 212 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Notes: Market-model abnormal returns. Cross-sectional t is the mean CAR divided by its cross-sectional standard deviation over the square root of N. Z is the standardized-residual Z. *** p $<$ 0.01, ** p $<$ 0.05, * p $<$ 0.10, two-tailed.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\caption{Cumulative abnormal returns, high-visibility partners}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Window & Mean CAR (\%) & SD (\%) & Cross-sectional t & N \\
+\midrule
+{[}$-1$, $+1${]} & 1.23 & 5.10 & 2.26** & 88 \\
+{[}$-3$, $+3${]} & 0.47 & 6.40 & 2.14** & 88 \\
+{[}$-5$, $+5${]} & 0.95 & 7.60 & 1.17 & 88 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Notes: Announcements whose nonprofit partner is in the top quintile of the Halvorsen Nonprofit Recognition Index. Market-model abnormal returns. *** p $<$ 0.01, ** p $<$ 0.05, * p $<$ 0.10, two-tailed.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\caption{Daily mean abnormal returns, high-visibility partners}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Day or window & Mean AR or CAR (\%) & SD (\%) & Cross-sectional t & N \\
+\midrule
+Day $-1$ & 0.30 & 2.40 & 1.17 & 88 \\
+Day 0 & 0.72 & 3.10 & 2.18** & 88 \\
+Day $+1$ & 0.21 & 2.60 & 0.76 & 88 \\
+\midrule
+{[}$-1$, $+1${]} & 1.23 & 5.10 & 2.26** & 88 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Notes: The same 88 announcements as Table 3. The window CAR is the sum of the three daily means. *** p $<$ 0.01, ** p $<$ 0.05, * p $<$ 0.10, two-tailed.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\caption{Daily mean abnormal returns, full sample}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Day & Mean AR (\%) & SD (\%) & Cross-sectional t & N \\
+\midrule
+$-5$ & 0.24 & 2.30 & 1.52 & 212 \\
+$-4$ & 0.16 & 2.20 & 1.06 & 212 \\
+$-3$ & $-0.02$ & 2.10 & $-0.14$ & 212 \\
+$-2$ & 0.11 & 2.20 & 0.73 & 212 \\
+$-1$ & 0.09 & 2.40 & 0.55 & 212 \\
+0 & 0.27 & 3.10 & 1.27 & 212 \\
+$+1$ & 0.18 & 2.60 & 1.01 & 212 \\
+$+2$ & 0.02 & 2.20 & 0.13 & 212 \\
+$+3$ & $-0.01$ & 2.10 & $-0.07$ & 212 \\
+$+4$ & 0.22 & 2.50 & 1.28 & 212 \\
+$+5$ & 0.26 & 2.60 & 1.46 & 212 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Notes: Market-model abnormal returns for the 212 announcements in Table 2. *** p $<$ 0.01, ** p $<$ 0.05, * p $<$ 0.10, two-tailed.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\caption{Cross-sectional regressions of CAR[$-1$, $+1$]}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) OLS & (2) Heckman second stage \\
+\midrule
+Prior CSR reputation & 0.58** & 0.54** \\
+ & (0.23) & (0.22) \\
+Ln market capitalization & $-0.21$ & $-0.19$ \\
+ & (0.17) & (0.17) \\
+Book-to-market ratio & 0.44 & 0.39 \\
+ & (0.61) & (0.60) \\
+Leverage & $-0.83$ & $-0.77$ \\
+ & (1.02) & (1.01) \\
+Return on assets & 2.16 & 1.98 \\
+ & (3.40) & (3.38) \\
+High-visibility partner & 0.97* & 0.93* \\
+ & (0.52) & (0.51) \\
+Change in consensus recommendation, days 0 to +30 & 0.91*** & 0.88*** \\
+ & (0.30) & (0.30) \\
+Inverse Mills ratio & & 1.84*** \\
+ & & (0.68) \\
+\addlinespace
+Year indicators & Yes & Yes \\
+Industry indicators & Yes & Yes \\
+Observations & 212 & 212 \\
+Clusters (announcement dates) & 176 & 176 \\
+R-squared & 0.148 & 0.156 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Notes: The dependent variable is CAR[$-1$, $+1$] in percent. Heteroskedasticity-robust standard errors clustered by announcement date in parentheses; 38 announcements share two summit dates. The first stage of the Heckman model is a probit of announcing a partnership on 5,944 firm-years with the same regressors as the second stage. *** p $<$ 0.01, ** p $<$ 0.05, * p $<$ 0.10.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\clearpage
+\appendix
+\section*{Appendix A. Additional tables}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\renewcommand{\thetable}{A1}
+\caption{Variable definitions}
+\small
+\begin{tabular}{p{0.34\textwidth}p{0.58\textwidth}}
+\toprule
+Variable & Definition \\
+\midrule
+CAR & Sum of daily market-model abnormal returns over the window, in percent. \\
+Prior CSR reputation & Stakewell CSR Reputation Rating at the end of the prior fiscal year, standardized across all rated firms. \\
+High-visibility partner & 1 if the nonprofit is in the top quintile of the Halvorsen Nonprofit Recognition Index. \\
+Release after 4:00 p.m. & 1 if the CivicWire time stamp is after 4:00 p.m. Eastern time. \\
+Within two days of earnings release & 1 if the announcement falls within two trading days of the firm's quarterly earnings release. \\
+Summit announcement & 1 if the partnership was announced at the Greenfield Leaders Summit or the Commons Forward Forum. \\
+Change in consensus recommendation & Change in the Ledgerline consensus analyst recommendation from day 0 to day +30. \\
+Market capitalization & Share price times shares outstanding at the end of the prior fiscal year. \\
+Book-to-market, leverage, return on assets & Book equity over market equity; total debt over total assets; net income over total assets; prior fiscal year. \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\renewcommand{\thetable}{A2}
+\caption{Announcements by industry}
+\small
+\begin{tabular}{lc}
+\toprule
+Industry group & Announcements \\
+\midrule
+Consumer goods & 48 \\
+Energy and utilities & 37 \\
+Industrials & 34 \\
+Technology & 31 \\
+Financials & 22 \\
+Health care & 21 \\
+Materials & 19 \\
+\midrule
+Total & 212 \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\renewcommand{\thetable}{A3}
+\caption{Cumulative abnormal returns over additional windows, full sample}
+\small
+\begin{tabular}{lcccc}
+\toprule
+Window & Mean CAR (\%) & SD (\%) & Cross-sectional t & N \\
+\midrule
+{[}$-20$, $-6${]} & 1.46 & 8.90 & 2.39** & 212 \\
+{[}$-5$, $-2${]} & 0.49 & 4.20 & 1.70* & 212 \\
+{[}$-20$, $-2${]} & 1.95 & 9.80 & 2.90*** & 212 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Notes: Market-model abnormal returns for the 212 announcements in Table 2. *** p $<$ 0.01, ** p $<$ 0.05, * p $<$ 0.10, two-tailed.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\clearpage
+\section*{Appendix B. Announcements made at sustainability summits}
+
+\begin{table}[h!]
+\centering
+\begin{threeparttable}
+\renewcommand{\thetable}{B1}
+\caption{The 38 summit announcements}
+\footnotesize
+\begin{tabular}{llll}
+\toprule
+Firm & Nonprofit partner & Summit & Date \\
+\midrule
+Alderbrook Foods & Open Harvest Alliance & Greenfield Leaders Summit & 2008-09-23 \\
+Barrow Creek Energy & Tidewater Land Fund & Greenfield Leaders Summit & 2008-09-23 \\
+Calloway Industries & Brightline Schools Project & Greenfield Leaders Summit & 2008-09-23 \\
+Dunmore Apparel & Kinfolk Health Network & Greenfield Leaders Summit & 2008-09-23 \\
+Eastvale Utilities & River Commons Trust & Greenfield Leaders Summit & 2008-09-23 \\
+Fenwick Materials & Tallgrass Prairie Guild & Greenfield Leaders Summit & 2008-09-23 \\
+Glenhaven Brands & Open Harvest Alliance & Greenfield Leaders Summit & 2008-09-23 \\
+Harrowgate Systems & Brightline Schools Project & Greenfield Leaders Summit & 2008-09-23 \\
+Ivydale Pharmaceuticals & Kinfolk Health Network & Greenfield Leaders Summit & 2008-09-23 \\
+Jasperton Logistics & Clearsky Air Coalition & Greenfield Leaders Summit & 2008-09-23 \\
+Kestrel Bay Beverages & River Commons Trust & Greenfield Leaders Summit & 2008-09-23 \\
+Larkspur Home & Hearth and Field Foundation & Greenfield Leaders Summit & 2008-09-23 \\
+Merriton Chemicals & Tidewater Land Fund & Greenfield Leaders Summit & 2008-09-23 \\
+Northcote Financial & Hearth and Field Foundation & Greenfield Leaders Summit & 2008-09-23 \\
+Oakhurst Motors & Clearsky Air Coalition & Greenfield Leaders Summit & 2008-09-23 \\
+Pembrook Paper & Tallgrass Prairie Guild & Greenfield Leaders Summit & 2008-09-23 \\
+Quillan Retail & Open Harvest Alliance & Greenfield Leaders Summit & 2008-09-23 \\
+Redstone Mills & Tidewater Land Fund & Greenfield Leaders Summit & 2008-09-23 \\
+Sallow Point Telecom & Brightline Schools Project & Greenfield Leaders Summit & 2008-09-23 \\
+Thornbury Health & Kinfolk Health Network & Greenfield Leaders Summit & 2008-09-23 \\
+Upton Grove Insurance & Hearth and Field Foundation & Greenfield Leaders Summit & 2008-09-23 \\
+\addlinespace
+Varden Steel & Tallgrass Prairie Guild & Commons Forward Forum & 2009-06-16 \\
+Whitlow Semiconductors & Brightline Schools Project & Commons Forward Forum & 2009-06-16 \\
+Yarrowby Grocers & Open Harvest Alliance & Commons Forward Forum & 2009-06-16 \\
+Ashcombe Airlines & Clearsky Air Coalition & Commons Forward Forum & 2009-06-16 \\
+Bellmere Cosmetics & Kinfolk Health Network & Commons Forward Forum & 2009-06-16 \\
+Corriden Mining & Tidewater Land Fund & Commons Forward Forum & 2009-06-16 \\
+Dellwood Software & Brightline Schools Project & Commons Forward Forum & 2009-06-16 \\
+Elmsford Packaging & River Commons Trust & Commons Forward Forum & 2009-06-16 \\
+Foxley Pharmacies & Kinfolk Health Network & Commons Forward Forum & 2009-06-16 \\
+Greywell Power & Clearsky Air Coalition & Commons Forward Forum & 2009-06-16 \\
+Hollins Outdoor & Tallgrass Prairie Guild & Commons Forward Forum & 2009-06-16 \\
+Inglewood Water & River Commons Trust & Commons Forward Forum & 2009-06-16 \\
+Kinross Textiles & Hearth and Field Foundation & Commons Forward Forum & 2009-06-16 \\
+Lowther Hotels & Hearth and Field Foundation & Commons Forward Forum & 2009-06-16 \\
+Marsden Medical & Kinfolk Health Network & Commons Forward Forum & 2009-06-16 \\
+Netherby Foods & Open Harvest Alliance & Commons Forward Forum & 2009-06-16 \\
+Ostley Freight & Clearsky Air Coalition & Commons Forward Forum & 2009-06-16 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item Notes: 21 announcements at the Greenfield Leaders Summit on 23 September 2008 and 17 at the Commons Forward Forum on 16 June 2009. All 38 are in the 212-event sample.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\end{document}

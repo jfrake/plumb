@@ -1,0 +1,52 @@
+name: selection
+label: "Selection"
+definition: "The paper addresses non-random treatment or sample selection by matching, weighting, entropy balancing, a doubly robust or double machine learning treatment-effect estimator, a Heckman or treatment-effects model, or a named sensitivity analysis for omitted variables (Oster, Cinelli-Hazlett, ITCV, Rosenbaum bounds)."
+detection_cues:
+  - "propensity score"
+  - "matched sample"
+  - "nearest neighbor"
+  - "caliper"
+  - "Mahalanobis"
+  - "coarsened exact matching"
+  - "CEM"
+  - "entropy balancing"
+  - "inverse probability weighting"
+  - "IPW"
+  - "overlap weights"
+  - "doubly robust"
+  - "augmented IPW"
+  - "double machine learning"
+  - "Heckman"
+  - "inverse Mills ratio"
+  - "selection equation"
+  - "treatment effects model"
+  - "etregress"
+  - "endogenous switching"
+  - "Rosenbaum bounds"
+  - "Oster"
+  - "coefficient stability"
+  - "sensemakr"
+  - "robustness value"
+  - "ITCV"
+  - "impact threshold"
+negative_cues:
+  - "a paper that only adds control variables, with no named matching, weighting, selection model, or sensitivity analysis (methods-checks CHECK 3 keeps it)"
+replaces: []  # traceability only; the loader does not read it
+later: []  # cut for version one; ids never reused
+encouragement: []
+checklist:
+  - {id: SO1, text: "A Heckman selection model names an excluded variable that affects selection but not the outcome and defends it, or states that identification rests on functional form alone", adjudication: paper}
+  - {id: SO2, text: "The paper distinguishes selection into the sample (the outcome is observed only for some units) from selection into treatment, uses a sample-selection correction only for the first, and handles a self-selected treatment observed for all units with a treatment-effects model, an instrument, or a design", adjudication: paper}
+  - {id: SO3, text: "The variable of interest predicts selection in the first stage, and a significant inverse Mills ratio is not read as evidence that selection bias existed or was corrected", adjudication: paper}
+  - {id: SO4, text: "The estimate is shown with and without the selection correction, collinearity between the inverse Mills ratio and the second-stage regressors is reported, and a hand-run two-step has second-stage standard errors that account for the estimated lambda", adjudication: paper}
+  - {id: SO5, text: "A selection correction in a firm panel with unit fixed effects respects the panel structure, or the paper says why a pooled cross-sectional correction is acceptable", adjudication: judgment}
+  - {id: SO6, text: "Matching reports balance on each covariate with standardized differences before and after matching, not only t-tests or p-values, and reports the number of units matched and discarded in each group", adjudication: paper}
+  - {id: SO7, text: "Propensity score matching states the score model, the algorithm, replacement, caliper, number of matches, and the estimand (ATT or ATE), and shows the result under at least one alternative such as covariate matching, CEM, or weighting", adjudication: paper}
+  - {id: SO8, text: "Overlap is shown by group, and any trimming reports its rule, the number of treated units removed, and that the estimand now refers to the retained sample", adjudication: paper}
+  - {id: SO9, text: "When the inference overlay does not run: standard errors after matching or weighting account for the matching step and for estimating the score, or the paper states how it handled them", adjudication: paper}
+  - {id: SO10, text: "Weighting and entropy balancing report the weight distribution, the effective sample size, and the covariates and moments balanced, and balance is claimed only for those", adjudication: paper}
+  - {id: SO11, text: "A doubly robust, matching-plus-regression, or double machine learning estimate is described as protecting against a misspecified model, not against unobserved confounding, and its covariate set contains no post-treatment variables", adjudication: paper}
+  - {id: SO12, text: "The headline result has a sensitivity analysis for unobserved confounding that fits the design, with its inputs and assumptions stated (for Oster's delta, the assumed maximum R-squared and the proportional-selection assumption; for Rosenbaum bounds, a matched design and a rank or binary test), benchmarked against observed covariates where the method allows", adjudication: paper}
+  - {id: SO13, text: "Each covariate in the propensity score, matching, or weighting model is measured before treatment or argued not to be a mediator or collider, and the covariate set has a stated causal rationale", adjudication: paper}
+  - {id: SO14, text: "The sample is not restricted on a variable the treatment could affect or on a later outcome (survival, continued coverage, non-missing later outcomes), and the data source's coverage of the population the theory concerns is addressed", adjudication: paper}
+  - {id: SO15, text: "The paper presents matching, weighting, and selection corrections as resting on an assumption (that the observed covariates capture selection, or that the excluded variable is valid) and argues for that assumption, instead of presenting the method as solving endogeneity", adjudication: judgment}

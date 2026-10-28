@@ -1,0 +1,187 @@
+[
+ {
+  "id": "p1-flow",
+  "kind": "flow",
+  "page": "3",
+  "locator": "Figure 1: Full-text articles assessed for eligibility (n = 164)",
+  "identified": "1,480",
+  "duplicates_removed": "276",
+  "screened": "1,204",
+  "excluded_screening": "1,050",
+  "assessed_full_text": "164",
+  "excluded_full_text": {
+   "no usable effect size": "60",
+   "not an employee, unit, or firm sample": "43"
+  },
+  "included": "61",
+  "included_unit": "samples",
+  "k_analyzed": "61",
+  "k_unit": "samples"
+ },
+ {
+  "id": "p2-overall-dependence",
+  "kind": "dependence_bound",
+  "page": "4",
+  "locator": "Method, analysis: pooled the 180 independent effect sizes",
+  "mean": ".10",
+  "ci": [
+   ".07",
+   ".13"
+  ],
+  "n_es": 180,
+  "n_samples": 61,
+  "scale": "fisher_z"
+ },
+ {
+  "id": "p2b-small-firm-dependence",
+  "kind": "dependence_bound",
+  "page": "6",
+  "locator": "Results, small firms: Pooling the 40 effect sizes from 12 small-firm samples",
+  "mean": ".05",
+  "ci": [
+   ".01",
+   ".09"
+  ],
+  "n_es": 40,
+  "n_samples": 12,
+  "scale": "fisher_z"
+ },
+ {
+  "id": "p3-overall-pi",
+  "kind": "prediction_interval",
+  "page": "1",
+  "locator": "Abstract: consistently positive across settings",
+  "mean": ".10",
+  "ci": [
+   ".07",
+   ".13"
+  ],
+  "tau": ".12",
+  "k": 61,
+  "k_unit": "samples",
+  "scale": "fisher_z"
+ },
+ {
+  "id": "p4-subgroup-i2",
+  "kind": "i2",
+  "page": "6",
+  "locator": "Table 3: Public sector",
+  "q": "40.0",
+  "df": 9,
+  "q_based": true,
+  "printed_i2": "85.0"
+ },
+ {
+  "id": "p5b-t-to-r",
+  "kind": "convert",
+  "page": "10",
+  "locator": "Appendix C: a bivariate t = 2.50 in a sample of N = 100 converts to r = .243",
+  "from": "t",
+  "to": "r",
+  "value": "2.50",
+  "df": 98,
+  "printed": ".243"
+ },
+ {
+  "id": "p6-shared-samples",
+  "kind": "study_table",
+  "page": "5",
+  "locator": "Table 1: Halloran and Mbeki (2015)",
+  "n": [
+   "2,412",
+   "2,412",
+   "2,412",
+   "388"
+  ],
+  "labels": [
+   "Halloran and Mbeki (2015)",
+   "Iversen and Quaye (2016)",
+   "Kowalczyk (2017)",
+   "Jaramillo and Sethi (2012)"
+  ],
+  "years": [
+   "2009-2014",
+   "2009-2014",
+   "2009-2014",
+   "2011"
+  ],
+  "sources": [
+   "National Workplace Panel",
+   "National Workplace Panel",
+   "National Workplace Panel",
+   "Own survey"
+  ]
+ },
+ {
+  "id": "p7-corrected-rho",
+  "kind": "attenuation",
+  "page": "4",
+  "locator": "Method, corrections: a typical value",
+  "r_obs": ".10",
+  "rxx": ".70",
+  "ryy": "1.00",
+  "printed_rho": ".12"
+ },
+ {
+  "id": "p8-masem-n",
+  "kind": "cell_n",
+  "page": "8",
+  "locator": "Results, MASEM: the average cell sample size",
+  "cell_ns": [
+   900,
+   1500,
+   2400,
+   3000,
+   4200,
+   6000,
+   9000,
+   12000,
+   36000,
+   45000
+  ],
+  "cell_ks": [
+   3,
+   5,
+   8,
+   11,
+   14,
+   19,
+   25,
+   33,
+   41,
+   60
+  ],
+  "used_n": "12,000"
+ },
+ {
+  "id": "d1-d-to-r",
+  "kind": "convert",
+  "page": "10",
+  "locator": "Appendix B: report d = .50 for 30 recognized stores and 70 comparison stores",
+  "from": "d",
+  "to": "r",
+  "value": ".50",
+  "n1": 30,
+  "n2": 70,
+  "printed": ".223"
+ },
+ {
+  "id": "d4-manufacturing-pi",
+  "kind": "prediction_interval",
+  "page": "6",
+  "locator": "Results, manufacturing: positive across the manufacturing settings studied",
+  "mean": ".20",
+  "ci": [
+   ".16",
+   ".24"
+  ],
+  "tau": ".04",
+  "k": 12,
+  "k_unit": "samples",
+  "scale": "fisher_z",
+  "printed_pi": [
+   ".10",
+   ".29"
+  ]
+ }
+]

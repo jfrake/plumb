@@ -1,0 +1,10 @@
+{
+  "as_of": "2026-09-28",
+  "source": "Ranges set by hand before any run was measured. Once five or more runs have usage logs, replace each range with the measured median.",
+  "per_pack": {"1": [2, 5], "3": [2, 5], "4": [5, 10]},
+  "minutes": {
+    "quick": {"0": [3, 5], "1": [10, 15], "2": [5, 10], "7": [5, 10]},
+    "standard": {"0": [5, 10], "1": [10, 20], "2": [10, 15], "3": [10, 15], "4": [15, 25], "5": [10, 20], "6": [15, 25], "7": [10, 15]},
+    "deep": {"0": [5, 10], "1": [15, 25], "2": [25, 40], "3": [20, 30], "4": [25, 40], "5": [15, 30], "6": [25, 40], "7": [10, 20]}
+  }
+}

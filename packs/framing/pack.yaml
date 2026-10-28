@@ -1,0 +1,27 @@
+name: framing
+overlay: true
+# Every research article frames its contribution, so these cues are found in almost every paper. The pack is an
+# overlay so a run can switch it off: the with-and-without test compares runs that differ only in this choice.
+detection_cues:
+  - "an introduction that justifies the study: a gap in prior work, a puzzle, a debate, a theory extended to a new setting, or a correction to a theory"
+  - "little is known, we know little about, has not been examined, remains unclear, few studies have, has received little attention, we still do not understand how"
+  - "we contribute to, this paper extends, we advance, our findings challenge, we reconcile, contrary to the view that"
+slots:
+  context: [framing-record.md]
+  theory: [framing-diagnosis.md]
+turns_off: []
+# Overlay findings are capped at 'Weakens a claim'. These rules set levels below the cap.
+severity_rules:
+  - "F2. An introduction that plays no root, so its contribution rests on a weak frame alone, is 'Weakens a claim'."
+  - "F2. A root the introduction only gestures at is 'Minor', unless published introductions in the target journal carry their root at least 40% of the time (`data/norms.yaml`); then it is 'Weakens a claim'."
+  - "F7. A paper whose findings support a different claim than its introduction makes (a different actor, level, or effect), or a different move, or the same move at a lower strength, is 'Weakens a claim'."
+  - "F3. A foil the field does not hold as the introduction states it, or a problem called unsolved without its main existing answers, is 'Weakens a claim' when the introduction's main justification rests on it, and 'Minor' otherwise."
+  - "F6. A root that is rare among published papers of the same design, journal, or home literature is at most 'Minor', and only when the paper's own evidence also fits another root better; rarity alone is not a finding."
+  - "F3, F4, F5. A missing foil, a voicing that outruns the evidence, or a promised reversal the findings don't deliver is 'Minor', unless F7 or the F3 rule above applies to it."
+core_notes:
+  contribution-auditor.md:
+    - text: "The framing pack runs with you. It owns how the introduction argues its contribution: which move it makes, whether it shows what is wrong with prior work or only says a topic is unstudied, how it portrays the literature, and whether the paper delivers the move it promises (`{WORKSPACE}/stage-2/framing_record.md`). Raise none of these. Keep whether prior work already makes the paper's claim. Which conversation the paper joins belongs to the editor reader."
+  developmental-advisor.md:
+    - text: "Read `{WORKSPACE}/stage-3/framing_diagnosis.md`. When you suggest reframing the paper's contribution, start from the chord it recommends, or say why you depart from it. Do not repeat its framing findings."
+  editor-reader.md:
+    - text: "The framing pack runs with you and owns how the introduction argues its contribution; its coded frame is in `{WORKSPACE}/stage-2/framing_record.md`. Skip every checklist item marked (framing): 1j (whether the framing fits the findings), 2d, and 5c. In question 2, raise only what a search shows: whether the field holds the view the paper argues against, and whether the sources it cites say what it claims. In the Checks section, answer each skipped id as \"skipped, pack note: framing pack.\""

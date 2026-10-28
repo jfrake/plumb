@@ -1,0 +1,19 @@
+id: smj
+name: Strategic Management Journal
+upload: banned
+drafting: banned
+requires_zero_retention: true
+sources:
+  - quote: "editors and peer reviewers are not permitted to upload manuscripts (or any parts of manuscripts including figures and tables) into AI Technology"
+    url: https://authors.wiley.com/ethics-guidelines/index.html
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+  - quote: "Responsibility for the accuracy, integrity, and overall content of a peer review report rests entirely with the individual reviewer and must not be delegated to AI Technology."
+    url: https://authors.wiley.com/ethics-guidelines/index.html
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+norms:
+  comments_min: 6
+  comments_max: 8
+  manuscript_refs_max: 12
+  notes: []

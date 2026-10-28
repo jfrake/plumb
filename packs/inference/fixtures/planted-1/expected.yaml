@@ -1,0 +1,35 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+journal: smj
+script_checked: true
+must_catch:
+  - {check: I4, page: 7, locator: "Results, H1: Clustering standard errors by province, the level at which nine of the 24 provinces adopted the reform, gives a similar estimate", note: "P1: firm clustering under a province treatment with 9 treated provinces; one I4 issue citing I1 (merge rule); the paper's own province-clustered estimate, 0.046 (0.031), gives p 0.127 to 0.149, above the 5 percent level H1 relies on; an I1 label also counts", severity: "Undermines the main claim"}
+  - {check: I4, page: 13, locator: "Extensions, pilot program: By a cluster-robust t test the estimate is significant at the 1 percent level", note: "P2: one treated province with cluster-robust t tests only, on a main result", severity: "Undermines the main claim"}
+  - {check: I3, page: 9, locator: "Results, H2: we cluster standard errors by industry in this table", note: "P3: 12 industry clusters, no count in the table, no small-sample method", severity: "Weakens a claim"}
+  - {check: I5, page: 11, locator: "Robustness, Table 5: Column 2: Robust standard errors in parentheses.", note: "P4: ten-year firm panel with robust errors only", severity: "Weakens a claim"}
+  - {check: I7, page: 8, locator: "Table 2: Firm clusters 38,650", note: "P5: 38,650 clusters against 38,400 firms described; N falls from 412,000 to 409,650 with no word on singletons", severity: "Weakens a claim"}
+  - {check: I10, page: 6, locator: "Methods, efficiency score: We estimate a stochastic production frontier in a first stage", note: "P6: first-stage frontier score as a regressor with no correction; the expected finding concerns the interval and the Reform coefficient in Table 4 (the naive t on the generated regressor has correct size under its null); Minor is also acceptable", severity: "Weakens a claim"}
+  - {check: I11, page: 9, locator: "Results, H3: significant at the 5 percent level (b = 0.046, SE = 0.021, p = .03). H3 is supported.", note: "P7: eight outcomes, one at p .03, no family or adjustment; Holm leaves no survivor on the printed p-values", severity: "Weakens a claim"}
+  - {check: I13, page: 9, locator: "Table 3: Industry exposure × reform", note: "P8: 0.084 (0.047) marked ** gives p 0.069 to 0.079; caught by the core star check, which the claims agent cites", severity: "Minor", record: p8-mark}
+  - {check: I13, page: 10, locator: "Results, H4: H4 is marginally significant and supported at the 10 percent level (b = 0.061, SE = 0.052).", note: "P9: 0.061 (0.052) gives p 0.232 to 0.249 two-sided and 0.116 to 0.125 one-tailed; 'supported at the 10 percent level' and 'marginally significant'", severity: "Weakens a claim", record: p9-h4}
+  - {check: I12, page: 7, locator: "Results, H1: The estimate is robust across specifications.", note: "P10: threshold crossed only after added controls; alternatives 'not reported'", severity: "Weakens a claim"}
+  - {check: I15, page: 16, locator: "Discussion: raises ROA by 2 percent of its mean, a large effect", note: "P11: the numbers give 0.2 percent of mean ROA, not 2 percent; called large on t = 8", severity: "Weakens a claim", record: p11-size}
+  - {check: I16, page: 10, locator: "Results, H5: Firm size does not moderate the reform", note: "P12: interval -0.023 to 0.047 covers the main effect 0.046; the lower bound -0.023 is half the main effect, in H5's direction; read as no moderation", severity: "Weakens a claim"}
+  - {check: I14, page: 7, locator: "Results: With the full set of controls, the coefficient is 0.046 (SE = 0.020), significant at the 5 percent level.", note: "P13: asterisks and cut-off significance as the test of each hypothesis in a paper prepared for SMJ", severity: "Minor"}
+must_not_flag:
+  - {check: I1, page: 12, locator: "Results, H6: The change occurs at the firm, and different firms experience it in different years", note: "D1: firm-level treatment clustered by firm"}
+  - {check: I13, page: 13, locator: "Table 8: Standard errors are clustered by firm, the level at which audit-committee changes occur.", note: "D2: 0.048 (0.025) marked ** is right once rounding is allowed (p 0.0477 to 0.0625)", record: d2-mark}
+  - {check: I3, page: 14, locator: "Robustness, regional analysis: Regional credit growth is a continuous variable that varies across all 11 regions", note: "D3: 11 regions, wild cluster bootstrap fully described, continuous regressor with no treated count"}
+  - {check: I11, page: 12, locator: "Results, H7: We treat these four outcomes as one family, the family of tests for H7", note: "D4: family named, Romano-Wolf adjusted p-values beside the unadjusted ones"}
+  - {check: I16, page: 13, locator: "Results, H8: we can rule out effects larger than 0.010 in either direction", note: "D5: null read with an interval that excludes effects larger than 0.010"}
+also_fair:
+  - {check: I3, page: 7, locator: "Results, H1: Clustering standard errors by province", note: "24 provinces once re-clustered at the treatment level, with no small-sample method"}
+  - {check: I1, page: 7, locator: "Results, H1: nine of the 24 provinces adopted the reform", note: "I1 label for P1; same issue"}
+  - {check: I13, page: 11, locator: "Table 6: Standard errors are clustered by province.", note: "P2's *** holds under the normal but gives p 0.012 to 0.023 under Student t with 23 degrees of freedom; a note, not a flag"}
+  - {check: I8, page: 4, locator: "Data section: Neighboring provinces share product and labor markets", note: "neighboring provinces share markets; a judgment"}
+  - {check: I15, page: 9, locator: "Results: The interaction is positive and significant at the 5 percent level in both columns", note: "no effect size for H2 to H4, and H1's size (1.2 percent of the mean, p. 7) has no interval; one finding listing every estimate"}
+  - {check: I1, page: 12, locator: "Table 7: Standard errors in parentheses. Standard errors are clustered by firm.", note: "P1's firm clustering under the province treatment also sits under H3 (Table 7), H5 (Table 5 col 1), Table 5 col 2 (robust, unclustered) and the event study (Figure 1, Table A1); for H3, Table 6 prints the province-clustered Reform on log patents at 0.044 (0.032), p 0.158 to 0.181; hypothesis role, capped at Weakens; one I1/I4 issue listing them, or folded into P1, both count"}
+  - {check: I1, page: 9, locator: "Results, H2: we cluster standard errors by industry in this table", note: "the interaction varies by province and industry; industry clusters do not contain provinces, so within-province correlation across industries is left out; asking for two-way province and industry clustering (24 and 12) is fair; may be merged with P3"}

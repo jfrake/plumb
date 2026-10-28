@@ -1,0 +1,561 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage[section]{placeins}
+\usepackage[round,authoryear]{natbib}
+\usepackage[hidelinks]{hyperref}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+{\Large Brokerage and Exploratory Innovation in Alliance Networks:\\ Evidence from Medical-Device Firms\par}
+\vspace{1em}
+{\large \textbf{SYNTHETIC TEST PAPER, NOT REAL RESEARCH}\par}
+\vspace{1.5em}
+Maren Ostvold\\
+School of Management, University of Tessaly, Arvenia\\[0.8em]
+Idris Calloway-Venn\\
+Arvenian Institute of Business Studies\\[1.5em]
+\end{center}
+
+\begin{abstract}
+\noindent Firms that bridge otherwise disconnected alliance partners are thought to gain access to diverse knowledge, yet evidence on whether brokerage shifts the direction of innovation toward exploration is mixed. We study 412 medical-device firms in Arvenia over ten years (2011--2020), using alliance records from the Meridian Alliance Register, patent filings, and board data. Firms with lower network constraint, that is, firms in brokerage positions in the industry's alliance network, file more exploratory patents: a one standard deviation decrease in constraint is associated with about 12 percent more exploratory patents. Common third parties raise the chance that two firms form an alliance, and firms adopt a design-assurance practice after their alliance partners adopt it. A descriptive analysis of board interlocks shows that the industry's directors form a small world. The results suggest that the structure of a firm's alliance portfolio shapes not only how much it innovates but where it searches.
+
+\vspace{0.8em}
+\noindent\textbf{Keywords:} alliance networks; structural holes; exploratory innovation; network formation; diffusion; medical devices
+\end{abstract}
+\end{titlepage}
+\setcounter{page}{2}
+
+\doublespacing
+
+\section{Introduction}
+
+Alliances give firms access to knowledge they do not hold themselves. A large literature asks whether the structure of a firm's alliance portfolio, and not only its size, matters for what the firm learns and invents \citep{ahuja2000,stuart2000,phelps2010}. One line of argument, drawn from the theory of structural holes, holds that firms whose partners are not connected to one another receive more diverse and less redundant information, and so are better placed to recombine distant knowledge \citep{burt1992,burt2004}. Another holds that dense, closed portfolios build the trust needed to transfer complex knowledge. The two arguments predict different effects of the same position, and the empirical record has not settled between them.
+
+This paper asks a narrower question. We ask whether brokerage in the alliance network changes the direction of a firm's innovation, toward exploration of technologies new to the firm, rather than its volume. The distinction matters for managers. A firm that wants to enter a new technical field may build its alliance portfolio differently from a firm that wants to deepen an existing one. If brokerage shifts search toward new fields, the choice of partners is also a choice of technological direction.
+
+We study the medical-device industry in Arvenia, a setting with three useful features. First, alliances are common and are recorded in a single public source, the Meridian Alliance Register, which the Arvenian Medical Technology Authority has maintained since 2006. Second, device firms patent heavily, and patent classes allow us to separate filings in technology classes that are new to the firm from filings in classes the firm already knows. Third, the industry is small enough that we can observe nearly every firm in it: our sample covers 412 firms observed each year from 2011 to 2020.
+
+We make three contributions. First, we show that lower constraint, our measure of brokerage, is associated with more exploratory patents within firms over time, net of firm and year fixed effects. Second, we show that alliance formation in the industry follows common third parties: two firms that share partners are more likely to ally. This result speaks to the origins of the structure that H1 treats as given \citep{zaheersoda2009,rosenkopfpadula2008}. Third, we show that a management practice, the Arvenian Design Assurance Protocol, spreads through alliance ties: firms adopt it after their partners do. Together, the results describe an industry in which network position is built through partners of partners and in which both knowledge and practices move along the resulting ties.
+
+We also describe the board interlock network among the same firms. Boards are a second channel through which information can travel between firms \citep{mizruchi1996}, and we show that the directors of Arvenian device firms form a small world. We treat this analysis as descriptive and do not test a hypothesis on it.
+
+The paper proceeds as follows. Section 2 develops the hypotheses. Section 3 describes the data and measures. Section 4 describes the board interlock network and reports the tests of H1. Section 5 reports the tests of H2 on alliance formation and a related analysis of alliance persistence. Section 6 reports the test of H3 on practice adoption, and Section 7 concludes.
+
+\section{Theory and Hypotheses}
+
+\subsection{Brokerage and the direction of search}
+
+A firm's alliance partners are sources of technical knowledge, market information, and referrals. When a firm's partners are themselves connected, what one partner knows is likely to be known by the others, and the information the firm receives is redundant. When the partners are not connected, the firm spans a structural hole: it receives information from sources that do not talk to one another, and it can combine that information before others do \citep{burt1992}. \citet{burt2004} shows that people who span structural holes in an organization are more likely to have their ideas judged good. At the level of firms, \citet{ahuja2000} studies how direct ties, indirect ties, and structural holes relate to later patenting.
+
+Most of this work concerns the volume of innovation. We argue that brokerage should matter even more for its direction. Exploratory innovation, which we define as patenting in technology classes in which the firm has not patented before, requires knowledge the firm does not already hold. Partners who are not connected to one another are more likely to work in different technical fields, and so more likely to expose the firm to fields it has not entered. A firm embedded in a closed cluster of partners, by contrast, hears repeatedly about the same fields, and its search is likely to stay local. \citet{phelps2010} makes a related argument about the diversity of partners' technologies.
+
+The mechanism we have in mind operates through the whole alliance network of the industry. A broker in the industry's network is a firm that links clusters of firms that would otherwise be distant from one another. Its position gives it early access to technical developments in several clusters. We therefore state the first hypothesis in terms of the firm's position in the industry's alliance network.
+
+\begin{quote}
+\textbf{Hypothesis 1 (H1).} The lower a firm's constraint in the industry's alliance network, the more exploratory patents it files.
+\end{quote}
+
+\subsection{Common third parties and alliance formation}
+
+If brokerage is valuable, one might expect firms to seek it out, and the network to fill in over time as firms connect to their partners' partners. Research on network evolution suggests that new ties often form between firms that share partners, because common partners supply information about a prospective partner's reliability and capabilities, and because they create occasions to meet \citep{rosenkopfpadula2008,gulati2012}. A shared partner also reduces the risk of opportunism: a firm that behaves badly toward one partner risks its standing with the common partner. This logic predicts closure: the more partners two firms share, the more likely they are to ally directly.
+
+\begin{quote}
+\textbf{Hypothesis 2 (H2).} The more common alliance partners two firms have, the more likely they are to form an alliance with each other.
+\end{quote}
+
+H2 matters for the interpretation of H1. If new ties close the holes that brokers span, then brokerage positions erode over time, and the benefits of brokerage are temporary unless the broker renews its portfolio. We return to this point in the discussion.
+
+\subsection{Practice adoption through alliance partners}
+
+Alliances carry more than technical knowledge. Partners working together on a device observe each other's development processes, quality systems, and regulatory routines. When one partner adopts a new practice, the other sees how it works in operation and can judge whether it would suit its own organization. Alliance ties should therefore carry management practices as well as technologies.
+
+We study one such practice, the Arvenian Design Assurance Protocol (DAP), a voluntary set of design-control routines introduced by the Arvenian Medical Technology Authority in 2010. Adoption of the protocol is costly: it requires changes to documentation, testing, and sign-off procedures, and its benefits are hard to judge from outside. We expect firms to learn about the protocol from partners who have adopted it and to adopt it themselves afterwards.
+
+\begin{quote}
+\textbf{Hypothesis 3 (H3).} A firm is more likely to adopt the Design Assurance Protocol after its alliance partners have adopted it.
+\end{quote}
+
+\section{Data and Methods}
+
+\subsection{Sample and data sources}
+
+Our sample consists of the 412 medical-device firms that appear in the Kestrel Firm Financials database with a primary industry code for medical devices and with financial records in every year from 2011 to 2020. The sample is therefore a balanced panel of 4,120 firm-years. Kestrel covers all Arvenian companies that file annual accounts with the national companies office, which includes both listed and private companies above a small-firm reporting threshold.
+
+Alliance data come from the Meridian Alliance Register. Since 2006 the Arvenian Medical Technology Authority has required firms that hold device licenses to notify it of research, development, manufacturing, and licensing agreements with other organizations, and the Register publishes these notifications. Each record lists the notifying firm, the names of the partner organizations, the date of the announcement, the type of agreement, and, where the parties have notified the Authority that the agreement ended, an end date. The Register covers listed firms well but records alliances involving private partners less completely, since private firms notify less consistently. Between 2006 and 2020 the Register lists 3,960 alliances in which at least one of our sample firms is a party.
+
+The Register does not carry company registration numbers. Partners named in the Register were therefore matched by firm name to the Kestrel records, after standardizing names by removing legal-form suffixes and punctuation. A Register partner that matches one of our 412 firms is treated as a sample firm. Of the 3,960 alliances, 1,450 are between two sample firms.
+
+Patent data come from the Arvenian Patent Office. Each application records the applicant's company registration number, which Kestrel also carries, so patents are linked to firms by that number without name matching. We assign each application to the year in which it was filed and use the office's technology classes at the four-digit level.
+
+Board data come from the Arvenian Companies Registry, which publishes the directors of every registered company each year. The Registry identifies each director by a personal identification number that is unique to the person, so a director who sits on two boards is recognized as the same person without name matching. Data on adoption of the Design Assurance Protocol come from the Authority's public list of certified adopters, which records the year each firm was certified.
+
+\subsection{Alliance network construction}
+
+We build the alliance network from alliances among sample firms. A tie joins two of the 412 firms in a year if an alliance between them is active in that year. The Register records an announcement date for every alliance but an end date for only 38 percent of them (551 of the 1,450 alliances among sample firms). Following common practice in alliance research, we assume that alliances remain active for five years from the announcement, and we apply this rule to every alliance. Two firms with more than one active alliance share a single tie, so the network is a simple undirected graph.
+
+Firms choose partners that resemble them. Allied pairs have a mean technological similarity of 0.42, measured as the cosine similarity of their patent-class vectors, against 0.17 for pairs that never ally, and the difference in R\&D intensity between allied partners is less than half the difference between randomly drawn pairs of sample firms. Partners are thus chosen on similarity in technology and prior R\&D. We return to this pattern in the analysis of H2, where technological similarity is a control, and it is also visible in the ERGM in Appendix B.
+
+The pooled ten-year network, in which two firms are tied if they had an active alliance at any time between 2011 and 2020, contains 1,030 ties. Of these, 230 join pairs whose first alliance was announced between 2006 and 2010 and was still active in 2011; the remaining 800 join pairs that formed their first alliance between 2011 and 2020. These 800 first alliances are the new ties we study in the test of H2, which models the formation of a first alliance between two firms. Because some pairs ally more than once, the 1,450 alliances among sample firms map onto 1,030 distinct pairs.
+
+\subsection{Measures}
+
+\textit{Exploratory patents.} Following \citet{phelps2010}, a patent application is exploratory if it is filed in a four-digit technology class in which the firm had filed no application in the preceding five years. The dependent variable for H1 is the number of exploratory applications a firm files in year $t$. In the linear models we use the natural logarithm of one plus this count.
+
+\textit{Constraint.} We measure brokerage with Burt's \citeyearpar{burt1992} constraint. For firm $i$, constraint is $C_i = \sum_{j \neq i} \big(p_{ij} + \sum_{q \neq i,j} p_{iq} p_{qj}\big)^2$, where $p_{ij}$ is the share of $i$'s ties that go to $j$. Lower values indicate that a firm's partners are less connected to one another and to each other's partners, that is, more brokerage. For each firm and year we compute constraint on the network of alliances active in the five years ending in year $t$, so that the measure reflects the partners the firm could draw on when it filed its applications. Constraint is undefined for a firm with no active alliance. We exclude the 612 firm-years in which a firm had no active alliance; this restricts the H1 sample to firm-years with at least one alliance, 3,508 firm-years in all, and so conditions the H1 estimates on the firm having formed a tie.
+
+\textit{Effective size and degree.} As a secondary measure of brokerage we use Burt's effective size, the number of a firm's partners minus the average number of ties each partner has to the firm's other partners. Degree is the number of distinct sample-firm partners with which a firm has an active alliance in the same window.
+
+\textit{Common third parties.} For a pair of firms in year $t$, the number of sample firms with which both had an active alliance in year $t-1$.
+
+\textit{Protocol adoption.} An indicator equal to one in the year a firm is certified as a Design Assurance Protocol adopter. Firms leave the risk set after adoption. Partner adoption share is the share of a firm's active alliance partners in year $t-1$ that had adopted the protocol by the end of year $t-1$; firm-years with no active partner take the value zero, and an indicator for having no partner is included.
+
+\textit{Controls.} Firm size is the natural logarithm of employees. R\&D intensity is R\&D spending divided by sales. Firm age is the natural logarithm of years since incorporation.
+
+\subsection{Estimation}
+
+We test H1 with linear regressions of the logged count of exploratory patents on constraint and controls, with firm and year fixed effects, and standard errors clustered by firm. The firm fixed effects absorb stable differences in technological breadth, managerial quality, and alliance capability, so the estimates come from changes in a firm's constraint over time. As a check on functional form we also estimate Poisson models with firm and year fixed effects on the raw count. We test H2 with logit models of first-alliance formation at the level of the pair and year, described in Section 5, and H3 with linear probability models of adoption with firm and year fixed effects.
+
+\begin{table}[!htbp]
+\centering
+\begin{threeparttable}
+\caption{Descriptive statistics}
+\label{tab:desc}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+ & N & Mean & SD & Min & Max \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel A. Firm-years, 2011--2020}} \\
+Exploratory patents (count) & 4,120 & 1.84 & 3.92 & 0 & 41 \\
+Log(1 + exploratory patents) & 4,120 & 0.61 & 0.74 & 0 & 3.74 \\
+Constraint & 3,508 & 0.52 & 0.27 & 0.09 & 1.00 \\
+Effective size & 3,508 & 2.31 & 1.87 & 1.00 & 17.40 \\
+Degree (five-year window) & 4,120 & 2.84 & 2.95 & 0 & 21 \\
+Log employees & 4,120 & 5.12 & 1.63 & 1.10 & 10.20 \\
+R\&D intensity & 4,120 & 0.14 & 0.11 & 0.00 & 0.87 \\
+Log firm age & 4,120 & 2.87 & 0.71 & 0.00 & 4.48 \\
+Protocol adopter (cumulative) & 4,120 & 0.15 & 0.36 & 0 & 1 \\
+Partner adoption share & 4,120 & 0.12 & 0.23 & 0.00 & 1.00 \\
+\midrule
+\multicolumn{6}{l}{\textit{Panel B. Network descriptives, pooled 10-year network}} \\
+Firms (nodes) & \multicolumn{5}{r}{412} \\
+Undirected ties & \multicolumn{5}{r}{1,030} \\
+Density & \multicolumn{5}{r}{0.12} \\
+Mean degree & \multicolumn{5}{r}{5.00} \\
+Isolates & \multicolumn{5}{r}{37} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} Panel A: constraint and effective size are undefined for the 612 firm-years with no active alliance. Degree counts distinct sample-firm partners with an alliance active in the five years ending in the given year. Panel B: the pooled network ties two sample firms if they had an active alliance at any time between 2011 and 2020; a pair with several alliances shares one tie.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\begin{threeparttable}
+\caption{Correlations among the H1 variables}
+\label{tab:corr}
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+(1) Log(1 + exploratory patents) & 1.00 & & & & \\
+(2) Constraint & $-0.24$ & 1.00 & & & \\
+(3) Log employees & 0.38 & $-0.29$ & 1.00 & & \\
+(4) R\&D intensity & 0.27 & $-0.11$ & $-0.08$ & 1.00 & \\
+(5) Log firm age & 0.12 & $-0.06$ & 0.41 & $-0.19$ & 1.00 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} N = 3,508 firm-years with at least one active alliance.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\section{Board Interlocks and Brokerage in Alliances}
+
+\subsection{The board interlock network}
+
+Before turning to the hypotheses, we describe a second network among the same firms. In 2020 the 412 sample firms had 2,690 board seats, held by 2,318 distinct directors; 331 directors sat on two or more sample boards. From these director-by-firm memberships we build the firm-by-firm projection of board memberships, in which two firms are tied if they share at least one director. The projection contains 386 ties. Its largest component contains 214 firms, and we compute path lengths within that component, since path length is undefined between firms in different components.
+
+The interlock network is highly clustered. The clustering coefficient of the projection is 0.31, against 0.04 in random graphs with the same degree sequence (the mean over 1,000 draws). The mean path length within the largest component is 4.9, against 4.6 in the same random graphs. The small-world quotient, the ratio of relative clustering to relative path length, is therefore $(0.31/0.04)/(4.9/4.6) = 7.28$, well above one. By the usual reading of this quotient \citep{uzzispiro2005}, the directors of Arvenian device firms form a cohesive elite: dense local clusters of firms joined by short paths, through which information and norms can travel quickly across the industry. The small-world quotient of 7.28 is evidence of a cohesive board elite in which a few well-connected directors hold the industry together.
+
+We do not use the interlock network in the tests that follow. We report it because it shows that alliance ties are not the only channel between device firms, a point we return to in the discussion of H3.
+
+\subsection{Brokerage and exploratory patents}
+
+Table \ref{tab:h1} reports the tests of H1. Column 1 includes only the controls and the fixed effects. Column 2 adds constraint. The coefficient is negative and significant ($-0.412$, s.e. 0.118): within a firm, years of lower constraint are years of more exploratory patenting. A decrease in constraint of one standard deviation (0.27) corresponds to about 12 percent more exploratory patents. Column 3 estimates a Poisson model on the count and gives a similar result. H1 is supported. The evidence indicates that lower constraint leads to more exploratory patents: when a firm's partners are less connected to one another, the firm moves into technology classes it has not entered before.
+
+Among the controls, larger firms and firms with higher R\&D intensity file more exploratory patents, as one would expect; firm age has no detectable association once the fixed effects are included.
+
+\begin{table}[!htbp]
+\centering
+\begin{threeparttable}
+\caption{Constraint and exploratory patents (H1)}
+\label{tab:h1}
+\small
+\begin{tabular}{lccc}
+\toprule
+ & (1) & (2) & (3) \\
+ & OLS & OLS & Poisson \\
+\midrule
+Constraint & & $-0.412^{***}$ & $-0.537^{***}$ \\
+ & & (0.118) & (0.161) \\
+Log employees & $0.118^{***}$ & $0.097^{**}$ & $0.142^{***}$ \\
+ & (0.041) & (0.040) & (0.052) \\
+R\&D intensity & $0.642^{***}$ & $0.611^{***}$ & $0.803^{***}$ \\
+ & (0.203) & (0.201) & (0.254) \\
+Log firm age & $-0.057$ & $-0.049$ & $-0.066$ \\
+ & (0.072) & (0.071) & (0.089) \\
+\midrule
+Firm fixed effects & Yes & Yes & Yes \\
+Year fixed effects & Yes & Yes & Yes \\
+Observations & 3,508 & 3,508 & 3,210 \\
+Within R$^2$ & 0.031 & 0.044 & \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} The dependent variable is log(1 + exploratory patents) in columns 1 and 2 and the count of exploratory patents in column 3. Column 3 drops 298 firm-years of firms with no exploratory patent in any year. Standard errors clustered by firm in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsection{Effective size as a secondary measure}
+
+Constraint combines two features of a firm's portfolio: how many partners it has and how connected those partners are. As a secondary measure we use effective size, which counts non-redundant partners. Because effective size rises mechanically with the number of partners, we include degree in every column of Table \ref{tab:effsize}. The correlation between effective size and degree in our sample is 0.61. Column 1 includes degree alone; firms with more partners file more exploratory patents. Column 2 adds effective size. Its coefficient is positive and significant (0.034, s.e. 0.013), and the coefficient on degree falls to near zero: holding the number of partners fixed, firms whose partners are less redundant file more exploratory patents. Column 3 repeats column 2 in a Poisson model. The results indicate that the association between non-redundant partners and exploration does not simply reflect having more partners.
+
+\begin{table}[!htbp]
+\centering
+\begin{threeparttable}
+\caption{Effective size, degree, and exploratory patents}
+\label{tab:effsize}
+\small
+\begin{tabular}{lccc}
+\toprule
+ & (1) & (2) & (3) \\
+ & OLS & OLS & Poisson \\
+\midrule
+Effective size & & $0.034^{***}$ & $0.041^{**}$ \\
+ & & (0.013) & (0.017) \\
+Degree & $0.021^{**}$ & $0.006$ & $0.009$ \\
+ & (0.009) & (0.010) & (0.012) \\
+Log employees & $0.104^{**}$ & $0.101^{**}$ & $0.139^{***}$ \\
+ & (0.041) & (0.041) & (0.052) \\
+R\&D intensity & $0.622^{***}$ & $0.617^{***}$ & $0.795^{***}$ \\
+ & (0.202) & (0.202) & (0.255) \\
+Log firm age & $-0.052$ & $-0.050$ & $-0.063$ \\
+ & (0.072) & (0.072) & (0.089) \\
+\midrule
+Firm fixed effects & Yes & Yes & Yes \\
+Year fixed effects & Yes & Yes & Yes \\
+Observations & 3,508 & 3,508 & 3,210 \\
+Within R$^2$ & 0.034 & 0.039 & \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} The dependent variable is log(1 + exploratory patents) in columns 1 and 2 and the count of exploratory patents in column 3. Degree is included in every column; the correlation between effective size and degree is 0.61 (N = 3,508). Standard errors clustered by firm in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsection{Further checks on H1}
+
+We ran three further checks on the H1 result. First, we excluded the 20 largest firms by employees, which account for a disproportionate share of patents; the coefficient on constraint in the specification of column 2 of Table \ref{tab:h1} is $-0.398$ (s.e. 0.124). Second, we redefined an exploratory patent as one filed in a class in which the firm had never filed, rather than not in the past five years; the coefficient is $-0.371$ (s.e. 0.121). Third, we estimated a negative binomial model with firm and year effects on the count; the coefficient is $-0.509$ (s.e. 0.170). The result is stable across these checks.
+
+\section{Alliance Formation and Persistence}
+
+\subsection{Common third parties and first alliances (H2)}
+
+To test H2 we model the formation of a first alliance between two sample firms. The pairs at risk in year $t$ are all pairs of sample firms that had not allied before year $t$; since any two licensed device firms in Arvenia may notify an agreement with each other, we do not restrict the risk set further. Each observation is a focal firm and a potential partner in a year, with the focal firm being the firm that notified the agreement to the Register for pairs that allied. Because first alliances are rare, we use all 800 first alliances formed between 2011 and 2020 and a random sample of 200,000 pair-years in which no first alliance formed. The estimation sample therefore has 200,800 observations. We estimate logit models of first-alliance formation on the number of common third parties in year $t-1$, with the degree of both the focal firm and the potential partner, their technological similarity, an indicator for whether they are headquartered in the same region, and year fixed effects.
+
+Table \ref{tab:h2} reports the results. The coefficient on common third parties is positive and significant (0.46, s.e. 0.07). The size of this association is large. Using the estimates in column 2 with the other variables at their means, a pair of firms with three common third parties has a 1.4 percent chance of forming an alliance in a given year, against a 0.35 percent chance for a pair with none. Each additional common partner thus multiplies the odds of an alliance by about 1.6. H2 is supported. The degree of both firms and their technological similarity are also positively associated with alliance formation, as expected.
+
+\begin{table}[!htbp]
+\centering
+\begin{threeparttable}
+\caption{Common third parties and first-alliance formation (H2)}
+\label{tab:h2}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) & (2) \\
+\midrule
+Common third parties ($t-1$) & & $0.46^{***}$ \\
+ & & (0.07) \\
+Degree, focal firm ($t-1$) & $0.112^{***}$ & $0.081^{***}$ \\
+ & (0.021) & (0.022) \\
+Degree, potential partner ($t-1$) & $0.097^{***}$ & $0.069^{***}$ \\
+ & (0.019) & (0.020) \\
+Technological similarity & $2.31^{***}$ & $2.18^{***}$ \\
+ & (0.34) & (0.34) \\
+Same region & $0.38^{***}$ & $0.36^{***}$ \\
+ & (0.09) & (0.09) \\
+\midrule
+Year fixed effects & Yes & Yes \\
+Observations & 200,800 & 200,800 \\
+Pseudo R$^2$ & 0.09 & 0.11 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} Logit models. Observations are pair-years: all 800 first alliances between sample firms formed in 2011--2020 and 200,000 randomly sampled pair-years with no first alliance. Standard errors clustered by focal firm in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\subsection{Alliance persistence}
+
+H2 concerns the formation of new ties. A related question is whether common third parties also help existing relationships continue. We examine this separately, because the processes that sustain a tie need not be the processes that create one. For this analysis we use the alliances for which the Register records an end date. Of the 551 such alliances, 486 ended between 2011 and 2017, which leaves at least three years in which to observe whether the pair allied again. The outcome is an indicator for whether the two firms announced another alliance within three years of the recorded end.
+
+Table \ref{tab:persist} reports logit models. Pairs with more common third parties at the time the alliance ended are more likely to ally again (0.29, s.e. 0.10), as are pairs whose alliance lasted longer and pairs with more similar technology. Because each firm can appear in several ended alliances, as the notifying firm in some and as the partner in others, the errors of pairs that share a firm may be correlated. We therefore report dyadic-robust standard errors \citep{aronow2015}, which allow correlation among all pairs that share a firm in either position.
+
+\begin{table}[!htbp]
+\centering
+\begin{threeparttable}
+\caption{Common third parties and repeat alliances after an alliance ends}
+\label{tab:persist}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) & (2) \\
+\midrule
+Common third parties at end & & $0.29^{***}$ \\
+ & & (0.10) \\
+Alliance duration (years) & $0.16^{***}$ & $0.14^{***}$ \\
+ & (0.05) & (0.05) \\
+Technological similarity & $1.24^{**}$ & $1.12^{**}$ \\
+ & (0.49) & (0.48) \\
+Degree, focal firm & $0.071^{**}$ & $0.052$ \\
+ & (0.033) & (0.034) \\
+Degree, partner & $0.064^{*}$ & $0.047$ \\
+ & (0.035) & (0.036) \\
+\midrule
+Year-of-end fixed effects & Yes & Yes \\
+Observations & 486 & 486 \\
+Pseudo R$^2$ & 0.07 & 0.09 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} Logit models. Observations are the 486 alliances between sample firms with a recorded end date in 2011--2017. The dependent variable equals one if the pair announced another alliance within three years of the end date. Standard errors in parentheses are dyadic-robust \citep{aronow2015}: they allow correlation among all pairs that share a firm, whichever position the firm holds in the pair. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\section{Practice Adoption Through Alliance Partners (H3)}
+
+We test H3 with linear probability models of adoption of the Design Assurance Protocol. The sample is the firm-years in which a firm had not yet adopted, from 2012 to 2020, and the dependent variable equals one in the year the firm adopts. By 2020, 164 of the 412 firms had adopted, and the risk set contains 3,236 firm-years, so the mean annual adoption rate in the sample is 5.1 percent. The main variable is the share of the firm's active partners that had adopted by the end of the previous year. All models include firm and year fixed effects, and standard errors are clustered by firm.
+
+Table \ref{tab:h3} reports the results. The coefficient on partner adoption share is positive and significant (0.071, s.e. 0.019). A firm all of whose partners had adopted is 7.1 percentage points more likely to adopt in the following year than a firm none of whose partners had adopted, more than doubling the base rate. The firm fixed effects rule out stable differences between firms in their propensity to adopt, and the one-year lag ensures that partners' adoption precedes the firm's own. We conclude that partner adoption caused focal adoption: firms adopted the protocol because their partners had adopted it, and the protocol spread through the alliance network. H3 is supported.
+
+This finding suggests that alliance ties carry management practices as well as technical knowledge. It also suggests that a firm's choice of partners shapes not only its technology but its organization, since a firm that allies with adopters will itself adopt.
+
+\begin{table}[!htbp]
+\centering
+\begin{threeparttable}
+\caption{Partner adoption and adoption of the Design Assurance Protocol (H3)}
+\label{tab:h3}
+\small
+\begin{tabular}{lcc}
+\toprule
+ & (1) & (2) \\
+\midrule
+Partner adoption share ($t-1$) & & $0.071^{***}$ \\
+ & & (0.019) \\
+No active partner ($t-1$) & $-0.006$ & $0.002$ \\
+ & (0.009) & (0.009) \\
+Number of partners ($t-1$) & $0.004$ & $0.002$ \\
+ & (0.003) & (0.003) \\
+Log employees & $0.012^{**}$ & $0.011^{*}$ \\
+ & (0.006) & (0.006) \\
+R\&D intensity & $0.043$ & $0.039$ \\
+ & (0.031) & (0.031) \\
+Log firm age & $0.008$ & $0.008$ \\
+ & (0.011) & (0.011) \\
+\midrule
+Firm fixed effects & Yes & Yes \\
+Year fixed effects & Yes & Yes \\
+Observations & 3,236 & 3,236 \\
+Within R$^2$ & 0.012 & 0.019 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} Linear probability models. Observations are firm-years before adoption, 2012--2020. The dependent variable equals one in the year the firm is certified as an adopter. Standard errors clustered by firm in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\section{Discussion and Conclusion}
+
+We asked whether brokerage in an alliance network shifts the direction of a firm's innovation toward exploration. In a ten-year panel of Arvenian medical-device firms, the answer is yes. Firms file more exploratory patents in years when their constraint is lower, and the association holds with firm and year fixed effects, in count models, and under an alternative definition of exploration. The secondary measure, effective size, gives the same answer once the number of partners is held fixed.
+
+The results on alliance formation complicate the picture. Common third parties raise the chance that two firms ally, which means that the industry's network tends to close the very holes that brokers span. A broker whose partners come to know one another loses its advantage. The analysis of repeat alliances points the same way: common third parties help pairs whose alliance has ended to ally again. Brokerage positions are therefore likely to be temporary, and a firm that wants to keep exploring must keep adding partners from outside its current cluster. This dynamic may explain why the literature has found both brokerage and closure to be valuable: they may be stages in the life of a firm's portfolio rather than fixed alternatives \citep{zaheersoda2009,gulati2012}.
+
+The results on the Design Assurance Protocol show that alliance ties carry practices as well as knowledge. Partner adoption caused adoption by the focal firm in the following year, so a firm's partners shape its organization as well as its technology. For managers, this means that partner selection has consequences beyond the joint project. For policy makers, it suggests that a practice seeded in a few well-connected firms will spread through the industry's alliance network without further intervention.
+
+The study has limitations. The Meridian Alliance Register relies on firms' notifications, and firms may notify some kinds of agreement more consistently than others. Our measure of exploration is based on patent classes and does not capture exploration that is not patented. The industry is small and the setting is one country, so the results may not carry over to larger industries with more fragmented alliance networks. Finally, although the board interlock network is not part of our tests, the small-world structure of the interlock network suggests that board ties may carry information alongside alliance ties, and future work could study the two networks together.
+
+Despite these limitations, the results show that where a firm sits in its industry's alliance network shapes where it searches. Brokerage opens new technical fields to the firm, and the partners a firm chooses bring practices along with their knowledge.
+
+\singlespacing
+\begin{thebibliography}{99}
+\small
+
+\bibitem[Ahuja(2000)]{ahuja2000}
+Ahuja, G. (2000). Collaboration networks, structural holes, and innovation: A longitudinal study. \textit{Administrative Science Quarterly}, 45(3), 425--455.
+
+\bibitem[Aronow et~al.(2015)]{aronow2015}
+Aronow, P. M., Samii, C., \& Assenova, V. A. (2015). Cluster-robust variance estimation for dyadic data. \textit{Political Analysis}, 23(4), 564--577.
+
+\bibitem[Burt(1992)]{burt1992}
+Burt, R. S. (1992). \textit{Structural Holes: The Social Structure of Competition}. Cambridge, MA: Harvard University Press.
+
+\bibitem[Burt(2004)]{burt2004}
+Burt, R. S. (2004). Structural holes and good ideas. \textit{American Journal of Sociology}, 110(2), 349--399.
+
+\bibitem[Gulati et~al.(2012)]{gulati2012}
+Gulati, R., Sytch, M., \& Tatarynowicz, A. (2012). The rise and fall of small worlds: Exploring the dynamics of social structure. \textit{Organization Science}, 23(2), 449--471.
+
+\bibitem[Lusher et~al.(2013)]{lusher2013}
+Lusher, D., Koskinen, J., \& Robins, G. (Eds.) (2013). \textit{Exponential Random Graph Models for Social Networks: Theory, Methods, and Applications}. Cambridge: Cambridge University Press.
+
+\bibitem[Mizruchi(1996)]{mizruchi1996}
+Mizruchi, M. S. (1996). What do interlocks do? An analysis, critique, and assessment of research on interlocking directorates. \textit{Annual Review of Sociology}, 22, 271--298.
+
+\bibitem[Phelps(2010)]{phelps2010}
+Phelps, C. C. (2010). A longitudinal study of the influence of alliance network structure and composition on firm exploratory innovation. \textit{Academy of Management Journal}, 53(4), 890--913.
+
+\bibitem[Rosenkopf and Padula(2008)]{rosenkopfpadula2008}
+Rosenkopf, L., \& Padula, G. (2008). Investigating the microstructure of network evolution: Alliance formation in the mobile communications industry. \textit{Organization Science}, 19(5), 669--687.
+
+\bibitem[Stuart(2000)]{stuart2000}
+Stuart, T. E. (2000). Interorganizational alliances and the performance of firms: A study of growth and innovation rates in a high-technology industry. \textit{Strategic Management Journal}, 21(8), 791--811.
+
+\bibitem[Uzzi and Spiro(2005)]{uzzispiro2005}
+Uzzi, B., \& Spiro, J. (2005). Collaboration and creativity: The small world problem. \textit{American Journal of Sociology}, 111(2), 447--504.
+
+\bibitem[Zaheer and Soda(2009)]{zaheersoda2009}
+Zaheer, A., \& Soda, G. (2009). Network evolution: The origins of structural holes. \textit{Administrative Science Quarterly}, 54(1), 1--31.
+
+\end{thebibliography}
+
+\clearpage
+\appendix
+\doublespacing
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+
+\subsection*{Appendix A. Variable definitions and sample construction}
+
+The sample begins with the 437 Kestrel firms with a primary medical-device industry code that filed accounts in at least one year between 2011 and 2020. We keep the 412 firms with financial records in every year of the period, which gives a balanced panel of 4,120 firm-years. The 25 firms dropped entered or exited the database during the period.
+
+Table \ref{tab:defs} lists the variables. All network measures other than those for the pooled network are computed on the network of alliances among sample firms active in the five years ending in the given year, as described in Section 3.2. Table \ref{tab:isolates} shows, by year, the number of firms with no active alliance, whose firm-years are excluded from the H1 sample.
+
+\begin{table}[h]
+\centering
+\begin{threeparttable}
+\caption{Variable definitions}
+\label{tab:defs}
+\small
+\singlespacing
+\begin{tabular}{p{4.2cm}p{10.6cm}}
+\toprule
+Variable & Definition \\
+\midrule
+Exploratory patents & Applications filed in year $t$ in a four-digit class in which the firm filed no application in years $t-5$ to $t-1$. Source: Arvenian Patent Office. \\
+Constraint & Burt's constraint on the network of alliances among sample firms active in the five years ending in year $t$. \\
+Effective size & Burt's effective size on the same network. \\
+Degree & Number of distinct sample-firm partners with an active alliance in the same window. \\
+Common third parties & Number of sample firms allied with both members of a pair in year $t-1$. \\
+Technological similarity & Cosine similarity of the two firms' patent-class vectors over the preceding five years. \\
+Same region & Both firms headquartered in the same one of Arvenia's nine regions. \\
+Protocol adoption & Year of certification as a Design Assurance Protocol adopter. Source: Arvenian Medical Technology Authority. \\
+Partner adoption share & Share of active partners certified as adopters by the end of year $t-1$. \\
+Log employees & Natural log of employees. Source: Kestrel. \\
+R\&D intensity & R\&D spending divided by sales. Source: Kestrel. \\
+Log firm age & Natural log of years since incorporation. Source: Kestrel. \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{threeparttable}
+\caption{Firms with no active alliance, by year}
+\label{tab:isolates}
+\small
+\singlespacing
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+Year & 2011 & 2012 & 2013 & 2014 & 2015 & 2016 & 2017 & 2018 & 2019 & 2020 \\
+\midrule
+Firms & 74 & 69 & 66 & 63 & 60 & 58 & 57 & 56 & 55 & 54 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} The ten years sum to 612 firm-years, which are excluded from the H1 sample.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\clearpage
+\subsection*{Appendix B. Exponential random graph model of the pooled network}
+
+As a robustness check on H2, we estimate an exponential random graph model (ERGM) on the pooled ten-year alliance network of 412 firms and 1,030 ties \citep{lusher2013}. The ERGM models the whole network at once and so represents the dependence among ties directly. The model includes an edges term; a geometrically weighted edgewise shared partner term (GWESP, decay 0.5), which captures the tendency of firms with common partners to be tied; a geometrically weighted degree term (GWD, decay 0.5); indicators for whether two firms share a primary technology class and whether they are in the same region; and the sum of the two firms' R\&D intensities.
+
+The model was estimated by Markov chain Monte Carlo maximum likelihood in the \texttt{ergm} package for R, and the model converged. Table \ref{tab:ergm} reports the estimates. The GWESP coefficient is positive and significant (1.08, s.e. 0.12), which indicates that ties are more likely between firms that share partners than the other terms would predict. This result is consistent with H2. Firms in the same technology class and the same region, and firms with higher R\&D intensity, are also more likely to be tied, in line with the pattern of partner similarity described in Section 3.2. The negative GWD coefficient indicates that ties are spread more evenly across firms than a model without it would imply.
+
+\begin{table}[h]
+\centering
+\begin{threeparttable}
+\caption{ERGM of the pooled 10-year alliance network}
+\label{tab:ergm}
+\small
+\singlespacing
+\begin{tabular}{lc}
+\toprule
+ & Estimate \\
+\midrule
+Edges & $-5.62^{***}$ \\
+ & (0.19) \\
+GWESP (decay 0.5) & $1.08^{***}$ \\
+ & (0.12) \\
+GWD (decay 0.5) & $-0.74^{***}$ \\
+ & (0.21) \\
+Same technology class & $0.63^{***}$ \\
+ & (0.09) \\
+Same region & $0.41^{***}$ \\
+ & (0.08) \\
+R\&D intensity (sum of the pair) & $0.91^{***}$ \\
+ & (0.28) \\
+\midrule
+Firms & 412 \\
+Ties & 1,030 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\footnotesize
+\item \textit{Notes.} Markov chain Monte Carlo maximum likelihood estimates. Standard errors in parentheses. $^{*}p<0.10$, $^{**}p<0.05$, $^{***}p<0.01$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\end{document}

@@ -1,0 +1,33 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+interview_counts: {methods_text: 41, table_1_rows: [12, 10, 9, 7]}
+must_not_raise:
+  - "more interviews or a larger sample as a flaw by itself"
+  - "an inter-rater reliability statistic"
+  - "statistical generalizability"
+  - "a missing ethics or IRB statement"
+  - "a positionality statement as a flaw by itself"
+must_catch:
+  - {check: Q6, page: 4, locator: "Method: we conducted 41 interviews with 29 informants", note: "P1: the Method says 41 interviews; Table 1 rows sum to 38", severity: "Minor"}
+  - {check: Q12, page: 11, locator: "Figure 3: A model of founder role remaking after acquisition", note: "P2: craft stewardship, the central mechanism, has no theme, code, or excerpt beneath it", severity: "Undermines the main claim"}
+  - {check: Q4, page: 7, locator: "Findings: Founders at all three breweries described", note: "P3: a claim about founders at all three breweries rests on the Alder founder alone", severity: "Weakens a claim"}
+  - {check: Q10, page: 11, locator: "Discussion: explain why these founders stayed", note: "P4: only founders who stayed; the practices said to explain staying", severity: "Weakens a claim"}
+  - {check: Q13, page: 3, locator: "Theory: We define founder re-crafting as the ongoing effort to form, repair, maintain, and revise", note: "P5: founder re-crafting matches identity work (for example Sveningsson and Alvesson 2003) and engages no identity construct", severity: "Weakens a claim"}
+  - {check: Q14, page: 10, locator: "Table 3: never let go of anything", note: "P6: a Cedar brewer contradicts letting go, and the same Cedar founder holds the new story role (p. 9), so the model relationship that releasing production is a condition for the new role (p. 11) is contradicted in one case of three; not discussed", severity: "Weakens a claim"}
+  - {check: Q11, page: 8, locator: "Findings: In the months before signing, the founders felt torn between relief and loss", note: "P7: pre-signing feelings and decision order rest on founders' recall five to seven years later", severity: "Weakens a claim"}
+  - {check: Q5, page: 10, locator: "Table 2: Additional excerpts for re-crafting the founder role", note: "P8: excerpts attributed only as informant", severity: "Minor"}
+must_not_flag:
+  - {check: Q2, page: 6, locator: "Method, analysis: Two authors coded the transcripts independently", note: "D1: consensus coding described; the absence of an agreement statistic is explained"}
+  - {check: Q15, page: 12, locator: "Discussion, scope: We offer these findings as analytic generalization", note: "D2: analytic generalization with stated conditions"}
+  - {check: Q1, page: 5, locator: "Table 1: Brewing shifts, tastings, and site meetings", note: "D3: 36 hours and 212 pages agree across text and table"}
+  - {check: Q4, page: 8, locator: "Findings: 18 of 29 informants described", note: "D4: the count carries the scope; excerpts illustrate it"}
+  - {check: Q8, page: 6, locator: "Figure 2: Data structure: first-order concepts in informants", note: "D5: data structure built as the Gioia approach describes"}
+also_fair:
+  - {check: Q3, page: 11, locator: "Figure 3: A model of founder role remaking after acquisition", note: "the model's central construct is missing from the data structure (the P2 gap read as structure-model fit)"}
+  - {check: "core:adjacent-literature", page: 3, locator: "Theory: Research on acquisitions has attended mainly", note: "the Theory section positions the study against research on acquisitions and founder departure without citing or engaging any of it"}
+  - {check: Q14, page: 11, locator: "Discussion: Research and practice often treat founder departure", note: "contracts and earn-outs are set aside as explanations for staying, but the paper has no data on deal terms (overlaps P4)"}
+  - {check: Q12, page: 11, locator: "Discussion: releasing production is a condition for this new role", note: "the grounding audit may rate this model relationship Contradicted: the Cedar founder holds the story role (p. 9) while a Cedar brewer says she never let go (Table 3, p. 10); the P6 contradiction read as a relationship finding, distinct from P2"}
+  - {check: Q14, page: 4, locator: "Method: We began with the founders, who introduced us to brewers", note: "founders chose the brewers and managers who describe them; a gatekeeper rival for the story and bridge findings"}

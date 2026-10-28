@@ -1,0 +1,46 @@
+# Unfrozen: written before anyone on the project read Wibbens and Kretschmer (2026); see unfrozen_note in pack.yaml.
+- id: K1
+  adjudication: paper
+  text: "The model can be reimplemented from the paper and its appendix: entities and their state variables, scales, initialization, every decision rule or submodel, the order and timing of updates (all at once or one at a time, fixed or random order), tie-breaking, and the stopping rule are stated in text, pseudo-code, or an ODD-style description; for LLM agents, prompts and memory rules count as decision rules"
+- id: K2
+  adjudication: paper
+  text: "The simulation code, with the seeds or configuration files that produce the reported results, is public or deposited with the submission; \"available on request\" does not meet this"
+- id: K3
+  adjudication: paper
+  text: "The number of runs per condition, the number of periods, and the stopping rule are stated and justified (for example by the stability of the outcome's variance across runs or by convergence), not set by habit"
+- id: K4
+  adjudication: paper
+  text: "Run-to-run uncertainty (standard deviation, standard error, or bands across runs) is reported for every compared outcome, and each difference the text calls meaningful is larger than that uncertainty"
+- id: K5
+  adjudication: paper
+  text: "No claim rests on significance tests or stars computed across simulation runs, whose number the authors choose; the size of each difference is reported in the outcome's units or as a standardized effect"
+- id: K6
+  adjudication: paper
+  text: "The parameter values behind the headline results are justified, and each claim is bounded to the parameter region where the paper's own results show it holds"
+- id: K7
+  adjudication: judgment
+  text: "Sensitivity analysis varies the parameters the result plausibly depends on, jointly where interactions could matter, and does not rest on one-at-a-time sweeps around a single baseline"
+- id: K8
+  adjudication: paper
+  text: "The model is verified before it is used: it reproduces the known behavior of the model it extends, analytical limits, or extreme-value cases, and intermediate variables are tracked to show the code does what the text says"
+- id: K9
+  adjudication: external
+  text: "When the paper extends a named published model, its base case agrees with the original's published results, or the paper explains the difference"
+- id: K10
+  adjudication: paper
+  text: "For NK and other landscape models: N, K, how interactions are assigned (adjacent, random, block, or other), how fitness contributions are drawn and combined, the number of landscapes, the search rule, and starting positions are stated"
+- id: K11
+  adjudication: judgment
+  text: "The paper shows which model element produces each headline result, by switching the element off, tracking intermediate variables, or tracing runs, and rules out artifacts of update order, initialization, and run length"
+- id: K12
+  adjudication: judgment
+  text: "No headline result is built in: the compared conditions differ only in the element the paper names, and no stated assumption grants the result directly"
+- id: K13
+  adjudication: judgment
+  text: "Validation matches the claim: calibrated magnitudes, numerical thresholds, and prescriptions are tied to calibration, stylized facts, or data; general propositions offered without testing are grounded in stylized facts; claims kept inside the model need neither"
+- id: K14
+  adjudication: judgment
+  text: "For simulations whose agents are LLMs, validation is tied to the mechanism and to empirical patterns, not to how realistic the agents' transcripts read"
+- id: K15
+  adjudication: judgment
+  text: "When LLM agents produce a known collective pattern (a convention, a canonical game outcome, a published finding), the paper rules out that the model recalls it from training, for example by disguising the task or using material the model cannot have seen"

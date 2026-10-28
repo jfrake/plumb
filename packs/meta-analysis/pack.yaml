@@ -1,0 +1,50 @@
+name: meta-analysis
+detection_cues:
+  - meta-analysis, meta-analytic, systematic review, research synthesis, quantitative review, meta-regression, MASEM, meta-analytic structural equation, second-order meta-analysis, umbrella review
+  - effect sizes, k studies, independent samples, PRISMA, inclusion criteria, coding scheme, intercoder agreement
+  - Hunter and Schmidt, Hedges and Olkin, psychometric meta-analysis, random-effects, fixed-effects, Q statistic, I2, tau, credibility interval, prediction interval, Fisher z
+  - file drawer, fail-safe N, trim and fill, funnel plot, Egger, PET-PEESE, p-curve, selection model
+  - robust variance estimation, three-level meta-analysis, metafor, robumeta, metaSEM, psychmeta, Comprehensive Meta-Analysis
+  - a table of included studies with N, r, and moderator codes; studies marked with an asterisk in the reference list; a corrected and uncorrected correlation table; a pooled correlation matrix followed by a path model
+slots:
+  verify: [synthesis-numbers.md]
+  context: [primary-studies.md]
+  diagnose: [evidence-base.md, synthesis-model.md, synthesis-claims.md]
+turns_off:
+  - {agent: timeline-research.md, reason: "the included studies span many years and settings, so no single study period has confounding events to list"}
+  - {agent: setting-research.md, reason: "the data are the included primary studies, which the pack's primary-studies agent checks"}
+core_notes:
+  construction-ledger-producer.md:
+    - {text: "For the pooled effect sizes in this paper, enter each construct in a pooled relationship in `variables` as treatment (the predictor) or DV (the criterion), with `source_data` 'the included primary studies (meta-analysis)'. That is correct for this paper and is not a missing source. Set `construction_formula` to the rule for which primary-study measures count as that construct, and `time_variation` to `time-invariant` unless the paper codes a construct by period. Enter each coded moderator as moderator, with its coding rule. Use `level_of_measurement` 'other' when the primary studies differ in level. Do not set `no_entries_reason` because the paper collects no data: the pooled constructs and coded moderators are its entries. For any new estimate the paper computes from primary data of its own, work as usual."}
+  face-validity.md:
+    - {text: "For the pooled effect sizes in this paper, skip Step 5. In Step 4, benchmark against earlier meta-analyses of the same relationship. In Step 7, ask whether the primary-study measures grouped under each construct measure the same thing. Leave effect size labels (Cohen's small, medium, large) to the pack's M17 check. For any new estimate the paper computes from primary data of its own, work as usual."}
+  completeness.md:
+    - {text: "For the pooled effect sizes in this paper, skip the empirical-causal component list in Step 3 (balance tables, pre-treatment comparisons). For heterogeneity claims, the pack's M15 check owns the test of subgroup differences; do not raise it again. For any new estimate the paper computes from primary data of its own, work as usual."}
+  contribution-research.md:
+    - {text: "For the pooled effect sizes in this paper, the closest prior work includes earlier meta-analyses and reviews of the same relationship. Name them and say what this one adds: more studies, a new period, new moderators, a correction, or a different method. For any new estimate the paper computes from primary data of its own, work as usual."}
+  boundary-conditions.md:
+    - {text: "For the pooled effect sizes in this paper, propose only moderators that could be coded from the primary studies' reports, such as setting, measure, design, or period. Do not ask for a moderator no primary study measures. For any new estimate the paper computes from primary data of its own, work as usual."}
+  packs/inference/agents/inference-numbers.md:
+    - {text: "Pooled effect sizes, moderator and subgroup tests, and publication-bias tests from the meta-analysis belong to the meta-analysis pack (M8, M10, M14, M15, M17): skip them in every check. Keep every estimate the paper computes from new primary data."}
+  packs/inference/agents/inference-dependence.md:
+    - {text: "Pooled effect sizes, moderator and subgroup tests, and publication-bias tests from the meta-analysis belong to the meta-analysis pack (M8, M10, M14, M15, M17): skip them in every check. Keep every estimate the paper computes from new primary data."}
+  packs/inference/agents/inference-claims.md:
+    - {text: "Pooled effect sizes, moderator and subgroup tests, and publication-bias tests from the meta-analysis belong to the meta-analysis pack (M8, M10, M14, M15, M17): skip them in every check. Keep every estimate the paper computes from new primary data."}
+  packs/nonlinear/agents/nonlinear-numbers.md:
+    - {text: "Study-level moderators in the meta-analysis (subgroups and meta-regression terms) and the effect sizes it converts belong to the meta-analysis pack (M5, M15): skip them."}
+  packs/nonlinear/agents/nonlinear-claims.md:
+    - {text: "Study-level moderators in the meta-analysis (subgroups and meta-regression terms) and the effect sizes it converts belong to the meta-analysis pack (M5, M15): skip them."}
+  packs/survey/agents/survey-numbers.md:
+    - {text: "Skip a correlation matrix pooled across primary studies; the meta-analysis pack checks it (M13)."}
+  packs/archival/agents/methods-checks.md:
+    - {text: "Pooled effect sizes and moderator tests from the meta-analysis belong to the meta-analysis pack: apply your checks only to estimates the paper computes from new primary data."}
+read_checkin_lines: ["Synthesis:", "Meta-analytic counts:"]
+severity_rules:
+  - "S1 (M10). The paper claims the effect holds across settings (consistently, universally, generalizes, in all contexts, regardless of setting; 'robust' alone does not count). The interval of the paper's own tradition, computed by `ma_arith.py`, includes zero or the opposite sign at every corner of the rounding box. That interval is the 95% prediction interval for Hedges-Olkin or random-effects models, and the credibility interval at the paper's stated level (80% if unstated) for Hunter-Schmidt, using the narrower z-based interval. If the paper's stated main contribution (from `contribution_defense.md`) is that the effect generalizes or that prior inconsistency is resolved, the finding is 'Undermines the main claim'. Otherwise it is 'Weakens a claim'. If tau or SD rho is not reported, the finding is 'Weakens a claim'. If the paper does not state whether tau is on the r or the Fisher z scale, compute both and apply the rule only if both include zero at every corner."
+  - "S2 (M8). The paper's own counts show more effect sizes than independent samples, and the model treats the effect sizes as independent. If the main claim rests on that estimate's interval or test, and the interval widened by sqrt(effect sizes / independent samples), computed by `ma_arith.py` kind `dependence_bound`, includes zero at every corner, the finding is 'Undermines the main claim'. Otherwise it is 'Weakens a claim'. The finding says the widening is an approximate worst case for equal-sized samples."
+  - "S3 (M15). A moderator or boundary-condition claim rests only on separate subgroup estimates, with no test of their difference in a model with residual heterogeneity. If that claim is the stated main contribution, the finding is 'Undermines the main claim'. Otherwise it is 'Weakens a claim'."
+  - "S4 (M14). Publication-bias findings are at most 'Weakens a claim'. A missing or weak assessment leaves the estimate unexamined; it does not show the estimate is biased."
+  - "S5 (M13). A MASEM that pools correlations one at a time and fits the model with one chosen N is 'Weakens a claim' when a main claim rests on a fit statistic, a chi-square test, or a path's significance."
+  - "S6 (M6). A coded effect size or N that differs from the primary study, under M6's conditions, is 'Weakens a claim' when that study carries 10 percent or more of total N (a line this pack sets, not a published threshold), and 'Minor' otherwise."
+  - "S7 (M1, M2, M3, M4, M9, M12, M18). A finding is 'Minor' when the gap is in reporting only and nothing in the analysis depends on it. It is 'Weakens a claim' when the gap changes the k or N behind a reported estimate (for example a flow count error that changes the included k) or leaves a main estimate impossible to check."
+  - "S8 (M17). M17 findings are always 'Minor'."

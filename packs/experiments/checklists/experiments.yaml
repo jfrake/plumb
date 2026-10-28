@@ -1,0 +1,15 @@
+- {id: E1, text: "Random assignment is described: unit, procedure, and who assigned", adjudication: paper}
+- {id: E2, text: "Sample sizes agree across the text, tables, and participant flow", adjudication: paper}
+- {id: E3, text: "Exclusion rules are stated and marked as preregistered or post hoc", adjudication: paper}
+- {id: E4, text: "A manipulation check is reported for each manipulation", adjudication: paper}
+- {id: E5, text: "Effect sizes are reported with every focal test", adjudication: paper}
+- {id: E6, text: "Test statistics, degrees of freedom, and p-values agree", adjudication: paper}
+- {id: E7, text: "A power analysis or other sample-size justification is reported", adjudication: paper}
+- {id: E8, text: "The preregistration matches the reported hypotheses, sample, exclusions, and analyses", adjudication: external}
+- {id: E9, text: "Scales described as validated are cited to a source that supports that use", adjudication: external}
+- {id: E10, text: "Stated facts about the participant platform or panel match the provider's documentation", adjudication: external}
+- {id: E11, text: "The manipulation is not confounded with another construct that could produce the effect", adjudication: judgment}
+- {id: E12, text: "Demand characteristics and experimenter effects are implausible given the design and cover story", adjudication: judgment}
+- {id: E13, text: "Mediation is analyzed soundly: the mediator is measured after the manipulation and before the outcome, and the indirect effect has a bootstrapped interval", adjudication: paper}
+- {id: E14, text: "Multiple dependent variables and studies are corrected for, or the lack of correction is justified", adjudication: judgment}
+- {id: E15, text: "Claims about real behavior and populations are scoped to what the sample and task support", adjudication: judgment}

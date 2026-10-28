@@ -1,0 +1,1 @@
+Note. Dependent variable: log of one plus new product introductions. Hypothesis 8 predicts negative moderation: a founder CEO weakens the positive association between alliance experience and new product introductions. Standard errors, clustered by firm, in parentheses. * p<0.10, ** p<0.05, *** p<0.01

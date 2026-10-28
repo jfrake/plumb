@@ -1,0 +1,29 @@
+name: inference
+overlay: true
+detection_cues:
+  - "Structural, not by cue: the paper reports at least one coefficient with a standard error, t or z statistic, p-value, confidence interval, or significance mark, and a hypothesis or the headline result rests on it. The manuscript audit lists the estimates under `Inference:`."
+  - a regression table footer such as standard errors in parentheses, robust standard errors, clustered at the ... level, or a key to significance marks
+  - reghdfe, xtreg, vce(cluster), feols, felm, lm_robust, coeftest, vcovCL, boottest, clubSandwich, sandwich
+  - many fixed effects (firm, year, industry-year, CEO, inventor) or an employer-employee panel
+  - a difference-in-differences or event-study design with few treated firms, provinces, states, industries, or a single shock
+  - a geographic sample (counties, regions, plants, labor markets) or a shock shared across units
+  - assignment or sampling by team, session, classroom, or firm with analysis at the individual level
+  - many dependent variables, moderators, or subgroups tested for one hypothesis
+  - a very large N with small coefficients, or a small N with a wide interval
+  - propensity scores, estimated fixed effects, predicted values, or frontier scores used as regressors
+  - marginally significant, approached significance, trend toward significance, highly significant, no effect, ruled out, results available upon request
+slots:
+  verify: [inference-numbers.md]
+  diagnose: [inference-dependence.md, inference-claims.md]
+turns_off: []
+read_checkin_lines: ["Inference:"]
+severity_rules:
+  - "When an estimate's role is main result, the issue is 'Undermines the main claim' in four cases, and only these. (a) I1: the paper clusters below the level at which the treatment varies, and the paper itself also reports the main result with errors clustered at or above that level, and under those errors no rounding of the printed digits gives a p-value below the level the text relies on. (b) I4: the design has one or two treated groups, inference rests on cluster-robust t tests or an unrestricted wild cluster bootstrap, and the paper reports no method built for few treated groups for this estimate. (c) I13: the core star check or the claims arithmetic shows that the main result's coefficient and standard error give a p interval lying entirely above the largest threshold the paper uses, while the text calls the result supported. (d) I16: the main claim is a null and the reported interval includes an effect the paper itself calls meaningful, or one as large as the paper's own main effect."
+  - "Any other issue on an estimate whose role is main result is 'Weakens a claim'. This includes wrong-level clustering without the paper's own coarser estimate, a significance mark one level too generous, and I4 when a method built for few treated groups is reported (give its page)."
+  - "For estimates with role hypothesis, and for anything not listed under `Inference:`, findings are capped at 'Weakens a claim'. A significance-mark or wording mismatch that does not change which hypotheses the text calls supported is 'Minor'."
+  - "I14 (SMJ reporting), the reproduction details in I3, and a multiway dimension nested in another are always 'Minor'. This rule takes precedence over rule 2."
+  - "I12 findings are never above 'Weakens a claim', and describe how the result depends on choices the paper made, never the authors' intent."
+  - "A finding that only notes a missing report (cluster count, bootstrap details, singleton handling, exact p-value, interval, effect size) is written once per check per paper, listing every estimate it applies to. It is 'Minor' unless it concerns the main result."
+core_notes:
+  packs/archival/agents/methods-checks.md:
+    text: "Leave to the inference pack, which runs with you: CHECK 5 except the Cragg-Donald note on first-stage strength; the cluster-count bullet in CHECK 4b; the last pattern in CHECK 7b (inference at the wrong cluster level) and the clustering clause of its fourth pattern; the number of higher-level units bullet in the multilevel section; the serial-correlation and cross-sectional-dependence bullets under Panel Methods (general); CHECK 7; bullets 1, 2, and 5 of CHECK 6 (keep separation, events per variable, the minimum detectable effect, and whether a positive finding's interval is informative); in CHECK 10, whether the paper states the size of an effect (keep plausibility against benchmarks); and, under Text-as-Data, the sentence on standard errors for a generated regressor (keep the attenuation question). This applies to every estimate, DiD estimates included, except SC and shift-share IV estimates, which stay with the design-checks agent, and takes precedence over the design-module and nonlinear hand-offs in your instructions for these items. Report none of these."

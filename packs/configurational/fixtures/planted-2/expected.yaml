@@ -1,0 +1,24 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+script_checked: true
+must_not_raise:
+  - "asks for inter-rater reliability for the crisp coding"
+  - "raises the missing case descriptions under Q4 as well as B14"
+  - "asks for a larger sample for statistical reasons"
+  - "flags a missing PRI column"
+must_catch:
+  - {check: B5, page: 3, locator: "Methods: We analyze 16 units on seven conditions", note: "P1: 128 logical rows and at least 87.5 percent remainders, neither reported, and seven conditions on 16 units not defended", severity: "Weakens a claim"}
+  - {check: B14, page: 6, locator: "Findings: We call the first configuration the protocol-led unit", note: "P2: the two configurations are named and no unit is described for either", severity: "Weakens a claim"}
+  - {check: B10, page: 3, locator: "Methods, software: Analyses were run in fsQCA software", note: "P3: fsQCA software with no version and nothing on alternative models", severity: "Minor"}
+must_not_flag:
+  - {check: B1, page: 4, locator: "Calibration: We coded each unit into each set case by case, from the interview evidence, using a written coding rule for each set", note: "D1a: each set's coding rule stated with its interview evidence"}
+  - {check: B2, page: 4, locator: "Calibration: We drew the line for each rule where the interview evidence divided the units", note: "D1b: the reason for each rule is stated from the case evidence"}
+  - {check: Q4, page: 7, locator: "Findings: The sheet does the remembering", note: "D2: the quoted excerpts support their claims; the missing unit descriptions are B14 only"}
+  - {check: B7, page: 6, locator: "Table 2, coverage column: Raw coverage", note: "D3: 0.12 plus 0.12 against 0.25 is rounding, since each true coverage is 0.125", record: t2-presence}
+also_fair:
+  - {check: B6, page: 5, locator: "Table 1: Crisp-set memberships of the 16 units", note: "the case data table is a truth table in all but name; B6 may fire either way"}
+  - {check: B6, page: 6, locator: "Table 2, solution coverage row: Solution coverage", note: "solution coverage of 0.25 leaves six reliable units unexplained; the paper codes contradictory rows 0. Each configuration rests on a single unit, and the paper discloses on p. 7 that a frequency cutoff of 2 leaves no row coded 1; a reviewer may fairly weigh that fragility here, not under B13, since the robustness is reported"}
+  - {check: B8, page: 5, locator: "Necessity: against a necessity consistency threshold of 0.90", note: "the necessity step is reported as a pass or fail against 0.90 with a count of units, not with consistency and coverage for each condition; no condition is called necessary, so a finding here is fair but minor"}

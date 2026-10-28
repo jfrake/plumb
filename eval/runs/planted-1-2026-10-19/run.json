@@ -1,0 +1,109 @@
+{
+  "pdf_path": "packs/archival/fixtures/planted-1/planted.pdf",
+  "started": "2026-10-19T13:49:44",
+  "search_before": "2016-06-01",
+  "depth": "standard",
+  "limits": {
+    "depth": "standard",
+    "stages": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "revisions": 2,
+    "turn_factor": 1,
+    "notes_factor": 1,
+    "searches": {
+      "setting-research": "about 15",
+      "timeline-research": "about 15",
+      "contribution-research": "about 15",
+      "adjacent-literature": "about 15",
+      "boundary-conditions": "about 15",
+      "editor-reader": "about 10"
+    },
+    "stress_test": true
+  },
+  "models": {
+    "mechanical": "sonnet",
+    "judgment": "opus"
+  },
+  "outputs": [
+    "issues_list",
+    "report"
+  ],
+  "issues_list_mode": "full",
+  "role": "author",
+  "permission": "mine",
+  "journal": "generic",
+  "level": "auto",
+  "needs_zero_retention": false,
+  "page_count": 57,
+  "packs": [
+    "archival",
+    "computational",
+    "nonlinear",
+    "inference",
+    "framing"
+  ],
+  "overlays": [
+    "computational",
+    "nonlinear",
+    "inference",
+    "framing"
+  ],
+  "types_without_pack": [],
+  "primary_pack": "archival",
+  "core_adjust": {
+    "off": {},
+    "notes": {
+      "packs/archival/agents/methods-checks.md": [
+        {
+          "pack": "inference",
+          "role": "overlay",
+          "text": "Leave to the inference pack, which runs with you: CHECK 5 except the Cragg-Donald note on first-stage strength; the cluster-count bullet in CHECK 4b; the last pattern in CHECK 7b (inference at the wrong cluster level) and the clustering clause of its fourth pattern; the number of higher-level units bullet in the multilevel section; the serial-correlation and cross-sectional-dependence bullets under Panel Methods (general); CHECK 7; bullets 1, 2, and 5 of CHECK 6 (keep separation, events per variable, the minimum detectable effect, and whether a positive finding's interval is informative); in CHECK 10, whether the paper states the size of an effect (keep plausibility against benchmarks); and, under Text-as-Data, the sentence on standard errors for a generated regressor (keep the attenuation question). This applies to every estimate, DiD estimates included, except SC and shift-share IV estimates, which stay with the design-checks agent, and takes precedence over the design-module and nonlinear hand-offs in your instructions for these items. Report none of these."
+        }
+      ],
+      "contribution-auditor.md": [
+        {
+          "pack": "framing",
+          "role": "overlay",
+          "text": "The framing pack runs with you. It owns how the introduction argues its contribution: which move it makes, whether it shows what is wrong with prior work or only says a topic is unstudied, how it portrays the literature, and whether the paper delivers the move it promises (`{WORKSPACE}/stage-2/framing_record.md`). Raise none of these. Keep whether prior work already makes the paper's claim. Which conversation the paper joins belongs to the editor reader."
+        }
+      ],
+      "developmental-advisor.md": [
+        {
+          "pack": "framing",
+          "role": "overlay",
+          "text": "Read `{WORKSPACE}/stage-3/framing_diagnosis.md`. When you suggest reframing the paper's contribution, start from the chord it recommends, or say why you depart from it. Do not repeat its framing findings."
+        }
+      ],
+      "editor-reader.md": [
+        {
+          "pack": "framing",
+          "role": "overlay",
+          "text": "The framing pack runs with you and owns how the introduction argues its contribution; its coded frame is in `{WORKSPACE}/stage-2/framing_record.md`. Skip every checklist item marked (framing): 1j (whether the framing fits the findings), 2d, and 5c. In question 2, raise only what a search shows: whether the field holds the view the paper argues against, and whether the sources it cites say what it claims. In the Checks section, answer each skipped id as \"skipped, pack note: framing pack.\""
+        }
+      ]
+    },
+    "read_lines": {
+      "archival": [
+        "Designs:"
+      ],
+      "computational": [
+        "Generated variables:"
+      ],
+      "nonlinear": [
+        "Nonlinear terms:"
+      ],
+      "inference": [
+        "Inference:"
+      ]
+    }
+  },
+  "page_offset": 0
+}

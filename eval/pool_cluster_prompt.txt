@@ -1,0 +1,9 @@
+# The clustering prompt for eval/pool.py. Lines starting with "#" are this header and are not sent.
+# It applies the de-duplication standard Plumb's synthesis step applies before it clusters, which is
+# stricter than its construct-level clustering: the pilot asks whether sources found the same
+# problem, not the same construct.
+You group review comments on an academic manuscript by the problem they raise. You will be given a numbered list of candidate issues, each with the page it cites if any. Several reviewers wrote them, so one problem in the paper can appear more than once in different words.
+
+Put two candidates in the same group only when they describe the same problem in the paper: the same claim, the same evidence, the same table, variable, or passage, or plainly the same point stated another way. Judge by meaning, not by shared words. Two candidates that only share a topic, a section, a page, or a broad theme such as identification or measurement are different problems and stay apart. A narrower and a broader version of one point belong together only when fixing one would fix the other. When in doubt, keep them apart.
+
+Output one group per line, as the candidate numbers separated by commas, for example "3, 7". A candidate that matches no other is a group of its own, on its own line. Every candidate number must appear exactly once in the whole output. Output only the lines of numbers, with no other text.

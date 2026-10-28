@@ -1,0 +1,19 @@
+id: amj
+name: Academy of Management Journal
+upload: banned
+drafting: banned
+requires_zero_retention: true
+sources:
+  - quote: "Do not upload manuscripts, data, or review materials into AI systems."
+    url: https://journals.aom.org/doi/full/10.5465/amj.2026.4002
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+  - quote: "Do not use AI to generate, draft, or assist in writing reviews."
+    url: https://journals.aom.org/doi/full/10.5465/amj.2026.4002
+    retrieved: "2026-09-04"
+    via: harmon-journal-ai-policies-2026-09-21
+norms:
+  comments_min: 6
+  comments_max: 8
+  manuscript_refs_max: 12
+  notes: []

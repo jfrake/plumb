@@ -1,0 +1,19 @@
+,Model 1,Model 2
+Alliance experience,,0.012
+,,(0.020)
+Firm size,0.071***,0.070***
+,(0.024),(0.024)
+Firm age,0.018,0.018
+,(0.031),(0.031)
+R&D intensity,1.62***,1.60***
+,(0.48),(0.48)
+Leverage,-0.044,-0.044
+,(0.061),(0.061)
+Slack,0.083,0.082
+,(0.069),(0.069)
+Competition,-0.072,-0.072
+,(0.048),(0.048)
+Firm fixed effects,Yes,Yes
+Year fixed effects,Yes,Yes
+Observations,"3,906","3,906"
+R2,0.052,0.052

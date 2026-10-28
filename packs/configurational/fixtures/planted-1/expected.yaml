@@ -1,0 +1,30 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+script_checked: true
+must_not_raise:
+  - "asks for standard errors, p-values, or a significance test for consistency or coverage"
+  - "flags the use of the intermediate solution as such"
+  - "asks for a power analysis or sample-size justification for the QCA"
+  - "benchmarks consistency or coverage as an effect size"
+  - "rates a reverse-causality alternative to a configuration as undermining the main claim"
+must_catch:
+  - {check: B1, page: 7, locator: "Table 1: Calibration anchors and sources", note: "P1: ownership concentration has no anchors; the text says only calibrated similarly", severity: "Weakens a claim"}
+  - {check: B2, page: 7, locator: "Calibration, outcome: we set the full membership anchor at the 95th percentile of ROA in our sample", note: "P2: outcome anchors at sample percentiles with no reason, while the setting section cites the trade association's median ROA", severity: "Weakens a claim"}
+  - {check: B3, page: 9, locator: "Results: The truth table covers 162 of the 180 firms", note: "P3: 18 firms at the alliance crossover of 3 leave the truth table unexplained", severity: "Weakens a claim"}
+  - {check: B6, page: 8, locator: "Methods: We used a raw consistency cutoff of 0.80", note: "P4: no truth table, no PRI cutoff, frequency threshold 2 kept most cases", severity: "Weakens a claim"}
+  - {check: B7, page: 10, locator: "Table 3: Configuration chart for high profitability", note: "P5: configuration 2 prints PRI 0.86 above its raw consistency 0.81", severity: "Weakens a claim", record: t3-presence, term: "BoardIndep*CEODuality*~OwnerConc"}
+  - {check: B8, page: 11, locator: "Discussion: Because board independence appears in all three configurations, it is a necessary condition for high profitability", note: "P6: H3 necessity declared from presence in all three configurations, with no necessity test; H3 itself on p. 4 is an equally valid hit", severity: "Undermines the main claim"}
+  - {check: B9, page: 8, locator: "Methods, solution: Following practice in organization research, we report the intermediate solution", note: "P7: intermediate solution with core and peripheral marks, no directional expectations, parsimonious solution never mentioned; the core and peripheral marks in Table 3 on p. 10 are an equally valid hit", severity: "Weakens a claim"}
+  - {check: B12, page: 4, locator: "Hypotheses: H2: R&D intensity is positively related to profitability", note: "P8: H2 stated as a positive relation and declared supported by the configuration chart; the claim that Table 3 supports H2 on p. 10 is an equally valid hit", severity: "Weakens a claim"}
+  - {check: B13, page: 10, locator: "Results, robustness: Results were robust to alternative specifications", note: "P9: one sentence claims robustness with no table or description", severity: "Weakens a claim"}
+must_not_flag:
+  - {check: B2, page: 7, locator: "Calibration, firm size: no external size standard exists for this industry", note: "D1: firm size percentiles with a stated reason (no external size standard)"}
+  - {check: B11, page: 12, locator: "Appendix: We analyzed the absence of high profitability separately", note: "D2: the absence is analyzed separately and the low-performer claims cite it"}
+also_fair:
+  - {check: B4, page: 6, locator: "Table 2: Descriptive statistics of the raw measures", note: "the outcome's distribution of membership is not reported"}
+  - {check: B5, page: 8, locator: "Analysis: We analyze 180 firms on six conditions", note: "the share of logical remainders is not reported"}
+  - {check: B10, page: 8, locator: "Analysis: We ran the analyses in the fsQCA program", note: "software named without a version"}
+  - {check: B14, page: 9, locator: "Results: Configuration 3 combines an independent board with large size", note: "large N; covered firms are not compared (Minor)"}

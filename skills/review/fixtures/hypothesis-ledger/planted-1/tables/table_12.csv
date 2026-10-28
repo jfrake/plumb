@@ -1,0 +1,23 @@
+,Model 1,Model 2
+Supplier concentration,,1.94***
+,,(0.52)
+Supplier concentration squared,,-1.25***
+,,(0.38)
+Alliance experience,0.142***,0.139***
+,(0.041),(0.041)
+Firm size,0.097***,0.094***
+,(0.032),(0.032)
+Firm age,-0.048,-0.049
+,(0.045),(0.045)
+R&D intensity,2.29***,2.22***
+,(0.69),(0.69)
+Leverage,-0.121,-0.117
+,(0.090),(0.090)
+Slack,0.188*,0.183*
+,(0.097),(0.097)
+Competition,-0.198***,-0.192***
+,(0.070),(0.070)
+Firm fixed effects,Yes,Yes
+Year fixed effects,Yes,Yes
+Observations,"3,906","3,906"
+R2,0.094,0.099

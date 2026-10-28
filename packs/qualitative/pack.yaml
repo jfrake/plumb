@@ -1,0 +1,89 @@
+name: qualitative
+detection_cues:
+  - interviews as the primary evidence
+  - ethnographic fieldwork or participant observation
+  - inductive or grounded theory building
+  - single or multiple case study
+  - process study from qualitative data
+  - qualitative coding (data structure of codes, themes, dimensions)
+slots:
+  context: [fieldwork-and-evidence.md]
+  theory: [grounding-audit.md]
+  diagnose: [methods-checks.md, claim-to-excerpt.md, alternative-interpretations.md]
+turns_off: []
+severity_rules:
+  - "For theory-building papers, a central construct or relationship in the model with no traceable grounding in the evidence is 'Undermines the main claim'."
+  - "A central claim supported by excerpts from a single informant or episode, where the paper implies a broader pattern, is 'Weakens a claim'."
+  - "A concept that relabels an existing construct without engaging it is 'Weakens a claim' when the concept is the paper's contribution."
+  - "Demands for generalizability, inter-rater reliability, or sample-size justification are not raised unless the paper's genre or its own claims call for them."
+  - "For phenomenon-driven papers, demands for theoretical novelty are downgraded one level."
+core_notes:
+  face-validity.md:
+    - text: "Apply this note only when the label says primary type. Benchmark only regression or experimental estimates. Counts of codes, informants, cases, or quotations are not effect estimates. If the paper reports no estimate, write 'No estimates to benchmark.' as your whole report and stop. Skip Step 7; the qualitative pack owns how the paper's concepts are built from its evidence (Q3, Q12, Q13)."
+    - file: "notes/privacy.md"
+  stage-4-compiler:
+    - text: "Apply this note only when the label says primary type. Apply the qualitative pack's fourth severity rule to every finding about interview, field-observation, or documentary evidence, from core agents as well as pack agents: do not raise a demand for statistical generalizability, inter-rater reliability, or a sample-size justification unless the paper's genre or its own claims call for it (for example, the paper supports a claim with code counts or percentages, or claims how common something is). A request for data from a group whose experience a claim concerns, or for a comparison case chosen for theoretical contrast, is fair. The skeptic's protected core problem may be narrowed, never dropped."
+  stress-test-prompt:
+    - text: "Apply this note only when the label says primary type. This is a qualitative paper: for findings about interview, field-observation, or documentary evidence, do not raise a demand for statistical generalizability, inter-rater reliability, or a sample-size justification unless the paper's genre or its own claims call for it (for example, the paper supports a claim with code counts or percentages, or claims how common something is). A request for data from a group whose experience a claim concerns, or for a comparison case chosen for theoretical contrast, is fair."
+  packs/qualitative/agents/grounding-audit.md:
+    - text: "Also write `{WORKSPACE}/stage-4/grounding_issues.md`, so the Stage 4 compiler receives your gaps as findings, and name it with `stage-3/grounding_audit.md` in your one-sentence reply. Its first line is `Pack: qualitative`, then the title '## Grounding Issues'. Write one finding for each central construct you rate Not traceable or Thinly grounded, each central relationship you rate Asserted or Contradicted, each gap in structure-model fit when the paper presents a coding structure (an ethnography or case study without one gets no Q3 finding), and each concept presented as new that relabels an existing construct without engaging it. Cite Q12 for the grounding of a construct or relationship, Q3 for structure-model fit, and Q13 for relabeling. Give each finding the heading '#### <construct or relationship>: <brief issue>' and the lines Checklist item, Evidence (excerpt IDs and pages), Concern, Suggestion (and whether it needs new fieldwork), Severity (Minor / Weakens a claim / Undermines the main claim), and Confidence. Set Severity by the pack's rules that set a level: for a theory-building paper, a central construct or relationship with no traceable grounding in the evidence is 'Undermines the main claim'; a concept that relabels an existing construct without engaging it is 'Weakens a claim' when the concept is the paper's contribution. A gap in a peripheral construct or relationship is 'Minor'. When there are none, write 'None.' under the title."
+  packs/qualitative/agents/methods-checks.md:
+    - text: "A fact about a named site or its context that Part 2 of `stage-2/fieldwork_and_evidence.md` shows the public record contradicts is checklist item Q9; cite it. Never add identifying detail about an anonymized site."
+    - text: "CHECK 11b applies only when the discrepancy changes which findings have evidence behind them; otherwise rate the mismatch Low and cite Q6."
+    - text: "In CHECK 10, a missing ethics or IRB statement is not a finding; raise only anonymity that the paper's own details break. In CHECK 9, a missing positionality statement is not a finding by itself; raise only an unexamined influence of the researcher's role that bears on the findings. In CHECK 8, the same holds for Confirmability: a missing positionality or reflexivity statement is not a finding by itself."
+  packs/qualitative/agents/claim-to-excerpt.md:
+    - text: "In Step 3, an excerpt that `stage-2/fieldwork_and_evidence.md` records with no informant role, site, or time point is checklist item Q5; cite it, 'Minor' unless a central claim's scope depends on who spoke."
+  accuracy-audit.md:
+    - file: "notes/privacy.md"
+  adjacent-literature.md:
+    - file: "notes/privacy.md"
+  boundary-conditions.md:
+    - file: "notes/privacy.md"
+  contribution-auditor.md:
+    - file: "notes/privacy.md"
+  contribution-research.md:
+    - file: "notes/privacy.md"
+  editor-reader.md:
+    - file: "notes/privacy.md"
+  developmental-advisor.md:
+    - file: "notes/privacy.md"
+  missed-criticisms.md:
+    - file: "notes/privacy.md"
+  setting-research.md:
+    - file: "notes/privacy.md"
+  skeptical-reviewer.md:
+    - file: "notes/privacy.md"
+  theory-devil.md:
+    - file: "notes/privacy.md"
+  theory-logic.md:
+    - file: "notes/privacy.md"
+  timeline-research.md:
+    - file: "notes/privacy.md"
+  packs/archival/agents/adversarial-dgp.md:
+    - file: "notes/privacy.md"
+  packs/archival/agents/dgp-research.md:
+    - file: "notes/privacy.md"
+  packs/archival/agents/methods-checks.md:
+    - file: "notes/privacy.md"
+  packs/computational/agents/model-provenance.md:
+    - file: "notes/privacy.md"
+  packs/experiments/agents/alternative-explanations.md:
+    - file: "notes/privacy.md"
+  packs/experiments/agents/methods-checks.md:
+    - file: "notes/privacy.md"
+  packs/experiments/agents/sample-and-materials.md:
+    - file: "notes/privacy.md"
+  packs/market-event/agents/event-dating.md:
+    - file: "notes/privacy.md"
+  packs/meta-analysis/agents/primary-studies.md:
+    - file: "notes/privacy.md"
+  packs/simulation/agents/reference-model.md:
+    - file: "notes/privacy.md"
+  packs/survey/agents/scale-provenance.md:
+    - file: "notes/privacy.md"
+  packs/theory/agents/construct-clarity.md:
+    - file: "notes/privacy.md"
+  packs/theory/agents/literature-fidelity.md:
+    - file: "notes/privacy.md"
+  packs/theory/agents/logic-checks.md:
+    - file: "notes/privacy.md"

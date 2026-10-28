@@ -1,0 +1,39 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+script_checked: true
+script_run: "check_hypotheses.py on ledger.json with --tables tables/: flags numbers:hyp:H2:HL3, numbers:hyp:H5:HL5, numbers:hyp:H6:HL7, numbers:hyp:H7:HL9, numbers:hyp:H8:HL9 (also_fair), numbers:hyp:H10:HL15; one HL8 fact for H9 (two-sided p 0.314 to 0.480); H8 HL3 not computed (p 0.043 to 0.057 straddles 0.05); no flag on H1, H4, H9, or H12"
+must_catch:
+  - {check: HL1, page: 3, locator: "Theory, H3: External CEO succession increases new product introductions", note: "P1: H3 developed and in the summary table; no test anywhere; the discussion calls it suggestive", severity: "Weakens a claim"}
+  - {check: HL2, page: 1, locator: "Abstract: the benefit of alliance experience grows with firm age, providing further support for our theory", note: "P2: Firm age x Alliance experience, unhypothesized, sold as support for the theory in the abstract", severity: "Weakens a claim"}
+  - {check: HL3, page: 8, locator: "Results, H2: Hypothesis 2 is supported (b = 0.061, SE = 0.052", note: "P3: 0.061 (0.052) called supported at p < .05; two-sided p 0.232 to 0.249; no mark in Table 3", severity: "Weakens a claim"}
+  - {check: HL4, page: 8, locator: "Results, H4: H4 received partial support", note: "P4: partial support; the designated full model fails and only the manufacturing column passes; the text does not say which part held", severity: "Weakens a claim"}
+  - {check: HL5, page: 8, locator: "Results, H5: Alliance experience is significantly related to withdrawal", note: "P5: a positive withdrawal-hazard coefficient called support for lower withdrawal risk", severity: "Weakens a claim"}
+  - {check: HL7, page: 9, locator: "Results, H6: H6 is not supported", note: "P6: a two-sided null whose test does not reject (p 0.522 to 0.575) reported as not supported", severity: "Weakens a claim"}
+  - {check: HL9, page: 9, locator: "Results, H7: supporting H7", note: "P7: 'slack weakens the negative effect' called supported by a negative product term; the main hypothesis", severity: "Undermines the main claim"}
+  - {check: HL12, page: 4, locator: "Theory, H8: A founder CEO strengthens the positive relationship between alliance experience and new product introductions", note: "P8: H8 predicts positive moderation in theory and negative moderation in the results and the Table 8 note", severity: "Weakens a claim"}
+  - {check: HL13, page: 10, locator: "Section 5: Given the unexpected negative effect of supplier concentration at high levels, we propose H12", note: "P9: H12 proposed after an unexpected result and listed in the abstract among the hypothesized findings", severity: "Minor"}
+  - {check: HL14, page: 7, locator: "Variables: We measure board size as the number of directors on the board", note: "P10: H10 on board independence tested with board size, no stated link", severity: "Minor"}
+  - {check: HL15, page: 10, locator: "Results, H10: In Model 2, board size has a positive and significant coefficient", note: "P11: the text names Model 4 as the test (p 0.242 to 0.267); the verdict cites Model 2 without controls", severity: "Weakens a claim"}
+  - {check: HL8, page: 9, locator: "Results, H9: Because the effect is significant for family firms but not for non-family firms, H9 is supported", note: "P12: family 0.18 (0.07) against non-family 0.09 (0.08), no test of the difference; difference p 0.314 to 0.480", severity: "Weakens a claim"}
+  - {check: HL10, page: 10, locator: "Results, H12: The squared term is negative and significant", note: "P13: inverted U supported on the squared term alone; the turning point sits at the 97th percentile (1.94 / (2 x 1.25) = 0.776; the 97th percentile is 0.78)", severity: "Weakens a claim"}
+  - {check: HL11, page: 10, locator: "Results, H11: indicating full mediation (H11 supported)", note: "P14: full mediation from causal steps; no indirect-effect estimate", severity: "Weakens a claim"}
+must_not_flag:
+  - {check: HL3, page: 8, locator: "Results, H1: Hypothesis 1 is supported", note: "D1: 0.142 (0.041) on the designated full model, supported", hypothesis: H1}
+  - {check: HL3, page: 9, locator: "Results, H8 verdict: Hypothesis 8 is therefore supported", note: "D2: -0.049 (0.025) with p < .05 in the text; p 0.0433 to 0.0572 allows it", hypothesis: H8}
+  - {check: HL5, page: 8, locator: "Results, H1 robustness: a negative coefficient means that alliance experience moves the firm up the industry ranking", note: "D3: industry rank, lower is better, negative coefficient explained", hypothesis: H1}
+  - {check: HL2, page: 11, locator: "Discussion, Post hoc exploratory analysis: The analysis in this subsection was not hypothesized, and we report it as exploratory", note: "D4: labeled exploratory, kept out of the abstract"}
+  - {check: HL5, page: 9, locator: "Results, H7, Competition: competition has a negative coefficient", note: "D5: Competition's own coefficient cited beside the product term; not focal", hypothesis: H7}
+  - {check: HL3, page: 9, locator: "Results, H9, non-family: for non-family firms it is 0.09 (SE = 0.08) and not significant", note: "D6: the non-significant non-family estimate cited in H9's verdict; not focal", hypothesis: H9}
+also_fair:
+  - {check: HL9, page: 4, locator: "Theory, H8: A founder CEO strengthens the positive relationship between alliance experience and new product introductions", note: "H8's theory statement against its negative product term; the HL12 issue absorbs it as one issue", hypothesis: H8, script: true}
+  - {check: HL12, page: 22, locator: "Table 10: Board Size and New Product Introductions (Hypothesis 10)", note: "the Table 10 title restates H10 with board size; the same mismatch as P10, may be written as HL12", hypothesis: H10}
+  - {check: HL1, page: 12, locator: "Appendix: These checks cover the alliance, slack, and partner diversity hypotheses", note: "no test of H3 in the appendix either"}
+  - {check: HL11, page: 10, locator: "Results, H11: Following Baron and Kenny (1986), we proceed in three steps", note: "run B only: the archival methods agent's identification point on H11 (the mediation block in its methods checks)", run: B, pack_check: ["archival methods-checks, If Mediation Analysis"]}
+  - {check: HL9, page: 9, locator: "Results, H7: Table 4 reports the tests", note: "run B only: nonlinear N3 or N4 on H7 (constitutive terms or conditional effects of competition across slack)", run: B, pack_check: [N3, N4]}
+  - {check: HL15, page: 10, locator: "Results, H10: Hypothesis 10 is supported", note: "run B only: inference I12 on P11 (the verdict rests on a different analytic path, Model 2 without controls, than the designated Model 4)", run: B, pack_check: [I12]}
+owner_run:
+  - {plant: P12, checks: [N6], hypothesis_audit_raises: false, note: "run B (packs archival, inference, nonlinear): the nonlinear pack's N6; inference I16 and archival triangulation leave within-study difference rows to it"}
+  - {plant: P13, checks: [N1], hypothesis_audit_raises: false, note: "run B: the nonlinear pack's N1, with the claim taken from the ledger's shape"}

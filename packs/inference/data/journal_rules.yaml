@@ -1,0 +1,8 @@
+smj:
+  rule: "Report standard errors or exact p-values, or both, without asterisks; do not report or refer to cut-off levels of statistical significance; interpret the values in the text; and, for papers accepted for publication, discuss and interpret the effect sizes of relevant estimated coefficients."
+  quote: "SMJ will no longer accept papers for publication that report or refer to cut-off levels of statistical significance (p-values). In statistical studies, authors should report either standard errors or exact p-values (without asterisks) or both, and should interpret these values appropriately in the text."
+  quote_effect_sizes: "SMJ will require in papers accepted for publication that authors explicitly discuss and interpret effect sizes of relevant estimated coefficients."
+  source: "Bettis, Ethiraj, Gambardella, Helfat, and Mitchell (2016), Creating repeatable cumulative knowledge in strategic management, Strategic Management Journal 37(2): 257-261, DOI 10.1002/smj.2477 (editorial policies 3 and 4)"
+  url: "https://doi.org/10.1002/smj.2477"
+  checked_on: "2026-09-29"
+  quote_verified: false  # metadata checked via Crossref 2026-09-29; the quotes still need a character check against the editorial PDF (Wiley blocks automated access)

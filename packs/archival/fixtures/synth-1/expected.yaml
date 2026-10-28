@@ -1,0 +1,67 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+module: synth
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+must_catch:
+  - check: SC8
+    page: 7
+    locator: "Section 5.2 Permutation inference: The permutation p-value is 0.02, significant at the 5 percent level."
+    note: "One treated carrier and J = 15 donors, all 15 placebos kept (Section 4.2, Figure 3), so the smallest attainable permutation p-value is 1/(J+1) = 1/16 = 0.0625. The paper reports Tarnwick's ratio as the largest of the 16 carriers, which gives p = 1/16 = 0.0625, not 0.02. The floor is above the 5 percent level the paper uses, so the claimed significance is impossible. The abstract (p. 1) repeats p = 0.02 and the rejection of the null supports Hypothesis 1, the main claim."
+    severity: "Undermines the main claim"
+  - check: SC1
+    page: 6
+    locator: "Section 5.1 Main estimate: The fit before 2014 is excellent"
+    note: "No pre-period RMSPE or mean gap is reported and there is no predictor balance table (treated vs synthetic vs donor average); Table 1 has no synthetic column. Figure 1 (p. 6) and Figure 2 (p. 7) show pre-period gaps of -4, 4, 3, -3, -2, 4 routes: mean absolute gap 3.3 and RMSPE 3.4 routes, about a quarter of the claimed 13.2-route effect. The word 'excellent' does not match the figures."
+    severity: "Weakens a claim"
+  - check: SC4
+    page: 10
+    locator: "Section 6 Discussion: rivals on shared city pairs responded to the rescue by cutting routes."
+    note: "Table 2 (p. 9) shows donors Pelagia Airways (0.21) and Sundra Express (0.11), 0.32 of the weight, share city pairs with Tarnwick. The Discussion claims these same rivals withdrew from 9 of 14 shared city pairs because of the rescue. If so, the donors were treated by spillover, the synthetic control is pushed down after 2014, and the effect is biased upward. The paper never states this or the direction of the bias; the leave-one-out drops (12.3 and 12.7 without Pelagia or Sundra) are consistent with it."
+    severity: "Weakens a claim"
+  - check: SC6
+    page: 5
+    locator: "Section 4.1 Synthetic control: Balance on fleet size, fleet age, and hub share matters in this setting"
+    note: "The predictor set includes route count in each of the six pre-rescue years as six separate predictors plus the three covariates. With every pre-period outcome as a predictor, the covariates get no role in the weights (Kaul et al. 2022), so the claim that balance on them matters and that including them makes the synthetic carrier resemble Tarnwick on fundamentals is not delivered by this specification. No covariate balance is reported either."
+    severity: "Weakens a claim"
+  - check: SC11
+    page: 9
+    locator: "Section 5.5 Alternative estimators: The jackknife standard error is 3.9, which gives a t-statistic of 2.9, significant at the 1 percent level."
+    note: "SDID with a single treated unit (Tarnwick). The jackknife variance estimator of Arkhangelsky et al. (2021) is undefined with one treated unit, so the 3.9 standard error in the text and in Table 4 (p. 10) and the 1 percent significance claim cannot be right; the paper then says SDID 'confirms the main estimate with conventional inference'. Weights and regularization are reported, so the flaw is the variance estimator."
+    severity: "Weakens a claim"
+  - check: SC2
+    page: 10
+    locator: "Section 6 Discussion: this close pre-rescue fit is itself validation of the design"
+    note: "T0 = 6 annual pre-periods and J = 15 donors (with all six lagged outcomes as predictors). Abadie (2021) warns that few pre-periods with many donors can give a close fit by over-fitting to noise, so pre-period fit alone does not validate the design. The paper offers the fit as proof, with no hold-out validation period. The fit is also not close (see SC1)."
+    severity: "Weakens a claim"
+must_not_flag:
+  - check: SC5
+    page: 7
+    locator: "Section 5.3 Donor weights and leave-one-out results: A weight of 0.62 on one donor means the counterfactual rests mainly on Kestrel."
+    note: "Weights are reported (Table 2, p. 9) and sum to 1.00 (0.62 + 0.21 + 0.11 + 0.06). The paper explains what concentration on Kestrel means, checks Kestrel for its own shocks, shows Tarnwick inside the donor range on every predictor (Table 1, p. 4), and reports leave-one-out estimates (Table 3, p. 9; 11.9 to 13.4 routes). Concentration by itself is not a flaw."
+  - check: SC10
+    page: 9
+    locator: "Section 5.5 Alternative estimators: Its ridge correction assigns negative weights to two donors"
+    note: "The augmented SC (Ben-Michael et al. 2021) is named as augmented SC, not called synthetic control, its negative weights are disclosed and sum with the positive weights (1.08) to one, and it is shown beside SC and DiD in Table 4 (p. 10): SC 13.2, ASCM 12.1, SDID 11.4, DiD 15.8."
+  - check: SC9
+    page: 8
+    locator: "Section 5.4 In-time placebo: We move the rescue back three years, to 2011, well before negotiations with the ministry became public in November 2013."
+    note: "Backdating placebo done correctly: weights refit on 2008 to 2010 only, placebo gaps 1.8, -2.6, 2.9 (mean 0.7) over 2011 to 2013, all before the true rescue and before the rescue was publicly discussed, so anticipation does not contaminate it."
+also_fair:
+  - check: SC7
+    page: 5
+    locator: "Section 4.1 Synthetic control: We fixed the predictor set and the donor pool before examining any post-2014 schedule data."
+    note: "Leave-one-out results are shown, but no alternative predictor set is estimated and the paper does not say why this predictor set was chosen over others. A referee could ask for alternative specifications."
+  - check: SC3
+    page: 4
+    locator: "Section 3 Data: none received state aid, and none changed ownership in the period."
+    note: "The donor rule excludes aided and merged carriers but keeps the four direct rivals that share city pairs with Tarnwick. A referee could raise this under the donor-pool rule as well as under SC4."
+  - check: SC15
+    page: 1
+    locator: "Abstract: rescues reshape the competitive position of the rescued firm"
+    note: "Generalizes from one rescued carrier to rescues in general, and makes a causal claim about rivals (repeated on p. 2, 'can alter the route decisions', and pp. 10 to 11 in the Discussion) with no counterfactual for the rivals' route counts."
+  - check: SC15
+    page: 8
+    locator: "Figure 3: Ratio of post-rescue (2014 to 2019) to pre-rescue (2008 to 2013) root mean squared prediction error"
+    note: "The 13.2-route effect is never set against the spread of placebo gaps in routes; only RMSPE ratios are shown."

@@ -1,0 +1,47 @@
+name: did
+label: "DiD"
+definition: "The paper compares the change in an outcome for units that receive a treatment with the change for units that do not, over periods before and after the treatment, including event-study regressions with leads and lags and designs where units adopt at different times."
+detection_cues:
+  - "difference-in-differences"
+  - "DiD"
+  - "event study"
+  - "event-study"
+  - "staggered adoption"
+  - "staggered rollout"
+  - "parallel trends"
+  - "pre-trend"
+  - "leads and lags"
+  - "two-way fixed effects"
+  - "TWFE"
+  - "triple difference"
+  - "Callaway and Sant'Anna"
+  - "Sun and Abraham"
+  - "Goodman-Bacon"
+  - "HonestDiD"
+  - "did2s"
+  - "csdid"
+  - "did_multiplegt"
+  - "eventstudyinteract"
+  - "jwdid"
+negative_cues:
+  - "cumulative abnormal returns around an announcement (market-event pack)"
+  - "randomized experiment with researcher-controlled assignment (experiments pack)"
+  - "cross-sectional regression with fixed effects and no before-after comparison"
+replaces: ["A4", "A9"]  # traceability only; the loader does not read it
+later: ["DD13"]  # cut for version one; ids never reused
+encouragement: []
+checklist:
+  - {id: DD1, text: "When treatment timing varies across units, the headline estimate comes from an estimator robust to heterogeneous effects, or the paper shows with a decomposition or weight diagnostics that its two-way fixed effects estimate is not driven by comparisons that use already-treated units as controls, or a heterogeneity-robust estimate reported anywhere in the paper agrees with the headline in sign and is of similar size", adjudication: paper}
+  - {id: DD2, text: "A robust DiD estimator's stated choices (never-treated or not-yet-treated controls, base period, anticipation window, covariates, aggregation weights) fit the sample, and a two-stage or imputation estimator's standard errors account for its first stage", adjudication: paper}
+  - {id: DD3, text: "Units called never-treated are untreated for the whole panel, not-yet-treated controls are not already responding to their coming treatment, control units are not treated by spillovers or by events the treatment coding missed, and a comparison group matched on pre-period outcomes is defended against regression to the mean", adjudication: judgment}
+  - {id: DD4, text: "The event study states its reference period, says how distant leads and lags are binned or restricted, keeps the event window balanced or reports how the units change across event time, and, when adoption is staggered, takes its leads and lags from an estimator that does not mix effects across relative periods", adjudication: paper}
+  - {id: DD5, text: "Pre-period coefficients are read as evidence with limited power: a pre-trend test that fails to reject is not offered as proof of parallel trends, a drift in the pre-period coefficients is not dismissed because single leads are insignificant, and no sample, control, or specification choice depends on the pre-test result", adjudication: paper}
+  - {id: DD6, text: "Sensitivity to violations of parallel trends is reported, with bounds on the post-period violation tied to the pre-period and a breakdown value, and the conclusion is stated at a violation the paper argues is plausible, not only under exact parallel trends", adjudication: paper}
+  - {id: DD7, text: "Announcement and effective dates are both stated, and where units could respond before the effective date, treatment is dated at the announcement or the estimator allows an anticipation window", adjudication: judgment}
+  - {id: DD8, text: "The outcome's scale (levels, logs, log(1+y), ratios) is justified for parallel trends, and when treated and control units differ greatly in size the paper shows whether the conclusion holds on the other plausible scale", adjudication: judgment}
+  - {id: DD9, text: "With a continuous or multi-valued treatment, the estimand is stated, comparisons across doses or a slope in dose are not read as causal under ordinary parallel trends alone, and the paper says whether units with zero dose exist", adjudication: paper}
+  - {id: DD10, text: "When treatment switches off for some units, the paper says so, states the estimand (effect of first adoption, of current status, or of exposure length), and uses an estimator that allows switching", adjudication: paper}
+  - {id: DD11, text: "Covariates in the DiD that the paper's own theory, text, or results imply the treatment moves are not in the main model, and conditional parallel trends is handled by an estimator built for it (outcome regression, weighting, or doubly robust), not by adding covariates to a staggered two-way fixed effects regression", adjudication: paper}
+  - {id: DD12, text: "A triple difference states what the third comparison identifies and defends the assumption it adds, the third-dimension comparison group is not itself affected by the treatment, and every lower-order interaction is in the model", adjudication: judgment}
+  - {id: DD14, text: "Treatment is defined and dated from a record of implementation, not from an event the outcome or the expected outcome could cause, and possible misclassification or mis-dating of treatment is addressed", adjudication: judgment}
+  - {id: DD15, text: "When the inference overlay does not run: with one or a few treated units or clusters, or an outcome that persists over time, the paper reports the number of treated clusters and uses inference that fits that design", adjudication: paper}

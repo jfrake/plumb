@@ -1,0 +1,15 @@
+- {id: T1, text: "The core claim is stated in one or two sentences somewhere in the paper", adjudication: paper}
+- {id: T2, text: "Every central construct is defined", adjudication: paper}
+- {id: T3, text: "Each construct is used consistently with its definition throughout", adjudication: paper}
+- {id: T4, text: "Propositions, where the paper uses them, state a direction and the constructs they relate", adjudication: paper}
+- {id: T5, text: "The level of analysis is stated and held consistent", adjudication: paper}
+- {id: T6, text: "Stated premises are not contradicted elsewhere in the paper", adjudication: paper}
+- {id: T7, text: "Scope conditions are stated", adjudication: paper}
+- {id: T8, text: "Characterizations of prior work match the cited works", adjudication: external}
+- {id: T9, text: "Theories and frameworks the paper builds on are described accurately", adjudication: external}
+- {id: T10, text: "The argument's form fits its type (propositional, process, typology, review, essay, adaptation)", adjudication: judgment}
+- {id: T11, text: "Each central relationship or transition has a specified mechanism", adjudication: judgment}
+- {id: T12, text: "The paper says what is wrong or incomplete in existing theory", adjudication: judgment}
+- {id: T13, text: "Constructs are distinct from related existing constructs", adjudication: judgment}
+- {id: T14, text: "The contribution advances theory rather than relabeling or summarizing it", adjudication: judgment}
+- {id: T15, text: "Claims do not reach beyond what the argument supports", adjudication: judgment}

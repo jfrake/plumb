@@ -1,0 +1,24 @@
+[
+  {"id": "p1-t2-m1p1", "kind": "car_test", "check": "R10", "analysis": "H1, CAR[-1,+1]", "source": "Table 2, page 8", "cells": ["Table 2:[-1, +1]:Mean CAR (%)", "Table 2:[-1, +1]:SD (%)", "Table 2:[-1, +1]:Cross-sectional t", "Table 2:[-1, +1]:N"], "test": "cross-sectional t", "tails": "two", "mean": "0.41", "sd": "5.90", "n": 212, "t": "1.01", "stars": ""},
+  {"id": "p1-t2-m3p3", "kind": "car_test", "check": "R10", "analysis": "H1, CAR[-3,+3]", "source": "Table 2, page 8", "cells": ["Table 2:[-3, +3]:Mean CAR (%)", "Table 2:[-3, +3]:SD (%)", "Table 2:[-3, +3]:Cross-sectional t", "Table 2:[-3, +3]:N"], "test": "cross-sectional t", "tails": "two", "mean": "0.64", "sd": "7.10", "n": 212, "t": "1.31", "stars": ""},
+  {"id": "p1-t2-m5p5", "kind": "car_test", "check": "R10", "analysis": "H1, CAR[-5,+5]", "source": "Table 2, page 8", "cells": ["Table 2:[-5, +5]:Mean CAR (%)", "Table 2:[-5, +5]:SD (%)", "Table 2:[-5, +5]:Cross-sectional t", "Table 2:[-5, +5]:N"], "test": "cross-sectional t", "tails": "two", "mean": "1.52", "sd": "8.30", "n": 212, "t": "2.67", "stars": "***"},
+  {"id": "p2-t3-m3p3", "kind": "car_test", "check": "R10", "analysis": "H3, CAR[-3,+3], high-visibility partners", "source": "Table 3, page 8", "cells": ["Table 3:[-3, +3]:Mean CAR (%)", "Table 3:[-3, +3]:SD (%)", "Table 3:[-3, +3]:Cross-sectional t", "Table 3:[-3, +3]:N"], "test": "cross-sectional t", "tails": "two", "mean": "0.47", "sd": "6.40", "n": 88, "t": "2.14", "stars": "**"},
+  {"id": "p3-daily-sum", "kind": "window_sum", "check": "R10", "analysis": "H1, daily AARs against CAR[-1,+1]", "source": "Table 5 and Table 2, pages 8 and 9", "cells": ["Table 5:-1:Mean AR (%)", "Table 5:0:Mean AR (%)", "Table 5:+1:Mean AR (%)", "Table 2:[-1, +1]:Mean CAR (%)"], "measure": "CAR", "winsorized_level": "daily", "items": [
+    {"label": "AR -1", "start": -1, "end": -1, "value": "0.09", "n": 212},
+    {"label": "AR 0", "start": 0, "end": 0, "value": "0.27", "n": 212},
+    {"label": "AR +1", "start": 1, "end": 1, "value": "0.18", "n": 212},
+    {"label": "CAR[-1,+1]", "start": -1, "end": 1, "value": "0.41", "n": 212}]},
+  {"id": "p5-share", "kind": "sign", "check": "R10", "analysis": "H1, CAR[-5,+5]", "source": "Table 2, page 8", "cells": ["Table 2:[-5, +5]:% positive", "Table 2:[-5, +5]:Median (%)", "Table 2:[-5, +5]:Mean CAR (%)", "Table 2:[-5, +5]:N"], "n": 212, "pct_positive": "46.7", "mean": "1.52", "median": "-0.18"},
+  {"id": "p8-pre", "kind": "car_test", "check": "R10", "analysis": "Pre-event CAR[-20,-2]", "source": "Appendix Table A3, page 11", "cells": ["Table A3:[-20, -2]:Mean CAR (%)", "Table A3:[-20, -2]:SD (%)", "Table A3:[-20, -2]:Cross-sectional t", "Table A3:[-20, -2]:N"], "test": "cross-sectional t", "tails": "two", "mean": "1.95", "sd": "9.80", "n": 212, "t": "2.90", "stars": "***"},
+  {"id": "p13-flow", "kind": "sample_flow", "check": "R10", "analysis": "Sample construction", "source": "Section 3.1, page 4", "cells": [], "start": 268, "steps": [
+    {"label": "no matched return identifiers", "removed": 31},
+    {"label": "fewer than 120 trading days of returns", "removed": 19},
+    {"label": "more than 10 percent zero-return days", "removed": 4}], "final": 212},
+  {"id": "p4-years", "kind": "period_counts", "check": "R10", "analysis": "Events by year", "source": "Table 1, Panel A, page 8", "cells": ["Table 1:Panel A:2007", "Table 1:Panel A:2008", "Table 1:Panel A:2009", "Table 1:Panel A:2010", "Table 1:Panel A:2011", "Table 1:Panel A:2012", "Table 1:Panel A:Total"], "counts": {"2007": 21, "2008": 64, "2009": 59, "2010": 31, "2011": 22, "2012": 15}, "total": 212},
+  {"id": "d2-daily-sum", "kind": "window_sum", "check": "R10", "analysis": "H3, daily AARs, high-visibility partners", "source": "Table 4, page 9", "cells": ["Table 4:Day -1:Mean AR or CAR (%)", "Table 4:Day 0:Mean AR or CAR (%)", "Table 4:Day +1:Mean AR or CAR (%)", "Table 4:[-1, +1]:Mean AR or CAR (%)"], "measure": "CAR", "winsorized_level": "daily", "items": [
+    {"label": "AR -1", "start": -1, "end": -1, "value": "0.30", "n": 88},
+    {"label": "AR 0", "start": 0, "end": 0, "value": "0.72", "n": 88},
+    {"label": "AR +1", "start": 1, "end": 1, "value": "0.21", "n": 88},
+    {"label": "CAR[-1,+1]", "start": -1, "end": 1, "value": "1.23", "n": 88}]},
+  {"id": "d2-t4-m1p1", "kind": "car_test", "check": "R10", "analysis": "H3, CAR[-1,+1], high-visibility partners", "source": "Table 4, page 9", "cells": ["Table 4:[-1, +1]:Mean AR or CAR (%)", "Table 4:[-1, +1]:SD (%)", "Table 4:[-1, +1]:Cross-sectional t", "Table 4:[-1, +1]:N"], "test": "cross-sectional t", "tails": "two", "mean": "1.23", "sd": "5.10", "n": 88, "t": "2.26", "stars": "**"}
+]

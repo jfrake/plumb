@@ -1,0 +1,31 @@
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+script_checked: true
+must_catch:
+  - {check: N1, page: 5, locator: "Results, H1: an optimal level of slack in the interior of the distribution", note: "P1: turning point 5.38 outside the observed range 0 to 3.10, called an interior optimum", severity: "Undermines the main claim", record: p1-slack-curve}
+  - {check: N1, page: 11, locator: "Additional analyses, team size: Exploration declines beyond ten members", note: "P2: slope at 15 not distinguishable from zero under any covariance, yet a decline is claimed; no interval for the turning point", severity: "Weakens a claim", record: p2-team-curve}
+  - {check: N2, page: 6, locator: "Results, H2: We read this as evidence that CEO tenure steepens the inverted U", note: "P3: steepening read from one coefficient; curvature changes sign at tenure 12.5 inside 1 to 22; no figure", severity: "Weakens a claim", record: p3-tenure-curve}
+  - {check: N3, page: 6, locator: "Results, H3: The effect of R&D intensity on exploration is positive (b = 0.31)", note: "P4: lower-order coefficient read as the effect of R&D where rivals equal zero, outside 2 to 9", severity: "Weakens a claim", record: p4-rd-rivals}
+  - {check: N4, page: 8, locator: "Figure 2: at low (mean minus 1 SD) and high (mean plus 1 SD) analyst coverage", note: "P5: mean minus 1 SD of coverage is -0.9, below the minimum of 0", severity: "Weakens a claim", record: p5-coverage-plot}
+  - {check: N5, page: 4, locator: "Methods, estimation: we mean-center slack and analyst coverage", note: "P6: centering offered as a cure for multicollinearity; identical product term 0.052 (0.019) in Appendix Table A1", severity: "Minor"}
+  - {check: N6, page: 8, locator: "Results, H4: The slack effect exists only for family firms", note: "P7: 0.70 (0.26) against 0.40 (0.26), difference z 0.82 (script 0.8159); 'only for family firms'", severity: "Weakens a claim", record: p7-family}
+  - {check: N7, page: 13, locator: "Discussion: Our estimates identify the optimal slack level for a given firm", note: "P8: optimum for a given firm drawn from the pooled range under firm fixed effects", severity: "Weakens a claim"}
+  - {check: N8, page: 9, locator: "Results, H5: Alliance experience weakens the effect of R&D on the probability of forming an alliance", note: "P9: probability-scale claim read from a logit product term; no marginal effects", severity: "Weakens a claim"}
+  - {check: N9, page: 9, locator: "Results, H5 (controls sentence): An odds ratio of 1.8 on prior alliance means firms with a prior alliance are 80 percent more likely to form one", note: "P10: odds ratio 1.8 at base rate 0.40 is a 36 percent relative change, not 80", severity: "Minor", record: p10-prior-alliance}
+  - {check: N10, page: 5, locator: "Results, H1: raises exploratory patenting by about 84 percent", note: "P11: log(1 + patents) coefficient read as a percent increase; Table 1 note (page 4) gives 58 percent zeros; no rescaling or Poisson check for the main outcome", severity: "Weakens a claim"}
+  - {check: N11, page: 10, locator: "Results, H6: The moderating effect of rivals is strongest when analyst coverage is high", note: "P12: triple product alone; rivals times coverage omitted though not absorbed; no slope-difference tests", severity: "Weakens a claim"}
+must_not_flag:
+  - {check: N1, page: 12, locator: "Additional analyses, supplier concentration: or 0.30 on the raw scale", note: "D1: centered curve; turning point 0.30 raw, inside; Fieller interval and both end slopes reported", record: d1-supplier-curve}
+  - {check: N8, page: 11, locator: "Results, H7: we evaluate the interaction on the probability scale", note: "D2: four-cell average second difference in probability 0.031 (95 percent CI 0.012 to 0.050), and predicted probabilities at the 10th and 90th percentiles of munificence plotted with intervals in Figure 3"}
+  - {check: N6, page: 9, locator: "Results, H4 continued: so the slack effect is stronger after 2012", note: "D3: 'stronger after 2012' rests on a pooled interaction 0.14 (0.05)"}
+  - {check: N10, page: 13, locator: "Additional analyses, alliance counts: with Poisson pseudo-maximum likelihood and firm fixed effects", note: "D4: alliance count estimated with Poisson and firm fixed effects"}
+  - {check: N9, page: 13, locator: "Additional analyses, alliance counts: The incidence rate ratio of 1.12 means a 12 percent higher expected number of alliances", note: "D4: incidence rate ratio 1.12 read as a 12 percent higher expected count"}
+also_fair:
+  - {check: N12, page: 5, locator: "Results, H1: Figure 1 plots the fitted curve", note: "no flexible check (bins, splines, two lines) for any curve or interaction; one finding listing every term"}
+  - {check: N13, page: 10, locator: "Results, H6: so H6 is supported", note: "no effect size in patents or probability for H2 to H6; one finding listing every term"}
+  - {check: N2, page: 1, locator: "Abstract: tenure steepens it", note: "abstract repeats the P3 claim; same finding as P3", severity: "Weakens a claim"}
+  - {check: N11, page: 1, locator: "Abstract: most of all when analyst coverage is high", note: "abstract repeats the P12 claim; same finding as P12", severity: "Weakens a claim"}
+  - {check: N7, page: 5, locator: "Results, H1: an optimal level of slack in the interior of the distribution", note: "H1 draws an optimum from a model with firm fixed effects; same passage as P1, a different check"}

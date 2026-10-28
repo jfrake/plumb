@@ -1,0 +1,31 @@
+# SYNTHETIC TEST PAPER, NOT REAL RESEARCH.
+# The country (Veloria), panel vendor (Ardent Insight), respondents, authors, journals,
+# and every cited scale source (Dravenko and Pell 2015; Olumide-Carrow 2017;
+# Pell, Sarrazine, and Oduya 2018; Quennell and Barros-Idde 2016; Tesfaye-Morrow 2014)
+# are fictional. The paper marks them "[Fictional source.]" in its reference list.
+# A reference check will not find them; that is expected and is not a planted error.
+# Only Flake and Fried 2020, Hu and Bentler 1999, Meade and Craig 2012, and
+# Zhao, Lynch, and Chen 2010 are real.
+# Matrix check (check_correlation_matrix.py on tables/): table_01, k = 6, smallest
+# eigenvalue -0.08732, bound B = 0.025, impossible (fired: bound); driving variables
+# psychological safety, team trust, voice. Page numbers are PDF pages (printed = physical).
+status: pending_planting
+owner: blind-agent
+synthetic: true
+label: "SYNTHETIC TEST PAPER, NOT REAL RESEARCH"
+paper: planted.pdf
+matrix_checked: true
+must_catch:
+  - {check: S1, page: 4, locator: "Method, measures: All variables were measured in the same online questionnaire", note: "P1: predictor (psychological safety), mediator (felt obligation), and outcome (voice) from one self-report questionnaire; no remedy named and common method bias never mentioned", severity: "Weakens a claim"}
+  - {check: S11, page: 4, locator: "Method, sample and procedure: Respondents qualified for the study by indicating in a screening question that they currently held a managerial position", note: "P2: managers by self-report only; one attention check; no exclusion counts (screen-outs and attention-check failures not counted); nothing on bots or LLM responses for March 2024 data", severity: "Weakens a claim"}
+  - {check: S14, page: 8, locator: "Discussion, practical implications: managers should build psychological safety to raise voice", note: "P3: causal wording (abstract p. 2 'We argue that psychological safety increases voice'; H1 'increases') and prescriptions from one cross-sectional questionnaire; stated contribution is 'the causal effect of psychological safety on managerial voice' (p. 2); single study; the only limitation on direction is one sentence (p. 9: 'Our data are cross-sectional, so future research should replicate these findings with longitudinal data'). The control rationales on p. 5 concern confounding of felt obligation and voice, not of the main relation; the paper gives no argument about direction or confounding of psychological safety to voice beyond the p. 9 sentence.", severity: "Undermines the main claim"}
+  - {check: S18, page: 7, locator: "Table 1: The diagonal is left blank; reliabilities are reported in the text", note: "P4: smallest eigenvalue -0.08732 below -0.025 (B = 0.025), so no complete data could produce the printed matrix; driving variables psychological safety, team trust, voice (r = .79, .74, .05); the note gives a single N = 402 and says nothing about pairwise deletion; a path model is fitted to the matrix (Table 2, p. 7). Two of the three driving variables (psychological safety, voice) and their .74 correlation are inputs to the fitted path model, so the model rests on the suspect values.", severity: "Weakens a claim"}
+must_not_flag:
+  - {check: S9, page: 5, locator: "Method, measurement model: The four-factor model fit markedly worse", note: "D1: psychological safety and team trust r .79 with alphas .88 and .86, disattenuated about .91; nested-model comparison reported; team trust is not focal."}
+  - {check: S8, page: 5, locator: "Method, measurement model: The five-factor model fit the data well", note: "D2: CFI .96, TLI .95, RMSEA .048, SRMR .041 meet the cited cutoffs (Hu and Bentler 1999)."}
+  - {check: S13, page: 4, locator: "Method, measures: we make no claim about a climate shared by the group’s members", note: "D3: psychological safety is each manager's individual-level perception; no aggregation."}
+also_fair:
+  - {check: S17, page: 6, locator: "Results: felt obligation partially mediates the effect of psychological safety on voice", note: "The indirect effect is tested with a CI and not called full mediation, but the paper never says the mediator was not assigned or what must hold for a causal reading, and does not treat measuring felt obligation in the same questionnaire as predictor and outcome as a limit on the claim. Overlaps the S14 plant. Expected severity if raised: Undermines the main claim (mechanism is a stated contribution, all three variables in one wave, single study)."}
+  - {check: S16, page: 5, locator: "Method, measures: is a relatively stable disposition that could make a manager more likely both to feel obligated and to speak up", note: "Arguable: prosocial motivation is measured in the same questionnaire and called a stable disposition, but a reviewer could say a safe work group might raise it, making it a possible mediator. Reason stated and models shown with and without controls, so only this part of S16 is open."}
+  - {check: S14, page: 2, locator: "Abstract: We argue that psychological safety increases voice", note: "Same issue as P3 at a second location; also the abstract's 'organizations can raise managerial voice by investing in psychological safety'."}
+  - {check: S14, page: 3, locator: "Theory and hypotheses: Psychological safety increases managerial voice", note: "H1 causal wording; same issue as P3."}

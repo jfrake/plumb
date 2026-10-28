@@ -1,0 +1,48 @@
+name: rdd
+label: "RD"
+definition: "Treatment changes discontinuously when a score, count, vote share, distance, or date crosses a cutoff, and the paper estimates the effect from units near the cutoff."
+detection_cues:
+  - "regression discontinuity"
+  - "RD design"
+  - "RDD"
+  - "sharp RD"
+  - "fuzzy RD"
+  - "running variable"
+  - "forcing variable"
+  - "cutoff"
+  - "threshold"
+  - "bandwidth"
+  - "rdrobust"
+  - "rddensity"
+  - "rdplot"
+  - "McCrary"
+  - "local linear"
+  - "close vote"
+  - "close call"
+  - "narrowly passed"
+  - "bare winners"
+  - "geographic boundary"
+  - "discontinuity in time"
+negative_cues:
+  - "a threshold used only to split a sample for a regression, with no estimate at the cutoff"
+  - "a kink design (cut for version one; CHECK 9 has no block for it either)"
+replaces: []  # traceability only; the loader does not read it
+later: ["RD15"]  # cut for version one; ids never reused
+encouragement: []
+checklist:
+  - {id: RD1, text: "The RD estimate uses local polynomial estimation with a named bandwidth selector and reports robust bias-corrected inference beside or instead of conventional inference, saying whether the bandwidth targets mean squared error or coverage error; or it uses a local randomization analysis with a stated window-selection rule; or bias-aware (honest) intervals with a stated smoothness bound", adjudication: paper}
+  - {id: RD2, text: "The polynomial is local linear or local quadratic near the cutoff, and no result depends on a global cubic or higher-order polynomial in the running variable", adjudication: paper}
+  - {id: RD3, text: "A density test suited to the running variable is reported with its result, and a failed or marginal test is addressed, not described as showing no manipulation", adjudication: paper}
+  - {id: RD4, text: "A close-vote design (shareholder proposals, say-on-pay, director elections) addresses the documented drop in vote-share density at the threshold and the management advantage in close votes, with its own density and balance evidence, before treating the vote outcome as as good as random", adjudication: judgment}
+  - {id: RD5, text: "Covariate balance at the cutoff is tested with the same RD estimator and inference as the outcome, using either the outcome's bandwidth or the same selector applied to each covariate, for pre-treatment covariates that matter in the setting, and when covariates enter the main model the estimate without them is also shown", adjudication: paper}
+  - {id: RD6, text: "Results are shown across bandwidths (for example half and double the chosen one), kernels, and polynomial orders, with a donut specification when heaping or bunching near the cutoff is plausible", adjudication: paper}
+  - {id: RD7, text: "Placebo cutoffs are estimated with the same estimator on each side of the true cutoff, in windows that exclude it, and jumps found at placebo cutoffs are reported and addressed", adjudication: paper}
+  - {id: RD8, text: "A discrete or heaped running variable is diagnosed (mass points near the cutoff, digit preference), and inference does not rely on clustering standard errors on the running variable as a fix for misspecification", adjudication: paper}
+  - {id: RD9, text: "A fuzzy RD shows the first stage at the cutoff with its size and strength, discusses the exclusion restriction, and interprets the estimate as an effect for compliers at the cutoff", adjudication: paper}
+  - {id: RD10, text: "The estimand is described as local to the cutoff, and to compliers in a fuzzy design; claims beyond the cutoff use an explicit extrapolation method with its assumption, and the abstract and discussion stay within that scope", adjudication: judgment}
+  - {id: RD11, text: "When the treatment is a predetermined trait of a person who won a close race, the paper addresses that bare winners with and without the trait can differ in other attributes that helped them win", adjudication: judgment}
+  - {id: RD12, text: "A design with several cutoffs reports cutoff-specific estimates and describes a pooled estimate as a weighted average of them", adjudication: paper}
+  - {id: RD13, text: "A geographic RD treats location as a two-dimensional running variable, reports balance and estimates along boundary segments, and checks that the boundary does not coincide with other policy or economic boundaries", adjudication: judgment}
+  - {id: RD14, text: "An RD in time justifies time as the running variable, handles autocorrelation and time trends, shows results in a narrow window, and checks for other events at the cutoff date; with a wide window the design is judged as an event study", adjudication: judgment}
+  - {id: RD16, text: "The RD plot shows binned means with a data-driven bin choice and local fits, and the visible jump agrees in size and sign with the reported estimate", adjudication: paper}
+  - {id: RD17, text: "The number of observations within the bandwidth on each side is reported, and a result significant only near the 5 percent line, at one bandwidth, with few effective observations, is presented as fragile", adjudication: paper}

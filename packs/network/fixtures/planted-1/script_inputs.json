@@ -1,0 +1,5 @@
+[
+  {"id": "t1-density", "kind": "summary", "page": 9, "location": "Table 1, pooled-network panel, Density", "cells": [], "same_network": true, "actors": 412, "ties": 1030, "directed": false, "density": "0.12"},
+  {"id": "t1-degree", "kind": "summary", "page": 9, "location": "Table 1, pooled-network panel, Mean degree", "cells": [], "same_network": true, "actors": 412, "ties": 1030, "directed": false, "mean_degree": "5.00"},
+  {"id": "t5-dyads", "kind": "dyads", "page": 15, "location": "Table 5, N", "cells": [], "actors": 412, "periods": 10, "reported_dyads": 200800, "sampling": "sampled", "ties": 800, "sampled_nonties": 200000}
+]

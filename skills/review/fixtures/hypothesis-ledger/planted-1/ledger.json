@@ -1,0 +1,1365 @@
+{
+  "verified": true,
+  "checker_signoff": "writer's hand-built ledger",
+  "mode": "hypotheses",
+  "no_entries_reason": "",
+  "criterion": {
+    "level": "0.05",
+    "tails": "two",
+    "page": "7",
+    "text": "We use two-tailed tests throughout and treat p < .05 as the criterion for support."
+  },
+  "preregistration": "none stated",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "Alliance experience is positively related to new product introductions.",
+      "page": "3",
+      "first_stated": {
+        "section": "theory",
+        "page": "3"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": true,
+      "type": "directional",
+      "sign_note": "H1-T2M6 uses industry rank, where 1 is the firm with the most introductions (lower is better), so the predicted positive effect is a negative coefficient; the methods and results sections say so.",
+      "shape": "n/a",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "alliance experience",
+        "outcome": "new product introductions",
+        "moderator": "",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "abstract",
+          "page": "1",
+          "text": "alliance experience increases new product introductions (Hypothesis 1)"
+        },
+        {
+          "where": "results",
+          "page": "8",
+          "text": "Model 4 of Table 2, the full model, is our test of Hypothesis 1."
+        },
+        {
+          "where": "table",
+          "page": "14",
+          "text": "Table 2: Alliance Experience and New Product Introductions (Hypothesis 1)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H1-T2M4",
+          "study": "",
+          "table": "Table 2",
+          "column": "Model 4",
+          "term": "Alliance experience",
+          "term_kind": "main effect",
+          "expected_sign": "positive",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "yes",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.142",
+            "se": "0.041",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_02.csv:1:4"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        },
+        {
+          "test_id": "H1-T2M6",
+          "study": "",
+          "table": "Table 2",
+          "column": "Model 6",
+          "term": "Alliance experience",
+          "term_kind": "main effect",
+          "expected_sign": "negative",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "industry rank in introductions, 1 = most introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "-0.315",
+            "se": "0.098",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_02.csv:1:6"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "Hypothesis 1 is supported.",
+      "verdict_page": "8",
+      "verdict_cites": [
+        "H1-T2M4",
+        "H1-T2M6"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "0.01",
+      "partial_parts": ""
+    },
+    {
+      "id": "H2",
+      "statement": "The technological diversity of a firm's alliance partners is positively related to new product introductions.",
+      "page": "3",
+      "first_stated": {
+        "section": "theory",
+        "page": "3"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "directional",
+      "sign_note": "",
+      "shape": "n/a",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "partner technological diversity",
+        "outcome": "new product introductions",
+        "moderator": "",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "table",
+          "page": "15",
+          "text": "Table 3: Partner Technological Diversity and New Product Introductions (Hypothesis 2)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H2-T3M2",
+          "study": "",
+          "table": "Table 3",
+          "column": "Model 2",
+          "term": "Partner technological diversity",
+          "term_kind": "main effect",
+          "expected_sign": "positive",
+          "variables": {
+            "predictor": "partner technological diversity",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "yes",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.061",
+            "se": "0.052",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_03.csv:1:2"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "Hypothesis 2 is supported (b = 0.061, SE = 0.052, p < .05).",
+      "verdict_page": "8",
+      "verdict_cites": [
+        "H2-T3M2"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "0.05",
+      "partial_parts": ""
+    },
+    {
+      "id": "H3",
+      "statement": "External CEO succession increases new product introductions.",
+      "page": "3",
+      "first_stated": {
+        "section": "theory",
+        "page": "3"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "directional",
+      "sign_note": "",
+      "shape": "n/a",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "external CEO succession",
+        "outcome": "new product introductions",
+        "moderator": "",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "theory",
+          "page": "5",
+          "text": "Summary of Hypotheses: H3 External CEO succession -> introductions, Positive"
+        },
+        {
+          "where": "discussion",
+          "page": "11",
+          "text": "Our evidence on external CEO succession (Hypothesis 3) is suggestive"
+        }
+      ],
+      "tests": [],
+      "search_note": "Searched Tables 1 to 12, the results section, Section 5, the discussion, and the appendix: no model includes external CEO succession; Table 1 reports only its mean. The discussion (p. 11) calls the evidence suggestive without a test.",
+      "verdict": "none stated",
+      "verdict_text": "Our evidence on external CEO succession (Hypothesis 3) is suggestive",
+      "verdict_page": "11",
+      "verdict_cites": [],
+      "verdict_scope": "cited tests",
+      "claimed_level": "",
+      "partial_parts": ""
+    },
+    {
+      "id": "H4",
+      "statement": "The share of a firm's alliances that are R&D alliances is positively related to new product introductions.",
+      "page": "3",
+      "first_stated": {
+        "section": "theory",
+        "page": "3"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "directional",
+      "sign_note": "",
+      "shape": "n/a",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "R&D alliance share",
+        "outcome": "new product introductions",
+        "moderator": "",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "table",
+          "page": "17",
+          "text": "Table 5: R&D Alliance Share and New Product Introductions (Hypothesis 4)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H4-T5C1",
+          "study": "",
+          "table": "Table 5",
+          "column": "(1)",
+          "term": "R&D alliance share",
+          "term_kind": "main effect",
+          "expected_sign": "positive",
+          "variables": {
+            "predictor": "R&D alliance share",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "yes",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.034",
+            "se": "0.029",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_05.csv:1:1"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        },
+        {
+          "test_id": "H4-T5C4",
+          "study": "",
+          "table": "Table 5",
+          "column": "(4)",
+          "term": "R&D alliance share",
+          "term_kind": "main effect",
+          "expected_sign": "positive",
+          "variables": {
+            "predictor": "R&D alliance share",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "manufacturing-only firms, 3,214 firm-years",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.071",
+            "se": "0.030",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "**",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_05.csv:1:4"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "partially supported",
+      "verdict_text": "H4 received partial support.",
+      "verdict_page": "8",
+      "verdict_cites": [
+        "H4-T5C1",
+        "H4-T5C4"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "",
+      "partial_parts": ""
+    },
+    {
+      "id": "H5",
+      "statement": "Alliance experience lowers the risk that a new product is withdrawn from the market.",
+      "page": "4",
+      "first_stated": {
+        "section": "theory",
+        "page": "4"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "directional",
+      "sign_note": "Cox model of the withdrawal hazard; a lower withdrawal risk is a negative log-hazard coefficient (the Table 6 note says positive means a higher withdrawal risk).",
+      "shape": "n/a",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "alliance experience",
+        "outcome": "risk of product withdrawal",
+        "moderator": "",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "table",
+          "page": "18",
+          "text": "Table 6: Alliance Experience and Product Withdrawal: Cox Models (Hypothesis 5)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H5-T6M2",
+          "study": "",
+          "table": "Table 6",
+          "column": "Model 2",
+          "term": "Alliance experience",
+          "term_kind": "main effect",
+          "expected_sign": "negative",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "withdrawal hazard (Cox, log-hazard coefficient)"
+          },
+          "sample": "6,842 products",
+          "designated": "yes",
+          "model_includes_product": false,
+          "model_family": "hazard",
+          "estimate": {
+            "b": "0.18",
+            "se": "0.06",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_06.csv:1:2"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "Alliance experience is significantly related to withdrawal (b = 0.18, SE = 0.06, p < .01), supporting H5.",
+      "verdict_page": "8",
+      "verdict_cites": [
+        "H5-T6M2"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "0.01",
+      "partial_parts": ""
+    },
+    {
+      "id": "H6",
+      "statement": "Alliance experience is unrelated to process innovation.",
+      "page": "4",
+      "first_stated": {
+        "section": "theory",
+        "page": "4"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "null",
+      "sign_note": "",
+      "shape": "n/a",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "alliance experience",
+        "outcome": "process innovation",
+        "moderator": "",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "table",
+          "page": "19",
+          "text": "Table 7: Alliance Experience and Process Innovation (Hypothesis 6)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H6-T7M2",
+          "study": "",
+          "table": "Table 7",
+          "column": "Model 2",
+          "term": "Alliance experience",
+          "term_kind": "main effect",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "log of one plus new process filings"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "yes",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.012",
+            "se": "0.020",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_07.csv:1:2"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "not supported",
+      "verdict_text": "H6 is not supported.",
+      "verdict_page": "9",
+      "verdict_cites": [
+        "H6-T7M2"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "",
+      "partial_parts": ""
+    },
+    {
+      "id": "H7",
+      "statement": "Organizational slack weakens the negative effect of product market competition on new product introductions.",
+      "page": "4",
+      "first_stated": {
+        "section": "theory",
+        "page": "4"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": true,
+      "type": "interaction",
+      "sign_note": "",
+      "shape": "weakens",
+      "base_sign": "negative",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "product market competition",
+        "outcome": "new product introductions",
+        "moderator": "organizational slack",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "abstract",
+          "page": "1",
+          "text": "organizational slack weakens the negative effect of product market competition on new product introductions (Hypothesis 7)"
+        },
+        {
+          "where": "results",
+          "page": "9",
+          "text": "Hypothesis 7 predicts that slack weakens the negative effect of competition on new product introductions."
+        },
+        {
+          "where": "table",
+          "page": "16",
+          "text": "Table 4: Slack, Competition, and New Product Introductions (Hypothesis 7)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H7-T4M3",
+          "study": "",
+          "table": "Table 4",
+          "column": "Model 3",
+          "term": "Slack x Competition",
+          "term_kind": "product term",
+          "expected_sign": "positive",
+          "variables": {
+            "predictor": "competition",
+            "moderator": "slack",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "yes",
+          "model_includes_product": true,
+          "model_family": "linear",
+          "estimate": {
+            "b": "-0.090",
+            "se": "0.030",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_04.csv:7:3"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        },
+        {
+          "test_id": "H7-T4M3c",
+          "study": "",
+          "table": "Table 4",
+          "column": "Model 3",
+          "term": "Competition",
+          "term_kind": "main effect",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "competition",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "no",
+          "model_includes_product": true,
+          "model_family": "linear",
+          "estimate": {
+            "b": "-0.25",
+            "se": "0.06",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_04.csv:5:3"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "supporting H7",
+      "verdict_page": "9",
+      "verdict_cites": [
+        "H7-T4M3",
+        "H7-T4M3c"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "0.01",
+      "partial_parts": ""
+    },
+    {
+      "id": "H8",
+      "statement": "A founder CEO strengthens the positive relationship between alliance experience and new product introductions.",
+      "page": "4",
+      "first_stated": {
+        "section": "theory",
+        "page": "4"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "interaction",
+      "sign_note": "",
+      "shape": "strengthens",
+      "base_sign": "positive",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "alliance experience",
+        "outcome": "new product introductions",
+        "moderator": "founder CEO",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "results",
+          "page": "9",
+          "text": "As Hypothesis 8 predicts, a founder CEO weakens the positive association between alliance experience and introductions"
+        },
+        {
+          "where": "results",
+          "page": "20",
+          "text": "Table 8 note: Hypothesis 8 predicts negative moderation: a founder CEO weakens the positive association between alliance experience and new product introductions."
+        },
+        {
+          "where": "table",
+          "page": "20",
+          "text": "Table 8: Founder CEOs and the Effect of Alliance Experience (Hypothesis 8)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H8-T8C2",
+          "study": "",
+          "table": "Table 8",
+          "column": "(2)",
+          "term": "Founder CEO x Alliance experience",
+          "term_kind": "product term",
+          "expected_sign": "positive",
+          "variables": {
+            "predictor": "alliance experience",
+            "moderator": "founder CEO",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "yes",
+          "model_includes_product": true,
+          "model_family": "linear",
+          "estimate": {
+            "b": "-0.049",
+            "se": "0.025",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "**",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_08.csv:5:2"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "Hypothesis 8 is therefore supported.",
+      "verdict_page": "9",
+      "verdict_cites": [
+        "H8-T8C2"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "0.05",
+      "partial_parts": ""
+    },
+    {
+      "id": "H9",
+      "statement": "The positive effect of alliance experience on new product introductions is stronger for family firms than for non-family firms.",
+      "page": "5",
+      "first_stated": {
+        "section": "theory",
+        "page": "5"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "difference",
+      "sign_note": "",
+      "shape": "larger in: family firms",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "yes",
+      "constructs": {
+        "predictor": "alliance experience",
+        "outcome": "new product introductions",
+        "moderator": "family firm",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "table",
+          "page": "21",
+          "text": "Table 9: Alliance Experience in Family and Non-Family Firms (Hypothesis 9)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H9-T9F",
+          "study": "",
+          "table": "Table 9",
+          "column": "Family firms",
+          "term": "Alliance experience",
+          "term_kind": "subsample estimate",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "136 family firms, 1,288 firm-years",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.18",
+            "se": "0.07",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "**",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_09.csv:1:1"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        },
+        {
+          "test_id": "H9-T9N",
+          "study": "",
+          "table": "Table 9",
+          "column": "Non-family firms",
+          "term": "Alliance experience",
+          "term_kind": "subsample estimate",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "276 non-family firms, 2,618 firm-years",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.09",
+            "se": "0.08",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_09.csv:1:2"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "Because the effect is significant for family firms but not for non-family firms, H9 is supported.",
+      "verdict_page": "9",
+      "verdict_cites": [
+        "H9-T9F",
+        "H9-T9N"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "",
+      "partial_parts": ""
+    },
+    {
+      "id": "H10",
+      "statement": "Board independence is positively related to new product introductions.",
+      "page": "5",
+      "first_stated": {
+        "section": "theory",
+        "page": "5"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "directional",
+      "sign_note": "",
+      "shape": "n/a",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "board independence",
+        "outcome": "new product introductions",
+        "moderator": "",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "table",
+          "page": "22",
+          "text": "Table 10: Board Size and New Product Introductions (Hypothesis 10)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H10-T10M2",
+          "study": "",
+          "table": "Table 10",
+          "column": "Model 2",
+          "term": "Board size",
+          "term_kind": "main effect",
+          "expected_sign": "positive",
+          "variables": {
+            "predictor": "board size (number of directors)",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years, no controls",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.083",
+            "se": "0.031",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_10.csv:1:2"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        },
+        {
+          "test_id": "H10-T10M4",
+          "study": "",
+          "table": "Table 10",
+          "column": "Model 4",
+          "term": "Board size",
+          "term_kind": "main effect",
+          "expected_sign": "positive",
+          "variables": {
+            "predictor": "board size (number of directors)",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "yes",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.041",
+            "se": "0.036",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_10.csv:1:4"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "In Model 2, board size has a positive and significant coefficient (b = 0.083, SE = 0.031, p < .01); Hypothesis 10 is supported.",
+      "verdict_page": "10",
+      "verdict_cites": [
+        "H10-T10M2"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "0.01",
+      "partial_parts": ""
+    },
+    {
+      "id": "H11",
+      "statement": "Absorptive capacity mediates the positive relationship between alliance experience and new product introductions.",
+      "page": "5",
+      "first_stated": {
+        "section": "theory",
+        "page": "5"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "mediation",
+      "sign_note": "",
+      "shape": "full",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "alliance experience",
+        "outcome": "new product introductions",
+        "moderator": "",
+        "mediator": "absorptive capacity"
+      },
+      "restatements": [
+        {
+          "where": "table",
+          "page": "23",
+          "text": "Table 11: Absorptive Capacity as a Mediator (Hypothesis 11)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H11-T11M1",
+          "study": "",
+          "table": "Table 11",
+          "column": "Model 1",
+          "term": "Alliance experience",
+          "term_kind": "main effect",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years, pooled",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.30",
+            "se": "0.08",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_11.csv:1:1"
+          ],
+          "evidence_kind": "causal steps only",
+          "verdict": ""
+        },
+        {
+          "test_id": "H11-T11M2",
+          "study": "",
+          "table": "Table 11",
+          "column": "Model 2",
+          "term": "Alliance experience",
+          "term_kind": "other",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "absorptive capacity (log R&D staff)"
+          },
+          "sample": "full panel, 3,906 firm-years, pooled",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.42",
+            "se": "0.09",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_11.csv:1:2"
+          ],
+          "evidence_kind": "causal steps only",
+          "verdict": ""
+        },
+        {
+          "test_id": "H11-T11M3b",
+          "study": "",
+          "table": "Table 11",
+          "column": "Model 3",
+          "term": "Absorptive capacity",
+          "term_kind": "other",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "absorptive capacity (log R&D staff)",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years, pooled",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.51",
+            "se": "0.12",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_11.csv:3:3"
+          ],
+          "evidence_kind": "causal steps only",
+          "verdict": ""
+        },
+        {
+          "test_id": "H11-T11M3c",
+          "study": "",
+          "table": "Table 11",
+          "column": "Model 3",
+          "term": "Alliance experience",
+          "term_kind": "direct effect",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "alliance experience (log)",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years, pooled",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "0.08",
+            "se": "0.07",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_11.csv:1:3"
+          ],
+          "evidence_kind": "causal steps only",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "indicating full mediation (H11 supported)",
+      "verdict_page": "10",
+      "verdict_cites": [
+        "H11-T11M1",
+        "H11-T11M2",
+        "H11-T11M3b",
+        "H11-T11M3c"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "",
+      "partial_parts": ""
+    },
+    {
+      "id": "H12",
+      "statement": "Supplier concentration has an inverted-U relationship with new product introductions.",
+      "page": "10",
+      "first_stated": {
+        "section": "results",
+        "page": "10"
+      },
+      "post_hoc_label": false,
+      "carries_main_result": false,
+      "type": "curvilinear",
+      "sign_note": "",
+      "shape": "inverted U",
+      "base_sign": "n/a",
+      "moderator_note": "",
+      "independent": "n/a",
+      "constructs": {
+        "predictor": "supplier concentration",
+        "outcome": "new product introductions",
+        "moderator": "",
+        "mediator": ""
+      },
+      "restatements": [
+        {
+          "where": "abstract",
+          "page": "1",
+          "text": "Among our other hypothesized findings, supplier concentration has an inverted-U relationship with new product introductions (Hypothesis 12)."
+        },
+        {
+          "where": "table",
+          "page": "24",
+          "text": "Table 12: Supplier Concentration and New Product Introductions (Hypothesis 12)"
+        }
+      ],
+      "tests": [
+        {
+          "test_id": "H12-T12M2sq",
+          "study": "",
+          "table": "Table 12",
+          "column": "Model 2",
+          "term": "Supplier concentration squared",
+          "term_kind": "squared term",
+          "expected_sign": "negative",
+          "variables": {
+            "predictor": "supplier concentration squared",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "yes",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "-1.25",
+            "se": "0.38",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_12.csv:3:2"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        },
+        {
+          "test_id": "H12-T12M2lin",
+          "study": "",
+          "table": "Table 12",
+          "column": "Model 2",
+          "term": "Supplier concentration",
+          "term_kind": "linear term of curve",
+          "expected_sign": "none",
+          "variables": {
+            "predictor": "supplier concentration",
+            "outcome": "log of one plus new product introductions"
+          },
+          "sample": "full panel, 3,906 firm-years",
+          "designated": "no",
+          "model_includes_product": false,
+          "model_family": "linear",
+          "estimate": {
+            "b": "1.94",
+            "se": "0.52",
+            "t": "",
+            "p": "",
+            "ci": [],
+            "ci_level": "",
+            "marks": "***",
+            "scale": "coefficient",
+            "se_of": "printed estimate"
+          },
+          "note_levels": [
+            "0.10",
+            "0.05",
+            "0.01"
+          ],
+          "tails": "two",
+          "cells": [
+            "table_12.csv:1:2"
+          ],
+          "evidence_kind": "n/a",
+          "verdict": ""
+        }
+      ],
+      "search_note": "",
+      "verdict": "supported",
+      "verdict_text": "The squared term is negative and significant (b = -1.25, SE = 0.38, p < .01), supporting H12.",
+      "verdict_page": "10",
+      "verdict_cites": [
+        "H12-T12M2sq"
+      ],
+      "verdict_scope": "cited tests",
+      "claimed_level": "0.01",
+      "partial_parts": ""
+    }
+  ],
+  "unhypothesized_tests": [
+    {
+      "table": "Table 4",
+      "column": "Model 5",
+      "term": "Firm age x Alliance experience",
+      "page": "9",
+      "excerpt": "older firms gain more from their alliance experience, providing further support for our theory",
+      "label": "none",
+      "in_abstract": true
+    },
+    {
+      "table": "text",
+      "column": "",
+      "term": "Share of alliances with partners based outside Veltria",
+      "page": "11",
+      "excerpt": "The analysis in this subsection was not hypothesized, and we report it as exploratory.",
+      "label": "exploratory",
+      "in_abstract": false
+    }
+  ]
+}
