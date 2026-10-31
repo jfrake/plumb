@@ -2,19 +2,40 @@
 
 A human-directed AI referee for management research. 
 
+## For reviewers
+
+There are three ways in, from quickest to slowest.
+
+**1. Read a finished review. No setup.** The test paper with 12 planted errors is `packs/archival/fixtures/planted-1/planted.pdf`, and its answer key is `expected.yaml` in the same folder. The review Plumb wrote in the run that Table 2 scores is in `eval/runs/planted-1-2026-10-19/outputs/`: the issues list, a mock referee report, and a summary of the paper.
+
+**2. Rebuild Tables 2 and 3. About two minutes, Python 3.9 or later, no AI model.** From the repository root:
+
+```
+python3 -m pip install pyyaml
+python3 eval/score_fixture.py packs/archival/fixtures/planted-1 eval/runs/planted-1-2026-10-19 --out score.json
+python3 eval/table2.py score.json --out table_2.tex
+python3 eval/referee_comparison/table3_from_counts.py
+```
+
+`score.json` lists each planted error, whether the run caught it, and the issue that caught it. Table 3 is rebuilt from the counts in `eval/referee_comparison/counts.json`. The manuscripts and referee reports behind those counts stay private.
+
+**3. Run Plumb on a paper.** You need Claude Code with a paid Claude plan or an API key, and Python 3.9 or later. In Claude Code, run the three commands under "Install" below, giving the path to this repository's top folder. Then run `/plumb:review packs/archival/fixtures/planted-1/planted.pdf search cap 2016-06-01`. The search cap keeps the research agents from finding the published version of the test paper. At the first screen, choose Standard depth and the Auto check-in level to run without stops, as the scored run did. A Standard run took about 2 to 2.5 hours. `/plumb:check-numbers <pdf>` runs only the Quick checks of the numbers and the reference list.
+
 ## Install
 
 ### Claude Code
 
-    /plugin marketplace add <owner>/plumb
+Replace `/path/to/plumb` with the path to this repository's top folder.
+
+    /plugin marketplace add /path/to/plumb
     /plugin install plumb@plumb
     /plumb:setup
 
 ### Claude desktop app
 
-Build a zip of the repo and upload it.
+Build a zip of the repository and upload it. From the repository's top folder:
 
-    git archive --format=zip -o plumb.zip HEAD
+    zip -r ../plumb.zip . -x '.git/*'
 
 Go to Your plugins in the desktop app and upload `plumb.zip`. Use it from the Claude tab or the Code tab.
 

@@ -32,7 +32,7 @@ One error undermines the main claim; five weaken a claim; six are minor. The ans
 - Give Plumb only `planted.pdf`, never this README or the answer key, which describe the planted errors. (`eval/run_fixture.sh` copies just the PDF into the run folder.)
 - Run at Standard depth with web search capped at **2016-06-01** (`eval/run_fixture.sh` reads it from `expected.yaml`; by hand, use `python3 -m plumb run-dir new --search-before 2016-06-01 planted.pdf` from the repository root; setup does not ask for a cap), so research agents can't find the published article.
 - Score with `python3 eval/score_fixture.py packs/archival/fixtures/planted-1 <run folder>`.
-- Issues that match nothing in the key can be judged by hand against a private run on the unaltered manuscript, with only counts reported. They have not been judged yet; that waits on the run on the unaltered manuscript.
+- Issues that match nothing in the key can be judged by hand against a private run on the unaltered manuscript, with only counts reported. They have not been judged yet.
 - Every catch the scorer credits is confirmed by hand: the issue must identify the planted change itself. In a real paper, comments about other problems can land on the same passages, and the automatic scorer can't tell them apart.
 - Each `must_catch` entry has a `signature`, a list of regexes that name the planted change. The scorer credits an entry only to an issue that matches one of them and sits within one page of the error (or on a page the entry lists under `pages`). The signatures were added on 2026-10-19 after a hand check.
 - `python3 eval/table2.py <score.json> --out table_2.tex` turns a scorecard saved with `--out` into a LaTeX table of recall by error kind and severity.

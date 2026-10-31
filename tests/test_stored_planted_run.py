@@ -29,7 +29,9 @@ def test_stored_run_reproduces_table_2(tmp_path):
 
 def test_stored_run_holds_only_what_the_grader_reads():
     files = sorted(str(p.relative_to(RUN)) for p in RUN.rglob("*") if p.is_file())
-    assert all(f in ("run.json", "README.md") or f.startswith(
+    outputs = ("outputs/issues_list.md", "outputs/mock_report.txt", "outputs/paper_summary.md")
+    assert all(f in ("run.json", "README.md") + outputs or f.startswith(
         ("stage-4/", "stage-5/issues.json", "stage-7/validated.json", "stage-7/dropped.json")) for f in files)
+    assert all(f in files for f in outputs)
     run = json.loads((RUN / "run.json").read_text())
     assert not Path(run["pdf_path"]).is_absolute()
