@@ -58,7 +58,7 @@ def test_counts_check_catches_a_bad_total():
 
 def test_table3_from_counts_cli_prints_the_total_row():
     r = subprocess.run([sys.executable, str(RC / "table3_from_counts.py")], capture_output=True, text=True)
-    assert r.returncode == 0 and "all | 124 | 87 (70%) | 99 | 66% / 82% | 49% / 38%" in r.stdout
+    assert r.returncode == 0 and "all | 124 | 87 (70%) | 82 (66%) | 61 (49%) | 99 | 81 (82%) | 38 (38%)" in r.stdout
 
 
 # --- pool validator and source guess ---

@@ -2,9 +2,10 @@
 """Recompute the Table 3 percentages from the public aggregate counts in counts.json.
 
 Usage: python3 eval/referee_comparison/table3_from_counts.py [--counts counts.json] [--json]
-Prints one row per class: referee points, also raised by Plumb (with its share), Plumb-only points,
-rated valid (referee / Plumb only), and rated serious (referee / Plumb only). Exits 1 if the counts
-do not add up (classes to the total, papers to the total, or a part larger than its whole).
+Prints Table 3 in the proposal's layout: one row per class, the referees' points (raised, also raised
+by Plumb, rated valid, rated serious) and the points only Plumb raised (raised, rated valid, rated
+serious). Each count is followed by its share of the points raised in the same row and block. Exits 1 if
+the counts do not add up (classes to the total, papers to the total, or a part larger than its whole).
 """
 from __future__ import annotations
 
@@ -71,11 +72,14 @@ def main(argv=None) -> int:
     if a.json:
         print(json.dumps(res, indent=1))
         return 0
-    f = lambda v: "--" if v is None else f"{v}%"
-    print("class | referee points | also raised | Plumb only | valid (referee / Plumb only) | serious (referee / Plumb only)")
-    for c, r in res.items():
-        print(f"{c} | {r['referee_points']} | {r['also_raised']} ({f(r['also_raised_pct'])}) | {r['plumb_only']} | "
-              f"{f(r['valid_pct'][0])} / {f(r['valid_pct'][1])} | {f(r['serious_pct'][0])} / {f(r['serious_pct'][1])}")
+    def cell(a, n):
+        return f"{a} ({pct(a, n)}%)" if n else f"{a} (--)"
+    print("class | referees: raised | also raised by Plumb | rated valid | rated serious | "
+          "Plumb only: raised | rated valid | rated serious")
+    for c in CLASSES + ["all"]:
+        r, n, m = counts["classes"][c], counts["classes"][c]["referee_points"], counts["classes"][c]["plumb_only"]
+        print(f"{c} | {n} | {cell(r['also_raised'], n)} | {cell(r['referee_valid'], n)} | {cell(r['referee_serious'], n)} | "
+              f"{m} | {cell(r['plumb_only_valid'], m)} | {cell(r['plumb_only_serious'], m)}")
     return 0
 
 

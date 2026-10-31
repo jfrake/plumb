@@ -10,7 +10,7 @@ No confidential material is here. The only data file is `counts.json`, which hol
 python3 eval/referee_comparison/table3_from_counts.py
 ```
 
-It reads `counts.json`, checks that the classes and the papers add up to the totals, and prints each class with its referee points, the points Plumb also raised, the Plumb-only points, and the shares rated valid and serious for both sources. Add `--json` for machine-readable output. `tests/test_referee_comparison.py` checks the printed numbers against Table 3.
+It reads `counts.json`, checks that the classes and the papers add up to the totals, and prints Table 3 as the proposal shows it: for each class, the referees' points (raised, also raised by Plumb, rated valid, rated serious) and the points only Plumb raised (raised, rated valid, rated serious), each count with its share of the points raised in the same row and block. Add `--json` for machine-readable output. `tests/test_referee_comparison.py` checks the printed numbers against Table 3.
 
 ## Pipeline
 
